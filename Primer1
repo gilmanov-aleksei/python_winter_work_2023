@@ -1,9 +1,11 @@
 #! /usr/bin/python
 
 # Вводим первое число
-x = int(input("Введите число X: "))
+#x = int(input("Введите число X: "))
+x = 4
 # Вводим второе число
-y = int(input("Введите число Y: "))
+#y = int(input("Введите число Y: "))
+y = 4
 # Вычисляем значение
 a = x + y
 b = x - y
@@ -13,14 +15,14 @@ e = x // y
 f = x ** y
 
 # Выводим результат на экран
-print("X =",x)
-print("Y =",y)
-print("X+Y =",a)
-print("X-Y =",b)
-print("X*Y =",c)
-print("X/Y =",d)
-print("X//Y =",e)
-print("X**Y =",f)
+print("X =",x, "Y =",y)
+if x < y:
+    print('X меньше Y')
+elif x == y:
+    print('X равен Y')
+else:
+    print('X больше Y')
+print("X+Y =",a,"\nX-Y =",b,"\nX*Y =",c,"\nX/Y =",d,"\nX//Y =",e,"\nX**Y =",f)
 
 # Сравниваем полученый результат
 
