@@ -4,13 +4,22 @@
 x = int(input("Введите число X: "))
 # Вводим второе число
 y = int(input("Введите число Y: "))
-# Вычисляем
-print("X+Y=",x + y)
-print("X-Y=",x - y)
-print("X*Y=",x * y)
-print("X/Y=",x / y)
-print("X//Y=",x // y)
-print("X**Y=",x ** y)
-
+# Вычисляем значение
+a = x + y
+b = x - y
+c = x * y
+d = x / y
+e = x // y
+f = x ** y
+# Выводим результат на экран
+print("X =",x)
+print("Y =",y)
+print("X+Y =",a)
+print("X-Y =",b)
+print("X*Y =",c)
+print("X/Y =",d)
+print("X//Y =",e)
+print("X**Y =",f)
 
 # Сравниваем полученый результат
+
