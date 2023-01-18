@@ -5,10 +5,12 @@ x = int(input("Введите число X: "))
 # Вводим второе число
 y = int(input("Введите число Y: "))
 # Вычисляем
-print(x + y)
-print(x - y)
-print(x * y)
-print(x / y)
-print(x // y)
+print("X+Y=",x + y)
+print("X-Y=",x - y)
+print("X*Y=",x * y)
+print("X/Y=",x / y)
+print("X//Y=",x // y)
+print("X**Y=",x ** y)
+
 
 # Сравниваем полученый результат
