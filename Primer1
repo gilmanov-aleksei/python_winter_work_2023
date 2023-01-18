@@ -1,8 +1,14 @@
 #! /usr/bin/python
 
-print("введите первое число")
-Var1 = int(input())
-print("введите второе число")
-Var2 = int(input())
+# Вводим первое число
+x = int(input("Введите число X: "))
+# Вводим второе число
+y = int(input("Введите число Y: "))
+# Вычисляем
+print(x + y)
+print(x - y)
+print(x * y)
+print(x / y)
+print(x // y)
 
-print(Var1 + Var2)
+# Сравниваем полученый результат
