@@ -1,11 +1,13 @@
 #! /usr/bin/python
+import random
+x = random.randint(1,9)
+y = random.randint(1,9)
 
 # Вводим первое число
 #x = int(input("Введите число X: "))
-x = 4
 # Вводим второе число
 #y = int(input("Введите число Y: "))
-y = 4
+
 # Вычисляем значение
 a = x + y
 b = x - y
@@ -13,7 +15,6 @@ c = x * y
 d = x / y
 e = x // y
 f = x ** y
-
 
 # Выводим результат на экран
 print("X =",x, "Y =",y)
