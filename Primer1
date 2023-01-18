@@ -1,0 +1,8 @@
+#! /usr/bin/python
+
+print("введите первое число")
+Var1 = int(input())
+print("введите второе число")
+Var2 = int(input())
+
+print(Var1 + Var2)
