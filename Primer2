@@ -27,9 +27,9 @@ else:
 print("X+Y =",a,"\nX-Y =",b,"\nX*Y =",c,"\nX/Y =",d,"\nX//Y =",e,"\nX**Y =",f)
 
 # Сравниваем полученый результат
-list1 = (a, b, c, d, e, f)
-max_number = max(list1)
-print("Наибольшее число:", max_number)
+l_num = (a, b, c, d, e, f)
+max_num = max(l_num)
+print("Наибольшее число:", max_num)
 
 
 
