@@ -36,5 +36,3 @@ l_num = (a, b, c, d, e, f)
 max_num = max(l_num)
 print("Наибольшее число:", max_num)
 
-
-
