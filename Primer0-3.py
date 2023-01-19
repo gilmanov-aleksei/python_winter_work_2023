@@ -13,6 +13,7 @@ y = int(input("Введите число Y: "))
 if y == 0:
     print("Делить на 0 нельзя!")
     input()
+    quit()
 else:
     a = x + y
     b = x - y
@@ -63,3 +64,4 @@ print("Второе наибольшее число через FOR:",z)
 values = [a, b, c, d, e, f]
 values.sort()
 print(f"Третье наибольшее число через SORT: {values[-3]}")
+input()
