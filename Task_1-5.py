@@ -6,12 +6,17 @@ x = int(input("Введите число X: "))
 y = int(input("Введите число Y: "))
 
 # Вычисляем значение
-a = x + y
-b = x - y
-c = x * y
-d = x / y
-e = x // y
-f = x ** y
+if y == 0:
+    print("Делить на 0 нельзя!")
+    input()
+    quit()
+else:
+    a = x + y
+    b = x - y
+    c = x * y
+    d = x / y
+    e = x // y
+    f = x ** y
 
 # Выводим на экран значение X и Y
 print("X =",x,"Y =",y)
