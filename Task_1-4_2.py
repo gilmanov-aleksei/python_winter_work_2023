@@ -1,8 +1,7 @@
 #! /usr/bin/python
-
-# Генерация случайных чисел для X и Y
 import random
 
+# Генерация случайных чисел для X и Y
 x = random.randint(-9,9)
 y = random.randint(-9,9)
 
@@ -14,17 +13,15 @@ y = random.randint(-9,9)
 # Проверка второго числа на 0
 if y == 0:
     print("Делить на 0 нельзя!")
-    input()
     quit()
 else:
-
 # Вычисляем значение
-a = x + y
-b = x - y
-c = x * y
-d = x / y
-e = x // y
-f = x ** y
+    a = x + y
+    b = x - y
+    c = x * y
+    d = x / y
+    e = x // y
+    f = x ** y
 
 # Выводим на экран значение X и Y
 print("X =",x, "Y =",y)
@@ -48,7 +45,7 @@ o = 0
 p = 0
 
 # Сравниваем полученый результат
-#--------
+
 if a > b:
     k = k + 1
 else:
@@ -69,7 +66,8 @@ if a > f:
     k = k + 1
 else:
     p = p + 1
-#--------
+
+# --------
 if b > c:
     l = l + 1
 else:
@@ -86,7 +84,8 @@ if b > f:
     l = l + 1
 else:
     p = p + 1
-#--------
+
+# --------
 if c > d:
     m = m + 1
 else:
@@ -99,7 +98,8 @@ if c > f:
     m = m + 1
 else:
     p = p + 1
-#--------
+
+# --------
 if d > e:
     n = n + 1
 else:
@@ -108,12 +108,14 @@ if d > f:
     n = n + 1
 else:
     p = p + 1
-#--------
+
+# --------
 if e > f:
     o = o + 1
 else:
     p = p + 1
-#--------
+
+# --------
 if k == 5:
     print(f"Наибольшее число: ",a)
 if l == 5:
