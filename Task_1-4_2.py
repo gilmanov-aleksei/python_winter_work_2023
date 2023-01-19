@@ -2,8 +2,8 @@
 import random
 
 # Генерация случайных чисел для X и Y
-x = random.randint(-9,9)
-y = random.randint(-9,9)
+x = random.randint(-10,10)
+y = random.randint(-10,10)
 
 # Вводим первое число
 #x = int(input("Введите число X: "))
