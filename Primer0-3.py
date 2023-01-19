@@ -1,21 +1,25 @@
 #! /usr/bin/python
 import random
 # Генерация случайного чисела для X и Y от 1 до 9
-x = random.randint(-9,9)
-y = random.randint(-9,9)
+# x = random.randint(-9,9)
+# y = random.randint(-9,9)
 
 # Вводим первое число
-#x = int(input("Введите число X: "))
+x = int(input("Введите число X: "))
 # Вводим второе число
-#y = int(input("Введите число Y: "))
+y = int(input("Введите число Y: "))
 
 # Вычисляем значение
-a = x + y
-b = x - y
-c = x * y
-d = x / y
-e = x // y
-f = x ** y
+if y == 0:
+    print("Делить на 0 нельзя!")
+    input()
+else:
+    a = x + y
+    b = x - y
+    c = x * y
+    d = x / y
+    e = x // y
+    f = x ** y
 
 # Выводим на экран значение X и Y
 print("X =",x,"Y =",y)
