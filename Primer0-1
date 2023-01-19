@@ -2,6 +2,7 @@
 
 # Генерация случайных чисел для X и Y
 import random
+
 x = random.randint(-9,9)
 y = random.randint(-9,9)
 
