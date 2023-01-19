@@ -6,6 +6,7 @@ import random
 x = random.randint(-9,9)
 y = random.randint(-9,9)
 
+
 # Вводим первое число
 #x = int(input("Введите число X: "))
 # Вводим второе число
