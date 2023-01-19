@@ -1,5 +1,7 @@
 #! /usr/bin/python
 import random
+
+
 # Генерация случайных чисел для X и Y
 x = random.randint(1,9)
 y = random.randint(1,9)
@@ -32,8 +34,12 @@ else:
 print("X+Y =",a,"  X-Y =",b,"  X*Y =",c,"  X/Y =",d,"  X//Y =",e,"  X**Y =",f)
 
 # Сравниваем полученый результат
+val1 = (a, b, c, d, e, f)
 
-if(a > b) : k = + k
+max1 = val1[0]
+for i in val1:
+    if i > max1:
+        max1 = i
 
-print(k)
+print(f"Наибольшее число: {max1}")
 
