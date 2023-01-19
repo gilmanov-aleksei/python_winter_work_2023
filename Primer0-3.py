@@ -1,20 +1,23 @@
 #! /usr/bin/python
+
+# Генерация случайных чисел для X и Y
 import random
-# Генерация случайного чисела для X и Y от 1 до 9
-x = random.randint(-10,10)
-y = random.randint(-10,10)
+
+x = random.randint(-9,9)
+y = random.randint(-9,9)
 
 # Вводим первое число
 #x = int(input("Введите число X: "))
 # Вводим второе число
 #y = int(input("Введите число Y: "))
 
-# Вычисляем значение
+# Проверка второго числа на 0
 if y == 0:
     print("Делить на 0 нельзя!")
-    input()
     quit()
 else:
+
+# Вычисляем значение
     a = x + y
     b = x - y
     c = x * y
@@ -23,7 +26,7 @@ else:
     f = x ** y
 
 # Выводим на экран значение X и Y
-print("X =",x,"Y =",y)
+print("X =",x, "Y =",y)
 
 # Сравниваем X и Y между собой, результат выводим на экран
 if x < y:
@@ -36,32 +39,89 @@ else:
 # Выводим результат примеров на экран
 print("X+Y =",a,"  X-Y =",b,"  X*Y =",c,"  X/Y =",d,"  X//Y =",e,"  X**Y =",f)
 
-# Сравнение результатов, код найден в интернете, применён для выполнения теукщей задачи
+k = 0
+l = 0
+m = 0
+n = 0
+o = 0
+p = 0
 
-# Сравниваем полученый результат через MAX
-l_num1 = (a, b, c, d, e, f)
-max_num = max(l_num1)
-print("Первое наибольшее число через MAX:", max_num)
-
-# Сравниваем полученый результат через FOR
-def calc_largest(arr):
-    second_largest = arr[0]
-    largest_val = arr[0]
-    for i in range(len(arr)):
-        if arr[i] > largest_val:
-            largest_val = arr[i]
-
-    for i in range(len(arr)):
-        if arr[i] > second_largest and arr[i] != largest_val:
-            second_largest = arr[i]
-
-    return second_largest
-
-z = calc_largest([a, b, c, d, e, f])
-print("Второе наибольшее число через FOR:",z)
-
-# Сравниваем полученый результат через SORT
-values = [a, b, c, d, e, f]
-values.sort()
-print(f"Третье наибольшее число через SORT: {values[-3]}")
-input()
+# Сравниваем полученый результат
+#--------
+if a > b:
+    k = k + 1
+else:
+    l = l + 1
+if a > c:
+    k = k + 1
+else:
+    m = m + 1
+if a > d:
+    k = k + 1
+else:
+    n = n + 1
+if a > e:
+    k = k + 1
+else:
+    o = o + 1
+if a > f:
+    k = k + 1
+else:
+    p = p + 1
+#--------
+if b > c:
+    l = l + 1
+else:
+    m = m + 1
+if b > d:
+    l = l + 1
+else:
+    n = n + 1
+if b > e:
+    l = l + 1
+else:
+    o = o + 1
+if b > f:
+    l = l + 1
+else:
+    p = p + 1
+#--------
+if c > d:
+    m = m + 1
+else:
+    n = n + 1
+if c > e:
+    m = m + 1
+else:
+    o = o + 1
+if c > f:
+    m = m + 1
+else:
+    p = p + 1
+#--------
+if d > e:
+    n = n + 1
+else:
+    o = o + 1
+if d > f:
+    n = n + 1
+else:
+    p = p + 1
+#--------
+if e > f:
+    o = o + 1
+else:
+    p = p + 1
+#--------
+if k == 5:
+    print(f"Наибольшее число: ",a)
+if l == 5:
+    print(f"Наибольшее число: ",b)
+if m == 5:
+    print(f"Наибольшее число: ",c)
+if n == 5:
+    print(f"Наибольшее число: ",d)
+if o == 5:
+    print(f"Наибольшее число: ",e)
+if p == 5:
+    print(f"Наибольшее число: ",f)
