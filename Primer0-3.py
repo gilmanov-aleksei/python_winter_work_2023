@@ -1,13 +1,13 @@
 #! /usr/bin/python
 import random
 # Генерация случайного чисела для X и Y от 1 до 9
-# x = random.randint(-9,9)
-# y = random.randint(-9,9)
+x = random.randint(-10,10)
+y = random.randint(-10,10)
 
 # Вводим первое число
-x = int(input("Введите число X: "))
+#x = int(input("Введите число X: "))
 # Вводим второе число
-y = int(input("Введите число Y: "))
+#y = int(input("Введите число Y: "))
 
 # Вычисляем значение
 if y == 0:
