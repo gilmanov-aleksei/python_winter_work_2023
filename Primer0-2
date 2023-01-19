@@ -18,7 +18,7 @@ e = x // y
 f = x ** y
 
 # Выводим на экран значение X и Y
-print("X =",x, "Y =",y)
+print("X =",x,"Y =",y)
 
 # Сравниваем X и Y между собой, результат выводим на экран
 if x < y:
@@ -32,7 +32,19 @@ else:
 print("X+Y =",a,"  X-Y =",b,"  X*Y =",c,"  X/Y =",d,"  X//Y =",e,"  X**Y =",f)
 
 # Сравниваем полученый результат через MAX
-l_num = (a, b, c, d, e, f)
-max_num = max(l_num)
-print("Наибольшее число:", max_num)
+l_num1 = (a, b, c, d, e, f)
+max_num = max(l_num1)
+print("Наибольшее число через MAX:", max_num)
+
+# Сравниваем полученый результат через FOR
+def large(arr):
+    max_ = arr[0]
+    for ele in arr:
+        if ele > max_:
+           max_ = ele
+    return max_
+
+l_num2 = (a, b, c, d, e, f)
+result = large(l_num2)
+print("Наибольшее число через FOR:", result)
 
