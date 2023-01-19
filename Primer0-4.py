@@ -1,4 +1,5 @@
 #! /usr/bin/python
+
 import math
 
 print("Введите коэффициенты для квадратного уравнения (ax^2 + bx + c = 0):")
