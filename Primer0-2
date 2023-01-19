@@ -31,26 +31,9 @@ else:
 # Выводим результат примеров на экран
 print("X+Y =",a,"  X-Y =",b,"  X*Y =",c,"  X/Y =",d,"  X//Y =",e,"  X**Y =",f)
 
-# Сравнение результатов, коды найдены в интернете, применены для выполнения задачи
+# Сравнение результатов, код найдены в интернете, применён для выполнения текущей задачи
 
 # Сравниваем полученый результат через MAX
 l_num1 = (a, b, c, d, e, f)
 max_num = max(l_num1)
-print("Первое наибольшее число через MAX:", max_num)
-
-# Сравниваем полученый результат через FOR
-def calc_largest(arr):
-    second_largest = arr[0]
-    largest_val = arr[0]
-    for i in range(len(arr)):
-        if arr[i] > largest_val:
-            largest_val = arr[i]
-
-    for i in range(len(arr)):
-        if arr[i] > second_largest and arr[i] != largest_val:
-            second_largest = arr[i]
-
-    return second_largest
-
-z = calc_largest([a, b, c, d, e, f])
-print("Второе наибольшее число через FOR:",z)
+print("Наибольшее число через функцию MAX:", max_num)
