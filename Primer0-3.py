@@ -54,3 +54,8 @@ def calc_largest(arr):
 
 z = calc_largest([a, b, c, d, e, f])
 print("Второе наибольшее число через FOR:",z)
+
+# Сравниваем полученый результат через SORT
+values = [a, b, c, d, e, f]
+values.sort()
+print(f"Третье наибольшее число через SORT: {values[-3]}")

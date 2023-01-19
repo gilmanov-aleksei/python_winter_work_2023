@@ -33,6 +33,13 @@ print("X+Y =",a,"\nX-Y =",b,"\nX*Y =",c,"\nX/Y =",d,"\nX//Y =",e,"\nX**Y =",f)
 
 # Сравниваем полученый результат
 
-
+if a > b:
+    k = k + 1
+else:
+    l = l + 1
+if a > c:
+    k = k + 1
+else:
+    l = l + 1
 
 
