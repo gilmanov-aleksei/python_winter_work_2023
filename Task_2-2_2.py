@@ -3,7 +3,7 @@
 from random import randint
 
 # Генерируем случайные список цифр для переменной lst
-lst = [randint(-50, 50) for i in range(10)]
+lst = [randint(-255, 255) for i in range(20)]
 
 # Присваиваем переменной "a" первое число из списка
 a = lst[0]
