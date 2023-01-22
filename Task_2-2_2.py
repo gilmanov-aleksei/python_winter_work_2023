@@ -5,6 +5,7 @@ from random import randint
 # Генерируем случайные список цифр для переменной lst
 lst = [randint(-255, 256) for i in range(20)]
 
+
 # Присваиваем переменной "a" первое число из списка
 a = lst[0]
 
