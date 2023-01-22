@@ -1,7 +1,6 @@
 #! /usr/bin/python
 
 from random import randint
-
 # Генерируем случайные список цифр для переменной lst
 lst = [randint(-50, 50) for i in range(10)]
 # Присваиваем переменной "a" первое число из списка
