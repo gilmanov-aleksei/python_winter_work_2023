@@ -1,6 +1,8 @@
 #! /usr/bin/python
-
-from random import sample
-
-lst = sample(range(-10, 11), 20)
-print(lst)
+b = 0
+while True:
+    a = int(input())
+    if a < 0:
+        break
+    b = b + a
+print(b)
