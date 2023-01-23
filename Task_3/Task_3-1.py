@@ -7,6 +7,7 @@ s_0 = "Список пуст"
 fio = []
 zp = []
 while True:
+    print()
     f = str(input(f1))
     if f == "0":
         break
