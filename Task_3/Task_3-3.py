@@ -8,3 +8,4 @@ len_s = len(l_s)
 
 print(l_s)
 print(len_s)
+
