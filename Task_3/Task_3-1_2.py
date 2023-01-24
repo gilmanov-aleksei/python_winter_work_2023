@@ -1,13 +1,18 @@
 #! /usr/bin/python
 
+# Рабочий текст
 f1 = "Введите Фамилию (0 - Выход): "
 z1 = "Введите ЗП: "
 sr_zp = "Средняя зарплата на"
 tov = "Товарищ "
 mec = " - меценат, мы его считать не будем."
 s_0 = "Список пуст, нам некого счтитать."
-fio = []
+
+# Создаём пустой список
+# fio = []
 zp = []
+
+
 while True:
     print()
     f = str(input(f1))
@@ -17,7 +22,7 @@ while True:
     if z <= 0:
         print(tov, f, mec)
         continue
-    fio.append(f)
+#    fio.append(f)
     zp.append(z)
 if len(zp):
     s_zp = sum(zp) / len(zp)
