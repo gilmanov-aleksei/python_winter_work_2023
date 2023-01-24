@@ -1,11 +1,9 @@
 #! /usr/bin/python
 
-x = "12244355367386879098756"
+x = "122443553673006879098756"
 #x = int(input(Введите число :"))
 
-l_x = list(x)
-len_x = len(l_x)
+print(x.split())
+print(x.count(1))
 
-print(l_x)
-print(len_x)
-#for i in range(11):
+
