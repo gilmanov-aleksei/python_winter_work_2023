@@ -7,6 +7,7 @@ print(x)
 y1 = (''.join(map(lambda z: z + ' ', x)))
 # Создаём список из строки цифр
 y = list(map(int, y1.split()))
+# y = list(map(int, (''.join(map(lambda z: z + ' ', x))).split()))
 # Сортируем список цифр по возрастанию
 s = sorted(y)
 # Печатаем количество цифр в списке

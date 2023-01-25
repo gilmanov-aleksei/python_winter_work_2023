@@ -1,8 +1,5 @@
 #! /usr/bin/python
 
-entered_list = input("Введите список чисел, разделенных пробелом: ").split()
-print("Введенный список:", entered_list)
-
-num_list = list(map(int, entered_list))
-print("Список чисел: ", num_list)
-print("Сумма списка:", sum(num_list))
+str_lst = ['1', '2', '3']
+int_lst = [int(x) for x in str_lst]
+print (int_lst)
