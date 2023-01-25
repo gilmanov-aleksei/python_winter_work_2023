@@ -1,9 +1,6 @@
 #! /usr/bin/python
 
-lst = [10, True, [1,2], "abcdefg"]
-l_lst = len(lst)
-for i in range(l_lst):
-    print(list[i])
-
-
-
+aaa = {0:'ноль', 1:'один', 2:'два', 3:'три', 4:'четыри', 5:'пять', 6:'шесть', 7:'семь', 8:'восемь', 9:'девять'}
+s = input()
+for i in s:
+    print(aaa[int(i)], end=' ')
