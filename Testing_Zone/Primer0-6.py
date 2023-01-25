@@ -1,7 +1,8 @@
 #! /usr/bin/python
 
 abc = {}
-s = input()
+s = "sadsddaf"
+# s = input()
 for i in s:
     if i not in abc:
         abc[i] = 0
