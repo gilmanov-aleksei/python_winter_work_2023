@@ -1,6 +1,6 @@
 #! /usr/bin/python
 
-abc = input().split()
+abc = input('Введите пример: ').split()
 
 a = int(abc[0])
 b = int(abc[2])
