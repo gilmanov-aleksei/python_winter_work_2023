@@ -5,6 +5,7 @@ abc = input('Введите пример: ').split()
 a = int(abc[0])
 b = int(abc[2])
 c = abc[1]
+
 if c == '+':
     print(abc[0], '+', abc[2], '=', a + b)
 if c == '-':
