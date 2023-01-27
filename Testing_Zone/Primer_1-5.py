@@ -1,4 +1,5 @@
 
+
 #str1 = list(input())
 s = "apple"
 str1 = list(s)
