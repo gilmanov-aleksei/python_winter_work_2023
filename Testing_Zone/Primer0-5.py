@@ -1,7 +1,13 @@
 #! /usr/bin/python
 
-primer = input().split()
-dict_w = {}
+# primer = input('Введите пример: ').split()
+primer = '1 + 2'
+p = primer.split()
+print(p)
+dict_p = {}
     # Подсчитываем каждый символ w1 в словаре.
-    for i in range(len(w1)):
-        dict_w[w1[i]] = dict_w.get(w1[i], 0) + 1
+for i in range(1, len(p) + 1):
+    dict_p[i] = 0
+#   dict_p.get(w1[i], 0) + 1
+
+print(dict_p)
