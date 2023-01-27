@@ -10,8 +10,10 @@ d_row = 0
 d_cow = 1
 
 for i in range(1, n * n + 1):
-    d[i] = d.get((x,y), -1)
+    d[i] = 0, 0
 print(d)
+# d.get((x,y), -1)
+
 
 # d[i] = d.get((x,y), -1)
 # print(d)
