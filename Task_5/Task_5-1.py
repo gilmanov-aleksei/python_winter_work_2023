@@ -16,5 +16,6 @@ for i in range(n):
 for k,v in z.items(): # в данном случае выводится вначале номер строки, а затем сама строка. Думаю, это наглядно
     print(' ' * (n - i), end='')
     print(str(v))
+
 #    print(' '.join(map(str, str(v)))
 
