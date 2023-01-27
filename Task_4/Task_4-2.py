@@ -18,7 +18,7 @@ mas_col = 1
 # Повторять цикл пока значение ячейки меньше n ^ 2
 while num <= n * n:
     # Проверяем, ячека ровна нулю и не выходит ячейки за пределы списка
-    if mas[x+mas_row][y+mas_col] == 0 <= x+mas_row < n and 0 <= y+mas_col < n:
+    if 0 <= x+mas_row < n and 0 <= y+mas_col < n and mas[x+mas_row][y+mas_col] == 0:
         # Если не выходит и ровна 0, то записываем значения
         # Записываем занчение ряда в X
         x += mas_row
