@@ -4,21 +4,17 @@
 n = 3
 d = {}
 num = 1
-x = 0
-y = -1
+x = 1
+y = 1
 d_row = 0
-d_cow = 1
+d_col = 0
 
-for i in range(1, n * n + 1):
-#    d[i] = 0, 0
-     d = dict.get(i[, default])
-#
+#     if 0 <= x + mas_row < n and 0 <= y + mas_col < n and mas[x + mas_row][y + mas_col] == 0:
+while num <= n * n:
+    d[num] = d.get(num, (x, y))
+    x += d_row
+    y += d_col
+    num += 1
+
 print(d)
-d = {a: 0 for a in range(1, n * n + 1)}
-print(d)
-# d.get((x,y), -1)
 
-
-# d[i] = d.get((x,y), -1)
-# print(d)
-# d[i] = d[i] - 1
