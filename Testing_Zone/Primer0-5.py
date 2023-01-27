@@ -1,15 +1,18 @@
 #! /usr/bin/python
 
-# primer = input('Введите пример: ').split()
-primer = '1 + 2'
-p = primer.split()
-print(p)
-dict_p = {}
-print(dict_p)
-    # Подсчитываем каждый символ w1 в словаре.
-for i in range(1, len(p) + 1):
-    dict_p[i] = 0
-#   dict_p.get(w1[i], 0) + 1
+# n = int(input('Введите число: '))
+n = 3
+d = {}
+num = 1
+x = 0
+y = -1
+d_row = 0
+d_cow = 1
 
-print(dict_p)
-print(p[0], p[1], p[2], '=', int(p[0])+int(p[2]))
+for i in range(1, n * n + 1):
+    d[i] = d.get((x,y), -1)
+print(d)
+
+# d[i] = d.get((x,y), -1)
+# print(d)
+# d[i] = d[i] - 1
