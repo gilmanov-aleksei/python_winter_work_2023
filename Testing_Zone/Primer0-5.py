@@ -1,6 +1,7 @@
 #! /usr/bin/python
 
-statistic_dict = {'b':10, 'd':30, 'c':15, 'c':14, 'a':33}
-for key,val in statistic_dict.items():
-    print(key, val)
-
+primer = input().split()
+dict_w = {}
+    # Подсчитываем каждый символ w1 в словаре.
+    for i in range(len(w1)):
+        dict_w[w1[i]] = dict_w.get(w1[i], 0) + 1
