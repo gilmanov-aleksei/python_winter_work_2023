@@ -1,14 +1,12 @@
 #! /usr/bin/python
 
 n = int(input("Введите число: "))
-f1 = 0
-f2 = 1
-fs = 0
-i = 0
-print("Значения лемента:", f1, f2, end=' ')
-while i < n - 1:
-    fs = f1 + f2
-    f1 = f2
-    f2 = fs
-    i += 1
+n = int(n) - 2
+f1 = f2 = 1
+print("Значения элемента:", f1, f2, end=' ')
+while n > 0:
+    f1, f2 = f2, f1 + f2
+    n -= 1
     print(f2, end=' ')
+
+
