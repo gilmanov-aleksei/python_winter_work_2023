@@ -2,6 +2,7 @@
 
 #str1 = list(input())
 s = "apple"
+
 str1 = list(s)
 # if abs(len(vow) - len(cons)) <=1
 #glas = {1:'a', 2:'e', 3:'i', 4:'o', 5:'u'}
