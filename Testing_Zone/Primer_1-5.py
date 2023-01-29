@@ -1,9 +1,22 @@
-fib1 = fib2 = 1
 
-n = int(input())
 
-print(fib1, fib2, end=' ')
+#str1 = list(input())
+s = "apple"
+str1 = list(s)
+# if abs(len(vow) - len(cons)) <=1
+#glas = {1:'a', 2:'e', 3:'i', 4:'o', 5:'u'}
+#sogl = {}
+glas  = ['a', 'e', 'i', 'o', 'u']
+sogl = []
+g = 0
+s = 0
+for i in range(len(str1)):
+    for j in range(len(glas)):
+        if str1[i] == glas[j]:
+            g += 1
+    if str1[i] != glas[j]:
+        s += 1
+print(g, "-", s)
 
-for i in range(2, n):
-    fib1, fib2 = fib2, fib1 + fib2
-    print(fib2, end=' ')
+
+# print(''.join(out))
