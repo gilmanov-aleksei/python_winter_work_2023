@@ -1,12 +1,14 @@
 
 
-def nalog(temp):
-    result = temp * 13 / 100
+def nalog(pn, sn=13):
+    result = pn * sn / 100
     return result
 
-while True:
-    x = float(input("Enter coin: "))
-    if x == 0:
-        break
-    res = nalog(x)
-    print("Pod.Nalog: ", res)
+#while True:
+#    x = float(input("Enter many: ").split())
+#    if x[0] == 0:
+#        break
+x = 20000
+stav = 15
+res = nalog(x, stav)
+print("Pod.Nalog: ", res, "Stavka", stav)
