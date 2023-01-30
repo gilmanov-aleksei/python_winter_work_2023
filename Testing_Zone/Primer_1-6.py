@@ -1,14 +1,14 @@
 # input n 
-n = int(input("Enter the number of rows:"))
 
-for i in range(1, n + 1):
-    for j in range(0, n - i + 1):
-        print(' ', end='')
-        # first element is always 1
-    C = 1
-    for j in range(1, i + 1):
-        # first value in a line is always 1
-        print(' ', C, sep='', end='')
-        # using Binomial Coefficient
-        C = C * (i - j) // j
-    print()
+text = input("Enter a word: ")
+for i in text:
+    if i not in 'abcdefghijklmnopqrstuvwxyz':
+        text = text.replace(i, ' ')
+a = text.split()
+for j in a:
+    b = 0
+    for k in j:
+        b += 1 if k in 'aeiouy' else 0
+    if b >= 4:
+        print(j)
+print(a)
