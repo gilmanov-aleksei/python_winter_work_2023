@@ -1,14 +1,5 @@
-
-def convert_to_clsius(temp):
-    result = (5/9) * (temp - 32)
-    return result
-
-x = convert_to_clsius(32)
-print(x)
-
-def convert_to_farengat(temp):
-    res_f = temp * (5/9) + 32
-    return res_f
-
-y = convert_to_farengat(10)
-print(y)
+out, mx = 0, 0
+for cur in map(lambda c: {'M': 1000, 'D': 500, 'C': 100, 'L': 50, 'X': 10, 'V': 5, 'I': 1}[c], input("Enter: ")[::-1]):
+    if cur >= mx: out, mx = out + cur, cur
+    else: out -= cur
+print(out)
