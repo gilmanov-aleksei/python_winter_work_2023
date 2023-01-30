@@ -1,7 +1,12 @@
 
-months_a = set(["Jan", "Feb", "March", "Apr", "May", "June"])
-months_b = set(["May", "June", "July", "Aug", "Sep", "Okt", "Nov", "Dec"])
-all_mohths = months_a.union(months_b)
-print(all_mohths)
 
+def nalog(temp):
+    result = temp * 13 / 100
+    return result
 
+while True:
+    x = float(input("Enter coin: "))
+    if x == 0:
+        break
+    res = nalog(x)
+    print("Pod.Nalog: ", res)
