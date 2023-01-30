@@ -1,4 +1,4 @@
-
+#! /usr/bin/python
 
 def nalog(pn, sn=13):
     result = pn * sn / 100
