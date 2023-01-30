@@ -11,4 +11,4 @@ for i in range(1, n + 1):
         print(' ', C, sep='', end='')
         # using Binomial Coefficient
         C = C * (i - j) // j
-    print()
+    print(
