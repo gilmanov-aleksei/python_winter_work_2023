@@ -1,26 +1,33 @@
 #! /usr/bin/python
 
-def roma_nubers(r_nums):
+# Словарь 1, для сложения
+rom_add = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+# Словарь 2, последовательность римских цифр,
+# для сложения не хватающего значения,
+# если за 1 идёт 5, то к 1 прибавляем 3, получем 4
+rom_div = {('I', 'V'): 3, ('I', 'X'): 8, ('X', 'L'): 30, ('X', 'C'): 80, ('C', 'D'): 300, ('C', 'M'): 800}
+def rom_2_arab(rom_num):
+    # Переменная для посчёта
+    num = 0
+    # Пустая строка для первой буквы
+    lit1 = ""
+    # Считываем каждую букву из переданной переменной
+    for lit2 in rom_num:
+        # Сравнимаем, если первая буква и вторая, меньше по значению со второй
+        if lit1 and rom_add[lit1] < rom_add[lit2]:
+            # То прибавляем к переменной значение из словаря 2
+            num += rom_div[(lit1, lit2)]
+        else:
+            # Иначе прибавляем значениеп из словаря 1
+            num += rom_add[lit2]
+        # Записываем значение второй буквы в строку первой,
+        lit1 = lit2
+    return num
 
-    pass
+rom = "MMXXIII, MMXXIV, MCMXVII, MCMLXI, MM, MDCCCLXII, MCCCXLIX"
 
- #   return num_print
+r = rom.split(sep=", ")
+for i in r:
+    print(i, "=", rom_2_arab(i))
 
-
-
-str_nums = "MMXXIII, MMXXIV, MCMXVII, MXMLXI, MM, MDXXXLXII"
-d_roma = { 'I': 1, 'IV': 4, 'V': 5, 'IX': 9,'X': 10,
-            'XL': 40,'L': 50, 'XC': 90, 'C': 100,
-           'CD': 400, 'D': 500, 'CM': 900, 'M': 1000
-           }
-str_n = str_nums.split(sep=", ")
-print(str_n)
-
-for i in str_nums:
-    print(i, end=" ")
-print()
-
-for k, v in d_roma.items():
-    print(k, "-", v, end="  ")
-
-
+# print (rom_2to_arab(input('Введите римскую цифра: ')))
