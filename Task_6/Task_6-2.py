@@ -13,4 +13,6 @@ for k, v in s3.items():
     if k in s2:
         b += 1
 print("Ответ: ", b)
+#for i in s2:
+#    s3.get(i, lambda: None)()
 
