@@ -17,7 +17,6 @@ str_n = str_nums.split(sep=", ")
 print(str_n)
 
 for i in str_nums:
-#    print(roma_nubers(i))
     print(i, end=" ")
 print()
 
