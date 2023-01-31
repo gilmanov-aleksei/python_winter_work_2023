@@ -5,7 +5,11 @@
 str1 = "Война и мир, Над пропастью во ржи, Мастер и Маргарита, Идиот"
 str2 = "Евгений Онегин, Идиот, Мастер и Маргарита, Война и мир"
 
-str1 = str1.split(sep=",")
-str2 = str2.split(sep=",")
-print(str1)
-print(str2)
+s1 = str1.split(sep=", ")
+s2 = str2.split(sep=", ")
+s3 = {s1: 0 for s1 in s1}
+print(s1)
+print(s2)
+print(s3)
+for i in s2:
+    print(i)
