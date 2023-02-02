@@ -13,4 +13,3 @@ for i in range(n):
 print(x)
 for i in range(len(x)):
     print(x[i])
-
