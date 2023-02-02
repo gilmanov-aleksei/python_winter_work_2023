@@ -1,8 +1,6 @@
 #! /usr/bin/python
 
-a = 1
-b = 5
-print(a, b)
-print(a & b)
-print(a ^ b)
-print(a * b)
+from math import pi, sqrt
+print(sqrt(121))
+print(pi)
+print(E)
