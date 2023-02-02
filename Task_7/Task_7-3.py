@@ -11,3 +11,6 @@ for i in range(n):
         y.append(randint(10, 99))
     x.append(y)
 print(x)
+for i in range(len(x)):
+    print(x[i])
+
