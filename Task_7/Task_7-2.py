@@ -22,7 +22,6 @@ def code(string, n):
             enc_str += i
     return enc_str
 
-
 # Ввод строки
 txt = str(input("Enter string: "))
 # Ввод шага
