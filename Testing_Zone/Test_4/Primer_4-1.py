@@ -1,16 +1,12 @@
 #! /usr/bin/python
 
-s = 'АГЦТАГЦТАГЦТ'
-d = []
-for i in range(len(s) - 3):
-    d.append(s[i:i + 2])
-for i in range(len(d)):
-    if d[i] == 'АГ':
-        d[i] = 'ГА'
-    elif d[i] == 'ЦТ':
-        d[i] = 'ЦАГТ'
+# s = str(input("Введите генетический код: "))
+s = 'АГЦТААГГЦЦТТГАГАТЦТТАЦЦТАГТАГЦТ'
+r = [('АГ', 'ГА'), ('ЦТ', 'ЦАГТ')]
 print(s)
-print(''.join(d))
+for i in r:
+    s = s.replace(i[0], i[1])
+print(s)
 
 
 

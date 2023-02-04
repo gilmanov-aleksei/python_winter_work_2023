@@ -1,7 +1,14 @@
 #! /usr/bin/python
 
-#for i in range(10):
- #   print((lambda x: x ** x)(i), end=' ')
 
-s = 'ACbdzYx'
-print((lambda x: x.lower()[::-1])(s))
+s1 = 'АГЦТААГГЦЦТТГАГАТЦТТАЦЦТАГТАГЦТ'
+
+#result = ['Science[92]', 'English[90]', 'Maths[96]']
+#lambdaFunc = lambda st : str.replace(st, 'Science[92]', 'Science[94]')
+#new_result  = list(map(lambdaFunc, result))
+#print(new_result)
+
+# s2 = s1.replace('АГ', 'ГА')
+# s3 = s2.replace('ЦТ', 'ЦАГТ')
+# print(s1)
+# print(s3)
