@@ -1,14 +1,16 @@
 #! /usr/bin/python
 
 s = 'АГЦТАГЦТАГЦТ'
-n = 3
-d = {}
-for i in range(len(s) - n + 1):
-    d[s[i:i + n]] = d.get(s[i:i + n], 0) + 1
-print(d)
-mx = max(d.values())
-for i in d:
-    if d[i] == mx:
-        print(i, mx)
+d = []
+for i in range(len(s) - 3):
+    d.append(s[i:i + 2])
+for i in range(len(d)):
+    if d[i] == 'АГ':
+        d[i] = 'ГА'
+    elif d[i] == 'ЦТ':
+        d[i] = 'ЦАГТ'
+print(s)
+print(''.join(d))
+
 
 
