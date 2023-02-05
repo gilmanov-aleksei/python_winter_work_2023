@@ -11,7 +11,7 @@ elm = {}
 print(lst)
 for i in lst:
     elm[i] = len(set(i))
+print(elm)
 sort_t = sorted(elm.items(), key=lambda x: x[1], reverse=True)
-sort_d = {k: v for k, v in sort_t}
+print(dict(sort_t))
 
-print(sort_d)
