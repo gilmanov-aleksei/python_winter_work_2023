@@ -1,3 +1,8 @@
 #! /usr/bin/python
-s = "1A3BCF 2BNKLOPY5T"
-for i in filter(str.isdigit , s) : print(i)
+
+f = open("text.txt", 'r+t', encoding='utf-8')
+print(f.read())
+f.write("Hello\n")
+print(f.write())
+
+f.close()
