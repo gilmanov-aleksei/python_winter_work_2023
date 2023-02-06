@@ -12,3 +12,4 @@ s1 = 'АГЦТААГГЦЦТТГАГАТЦТТАЦЦТАГТАГЦТ'
 # s3 = s2.replace('ЦТ', 'ЦАГТ')
 # print(s1)
 # print(s3)
+lst2.sort(key = lambda x: (len(x), "".join(map(str, x))))
