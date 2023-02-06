@@ -23,6 +23,7 @@ from random import randint
 lst1 = [[1, 5, 3], [2, 44, 1, 4], [3, 3]]
 # Пустой список
 lst2 = []
+lst3 = []
 # Цикл по оснавному списку
 for i in lst1:
     # В пустой список записываем
@@ -31,7 +32,12 @@ for i in lst1:
     lst2.append(sorted(i, reverse=True))
 # Сортируем основной список по возрастанию
 # колличества элементов во внутренних списках
-lst2.sort(key=len)
+# for i in lst2:
+#    lst2.sort(key=len)
+for i in lst2:
+    ll = str(len("".join(map(str, i))))
+    print(type(ll))
+    lst2.append(sorted(i,key=lambda x: (len(ll)))
 # Выводим на экран начальный список
 print(lst1)
 # выводим на экран отсартированный список
