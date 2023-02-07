@@ -1,5 +1,6 @@
 #! /usr/bin/python
 
+# Не решена
 # # Модуль randint из функции random для генерации чисел
 # from random import randint
 #
