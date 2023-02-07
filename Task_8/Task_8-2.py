@@ -1,8 +1,8 @@
 #! /usr/bin/python
 
-# Модуль randint из функции random для генерации чисел
-from random import randint
-
+# # Модуль randint из функции random для генерации чисел
+# from random import randint
+#
 # # Генерация списка, состоящий из списка чисел
 # # Пустой список, основной список
 # lst1 = []
@@ -10,20 +10,21 @@ from random import randint
 # lst3 = []
 # # Колличество внутренних списков
 # for i in range(randint(3, 7)):
-#      # Очистка внутреннего списка
-#        lst3.clear()
+#     # Очистка внутреннего списка
+#     lst3.clear()
 #     # Колличество цифр во внутренних списках
-#     for j in range(randint(2, 4)):
+#     for j in range(randint(2, 5)):
 #         # Добовляем сгенерированные число во внутренний список
 #         lst3.append(randint(1, 50))
-#     # Добовляем внутренний список в основой
+# # Добовляем внутренний список в основой
 #     lst1.append(lst3)
 
 # Список состоящий из списков чисел
-lst1 = [[1, 5, 3], [333, 555, 777], [2, 44, 1, 4], [221122, 112211], [3, 3], [111111]]
+lst1 = [[1, 5, 3], [333, 555, 777], [1], [2, 44, 1, 4], [221122, 112211], [3, 3], [111111]]
 # Пустой список
 lst2 = []
 lst3 = []
+d = {}
 # Цикл по оснавному списку
 for i in lst1:
     # В пустой список записываем
@@ -32,14 +33,10 @@ for i in lst1:
     lst2.append(sorted(i, reverse=True))
 # Сортируем основной список по возрастанию
 # колличества элементов во внутренних списках
-print(lst1)
-print(lst2)
 for j in lst2:
-    ll = "".join(map(str, j))
-    print(ll, "-", len(ll))
-    lst3.append(sorted(j, key=len(ll)))
-lst2.sort(key=sortByLength, reverse=True)
+    ll = len("".join(map(str, j)))
+    lst3[ll] = j
 # Выводим на экран начальный список
-print(lst2)
+print(lst1)
 # выводим на экран отсартированный список
-print(lst3)
+print(lst2)
