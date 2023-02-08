@@ -20,21 +20,20 @@ s1 = 'питон'
 s2 = 'поросенок титан итог лавка погост кино'
 glas = {'а': 0, 'у': 0, 'о': 0, 'ы': 0, 'и': 0, 'э': 0, 'я': 0, 'ю': 0, 'ё': 0, 'е': 0, }
 gls1 = 0
-gls2 = 0
 sl1 = list(s1)
-for c, v in enumerate(sl1):
-    if v in glas:
+for i, j in enumerate(sl1):
+    if j in glas:
         gls1 += 1
-print(sl1)
-print('-' * 5 * len(sl1))
+print('Слова, похожие на:', s1)
 sl2 = s2.split()
 for i in sl2:
     sl3 = list(i)
+    gls2 = 0
 #    print(sl3)
-    if len(sl3) - 1 < len(sl2) or len(sl2) > len(sl3) + 1 or len(sl2) == len(sl3):
+    if len(sl3) + 1 <= len(sl2) or len(sl2) == len(sl3) - 1 or len(sl2) == len(sl3):
         for c, v in enumerate(sl1):
             if v in glas:
                 if sl3[c] in glas:
                     gls2 += 1
-    if gls1 == gls2:
-        print(sl3)
+        if gls1 == gls2:
+            print(''.join(map(str, sl3)))
