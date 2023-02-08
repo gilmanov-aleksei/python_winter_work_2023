@@ -1,15 +1,28 @@
 #! /usr/bin/python
 
+# Импортируем модуль для работы с файлами XLSX/XLS
 import openpyxl
-# from openpyxl import Workbook
+# Создаём пустой список
 s = []
+# Переменная для работы с файлом XLSX/XLS
 wb = openpyxl.load_workbook('task_10-0.xlsx')
-# print(wb.sheetnames)
+# Выводим на экран список всех страниц рабочей книги
+print(wb.sheetnames)
+# Цикл по страницам рабоей книги
 for i in wb.sheetnames:
+    # Делаем активную страницу
     ws = wb[i]
+    # Добовляем в список кортеж  из названия страница
+    # и количества заполненых ячеек
     s.append((ws.title, ws.max_row * ws.max_column))
+# Выводим на экран полный список кортежей
 print(s)
+# Выводим на экран список кортежей,
+# отсартированный по алфавиту страниц
 print(sorted(s, key=lambda x: (x[0], x[1])))
+# Выводим на экран список кортежей,
+# отсартированных по количеству заполненых ячеек,
+# в убывающем порядке
 print(sorted(s, key=lambda x: (-x[1], x[0])))
 
 
