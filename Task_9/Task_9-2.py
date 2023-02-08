@@ -30,7 +30,7 @@ for i in sl2:
     sl3 = list(i)
     gls2 = 0
 #    print(sl3)
-    if len(sl3) + 1 == len(sl2) or len(sl2) == len(sl3) - 1 or len(sl2) == len(sl3):
+    if len(sl3) + 1 <= len(sl2) or len(sl2) == len(sl3) - 1 or len(sl2) == len(sl3):
         for c, v in enumerate(sl1):
             if v in glas:
                 if sl3[c] in glas:
