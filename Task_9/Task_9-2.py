@@ -16,7 +16,7 @@
 
 # str1 = input("Введите первое слов: ")
 # str2 = input("Введите слова через пробел: ")
-s1 = 'питона'
+s1 = 'питон'
 s2 = 'титан итог лавка погост кино' # поросенок
 glas = {'а': 0, 'у': 0, 'о': 0, 'ы': 0, 'и': 0, 'э': 0, 'я': 0, 'ю': 0, 'ё': 0, 'е': 0, }
 gls1 = 0
@@ -31,11 +31,11 @@ for i in sl2:
     sl3 = list(i)
     lsl3 = len(i)
     gls2 = 0
-    print(i)
-    if lsl2 == lsl3 + 1 or lsl2 == lsl3:
+#    print(i)
+    if lsl2 <= lsl3 + 2 or lsl2 == lsl3:
         for c, v in enumerate(sl1):
             if v in glas:
-                if sl3[c] in glas:
+                if c < lsl3 and sl3[c] in glas:
                     gls2 += 1
         if gls1 == gls2:
             print(''.join(map(str, sl3)))
