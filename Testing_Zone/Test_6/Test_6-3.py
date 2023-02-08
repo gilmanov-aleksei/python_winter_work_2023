@@ -1,4 +1,6 @@
 #! /usr/bin/python
 
-with open('test.txt', 'r', encoding='utf-8') as fi:
-    print(fi.readlines())
+with open('test.csv') as fi:
+    data = fi.read()
+    for line in data.splitlines():
+        print(line.split(','))
