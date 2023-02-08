@@ -17,7 +17,7 @@ c.value = c.value * 2
 print(ws.max_row)
 for i in range(ws.max_row):
     for j in range(ws.max_column):
-        print(i + 1, j + 1, ws.coll(row = i + 1, column = j + 1).value)
+        print(i + 1, j + 1, ws.cell(row = i + 1, column = j + 1).value)
 
 # wb.save('test.xlsx')
 # ws = wb.active
