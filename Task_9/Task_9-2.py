@@ -19,15 +19,22 @@
 s1 = 'питон'
 s2 = 'поросенок титан итог лавка погост кино'
 glas = {'а': 0, 'у': 0, 'о': 0, 'ы': 0, 'и': 0, 'э': 0, 'я': 0, 'ю': 0, 'ё': 0, 'е': 0, }
-# gls = ['а', 'у', 'о', 'ы', 'и', 'э', 'я', 'ю', 'ё', 'е']
+gls1 = 0
+gls2 = 0
 sl1 = list(s1)
+for c, v in enumerate(sl1):
+    if v in glas:
+        gls1 += 1
 print(sl1)
 print('-' * 5 * len(sl1))
 sl2 = s2.split()
 for i in sl2:
     sl3 = list(i)
-    print(sl3)
-    for c, v in enumerate(sl1):
-        if v in glas:
-            if sl3[c] in glas:
-                print(v, sl3[c])
+#    print(sl3)
+    if len(sl3) - 1 < len(sl2) or len(sl2) > len(sl3) + 1 or len(sl2) == len(sl3):
+        for c, v in enumerate(sl1):
+            if v in glas:
+                if sl3[c] in glas:
+                    gls2 += 1
+    if gls1 == gls2:
+        print(sl3)
