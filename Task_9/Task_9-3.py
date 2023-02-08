@@ -14,3 +14,10 @@
 # И т.д.
 str = 'Мама, мыла раму! Папа, сделал стол?'
 d = {}
+for i in list(str):
+    d[i] = d.get(i, 0) + 1
+ds = sorted(d.items(), key=lambda x: (-x[1], x[0]))[:10]
+for j in ds:
+    print((j))
+#print(type(ds[0]))
+
