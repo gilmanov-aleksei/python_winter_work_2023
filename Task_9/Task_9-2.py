@@ -29,7 +29,6 @@ sl2 = s2.split()
 for i in sl2:
     sl3 = list(i)
     gls2 = 0
-#    print(sl3)
     if len(sl3) + 1 <= len(sl2) or len(sl2) == len(sl3) - 1 or len(sl2) == len(sl3):
         for c, v in enumerate(sl1):
             if v in glas:
@@ -37,3 +36,5 @@ for i in sl2:
                     gls2 += 1
         if gls1 == gls2:
             print(''.join(map(str, sl3)))
+
+# 0 <= sl3[c] < len(sl3) and
