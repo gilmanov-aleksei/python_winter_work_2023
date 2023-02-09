@@ -2,8 +2,31 @@
 
 # Импортируем модуль openpyxl
 import openpyxl
-wb = openpyxl.load_workbook("task_10-2.xlsx")
-sheets = wb.sheetnames
 
-# ws = wb[sheets[s]]
-# wb.active = sheet
+# Открываем на чтение рабочую книгу
+wb = openpyxl.load_workbook("task_10-2.xlsx")
+# Записываем в переменную все страницы рабочей книги
+sheet = wb.sheetnames
+# Записываем в переменную первую страницу
+ws = wb[sheet[0]]
+# Выводим на экран название активной страницы
+# print(ws.title)
+# пустой словарь
+d = {}
+# Цикл по максимальной строке на странице
+for i in range(ws.max_row):
+    # Пустой список для записи двух ячеек
+    z = []
+    # Цикл по максимальной колонке на странице
+    for j in range(ws.max_column):
+        # Записываем две ячейки из строку в список
+        z.append(ws.cell(row=i + 1, column=j + 1).value)
+    # Проверяем значения списка со словарём
+    if d.get(z[0]):
+        # если ключ есть, то прибавляем значение
+        d[z[0]] += z[1]
+    else:
+        # если ключа нет, то создаём новый
+        # со значением из списка
+        d[z[0]] = z[1]
+print(d)
