@@ -51,7 +51,7 @@ for k, v in ds1.items():
         ds0[k] = v
 
 # Сортируем словарь по алфавиту
-dict(sorted(ds0.items()))
+ds0 = dict(sorted(ds0.items()))
 # Открываем на чтение рабочую книгу
 wb1 = openpyxl.load_workbook("task_10-2.xlsx")
 # Создаём третию страницу в рабочей книге
