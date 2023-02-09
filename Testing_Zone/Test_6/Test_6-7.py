@@ -1,8 +1,9 @@
 # ! /usr/bin/python
 #
-
-
-
+print(ord("B"))
+print(chr(66))
+for i in range(67, 71):
+    print(chr(i))
 
 # sheet1 = wb['Sheet1']
 # ws = sheet1
@@ -16,7 +17,7 @@
 #
 # for i in range(ws.max_row):
 #     for j in range(ws.max_column):
-#         print(i + 1, j + 1, ws.cell(row=i + 1, column=j + 1).value)
+#
 #
 # wb.sheetnames
 # for sheet in wb:
