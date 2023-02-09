@@ -1,4 +1,8 @@
-#! /usr/bin/python
+# ! /usr/bin/python
+#
+
+
+
 
 # sheet1 = wb['Sheet1']
 # ws = sheet1
@@ -9,7 +13,7 @@
 # sheet3 = wb['Sheet3']
 # ws = sheet3
 # print(ws.title, ws.max_row * ws.max_column)
-
+#
 # for i in range(ws.max_row):
 #     for j in range(ws.max_column):
 #         print(i + 1, j + 1, ws.cell(row=i + 1, column=j + 1).value)
@@ -17,8 +21,8 @@
 # wb.sheetnames
 # for sheet in wb:
 #     print(sheet.title)
-
-
+#
+#
 # sheet = wb['Sheet1']
 # wb.active = sheet
 # ws['A4'].value = 1234
@@ -29,12 +33,12 @@
 # for i in range(ws.max_row):
 #     for j in range(ws.max_column):
 #         print(i + 1, j + 1, ws.cell(row=i + 1, column=j + 1).value)
-
+#
 # wb.create_sheet("Sheet1")
 # ws = wb.active
 # print(ws)
 # wb.active = ws
 # print(ws.title)
-
+#
 # wb.create_sheet("Newssheet")
 # wb.save('task_10-0.xlsx')
