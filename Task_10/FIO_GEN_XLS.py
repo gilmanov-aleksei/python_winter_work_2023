@@ -14,7 +14,7 @@ def gen_fio_sheet(s, fio, name_file):
     fio = rn.get_batch()
     for v, k in enumerate(fio, 1):
         ws['A' + str(v)] = k
-    for i in range(67, 71):
+    for i in range(66, 76):
         for j in range(1, ws.max_row + 1):
             ws[str(chr(i)) + str(j)] = int(randint(3, 8))
     wb.save(name_file)
