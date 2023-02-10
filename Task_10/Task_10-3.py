@@ -29,7 +29,7 @@ for i in range(ws.max_row):
     y = z.pop(0)
     # имя это ключ в словаре, список цифр в значение
     dct[y] = z
-print(dct)
+# print(dct)
     # Вычисляем минимальное, максимальное згачение,
     # Среднеарфметическое и медиану
 for k, v in dct.items():
@@ -38,7 +38,7 @@ for k, v in dct.items():
     dct[k] = m
 # Производим сортировку словаря по алфавиту
 dct = dict(sorted(dct.items()))
-print(dct)
+# print(dct)
 # Открываем на чтение рабочую книгу
 wb = openpyxl.load_workbook("task_10-3.xlsx")
 # Прверяем в книги, есть ли Лист2,
