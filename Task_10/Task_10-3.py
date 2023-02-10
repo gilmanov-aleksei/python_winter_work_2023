@@ -33,7 +33,7 @@ for k, v in dct.items():
     m = [min(v), max(v), round(statistics.mean(v), 1), statistics.median(v)]
     dct[k] = m
 dct = dict(sorted(dct.items()))
-print(dct)
+# print(dct)
 
 # Открываем на чтение рабочую книгу
 wb = openpyxl.load_workbook("task_10-2.xlsx")
@@ -49,17 +49,13 @@ sheets = wb.sheetnames
 ws = wb[sheets[1]]
 # Счетчик строк
 row = 1
-for k in dct.keys():
-    print(str(chr(65)) + str(row), "=", k)
+for k, v in dct.items():
+    # print(str(chr(65)) + str(row), "=", k)
+    ws[str(chr(65)) + str(row)] = k
+    for i, j in enumerate(v, 66):
+        # print(str(chr(i)) + str(row), "=", str(j))
+        ws[str(chr(i)) + str(row)] = j
     row += 1
-
-    # for i in range(65, 70):
-        # ws[str(chr(i)) + str(row)] = k
-
-
-        # print(str(chr(i)) + str(j), "=", v[j - 1])
-        # ws[str(chr(i)) + str(j)] = v[j - 1]
-
 
 # Сохраняем все вычисления в файл
 wb.save("task_10-3.xlsx")
