@@ -31,7 +31,7 @@ for i in range(ws.max_row):
 # Складываем значения словаря для ИТОГОВ
 itogo = sum(d.values())
 # Открываем на чтение рабочую книгу
-wb = openpyxl.load_workbook("task_10-1.xlsx")
+# wb = openpyxl.load_workbook("task_10-1.xlsx")
 # Прверяем в книги, есть ли Лист2,
 if 'Лист2' in wb.sheetnames:
     # если есть удаляем его
