@@ -29,19 +29,22 @@ for i in range(ws.max_row):
     y = z.pop(0)
     # имя это ключ в словаре, список цифр в значение
     dct[y] = z
+    # Вычисляем минимальное, максимальное згачение,
+    # Среднеарфметическое и медиану
 for k, v in dct.items():
     m = [min(v), max(v), round(statistics.mean(v), 1), statistics.median(v)]
+    # Перезаписываем значение текущего ключа на произведённое вычисление.
     dct[k] = m
+# Производим сортировку словаря по алфавиту
 dct = dict(sorted(dct.items()))
-# print(dct)
-
+print(dct)
 # Открываем на чтение рабочую книгу
-wb = openpyxl.load_workbook("task_10-2.xlsx")
-# Прверяем в книги, есть ли Лист3,
+wb = openpyxl.load_workbook("task_10-3.xlsx")
+# Прверяем в книги, есть ли Лист2,
 if 'Лист2' in wb.sheetnames:
     # если есть удаляем его
     wb.remove(wb["Лист2"])
-# Создаём третию страницу в рабочей книге
+# Создаём второй лист в рабочей книге
 wb.create_sheet("Лист2")
 # Записываем в переменную все страницы рабочей книги
 sheets = wb.sheetnames
