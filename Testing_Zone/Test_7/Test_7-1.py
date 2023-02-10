@@ -12,3 +12,4 @@ for sh in wb.sheetnames:
     ws = wb[sh]
     ws.append([111, "Текст", 333 ])
     ws.append({1: '123', 3: '345'})
+wb.save("test_7.xlsx")
