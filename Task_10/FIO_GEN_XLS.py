@@ -4,6 +4,7 @@ import openpyxl
 from random import randint
 from russian_names import RussianNames
 
+# Генератор фамилий и числовых значений в таблицу XLSX
 
 def gen_fio_sheet(s, fio, bl, el, name_file):
     # Генератор русских фамилий, имён и отчества русскими буквами
@@ -16,12 +17,12 @@ def gen_fio_sheet(s, fio, bl, el, name_file):
         ws['A' + str(v)] = k
     for i in range(ord(bl), ord(el) + 1):
         for j in range(1, ws.max_row + 1):
+            # Генерация цифр для ячеек
             ws[str(chr(i)) + str(j)] = int(randint(0, 9))
     wb.save(name_file)
     return
 
 
-# Генератор фамилий из N колонок значений,
 # первый аргумент - номер листа куда будут записываться фамилиии,
 # второй аргумент - колличество фамилий в колонке А
 # третий аргумент - с какой колонки начать вносить цифры
