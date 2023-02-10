@@ -13,6 +13,7 @@ sheet = wb.sheetnames
 ws = wb[sheet[0]]
 # пустой словарь
 dct = {}
+all_stat = []
 # Цикл по максимальной строке на странице
 for i in range(ws.max_row):
     # Пустой список для записи двух ячеек
@@ -33,9 +34,16 @@ for i in range(ws.max_row):
     # Вычисляем минимальное, максимальное згачение,
     # Среднеарфметическое и медиану
 for k, v in dct.items():
+    # Слияние всех списков в один
+    all_stat = all_stat + v
+    # Расчёт минимального, максимально, среднеарефметического значения и медиан для каждого
     m = [min(v), max(v), round(statistics.mean(v), 1), statistics.median(v)]
     # Перезаписываем значение текущего ключа на произведённое вычисление.
     dct[k] = m
+# Расчёт минимального, максимально, среднеарефметического значения и медиан по всем
+all_itog = [min(all_stat), max(all_stat), round(statistics.mean(all_stat), 1), statistics.median(all_stat)]
+# print(all_stat)
+# print(all_itog)
 # Производим сортировку словаря по алфавиту
 dct = dict(sorted(dct.items()))
 # print(dct)
@@ -60,6 +68,12 @@ for k, v in dct.items():
         # print(str(chr(i)) + str(row), "=", str(j))
         ws[str(chr(i)) + str(row)] = j
     row += 1
-
+# Записываем в первой колонке на нижней строке ИТОГО
+ws['A' + str(row)] = 'ИТОГО'
+# Записываем во второй колонке общую сумму по всем фамилиям
+# ws['B' + str(row)] = itog_all
+for i, j in enumerate(all_itog, 66):
+    # print(str(chr(i)) + str(row), "=", str(j))
+    ws[str(chr(i)) + str(row)] = j
 # Сохраняем все вычисления в файл
 wb.save("task_10-3.xlsx")
