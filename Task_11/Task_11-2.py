@@ -2,12 +2,17 @@
 
 # Импортируем модуль openpyxl
 import openpyxl
+import csv
 
-with open("test_11-2.csv", "r", encoding='utf 8') as fi:
-    data = fi.read
-    for line in data.splitlines():
-        print(line.split(','))
+with open('test_11-2.csv', encoding='utf-8') as file:
+    rows = csv.reader(file)
+    for row in rows:
+        print(row)
 
+# with open("test_11-2.csv", "r", encoding='utf 8') as fi:
+#     data = fi.read
+#     for line in data.splitlines():
+#         print(line.split(','))
 
 
 # wb = openpyxl.load_workbook("test_7.xlsx")
