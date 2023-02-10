@@ -1,5 +1,6 @@
 #! /usr/bin/python
 
+
 import calendar
 
 year = int(input('Введите номер года: '))
