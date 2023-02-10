@@ -5,6 +5,10 @@
 import openpyxl
 import statistics
 
+def min_max_sred(p):
+    q = [min(p), max(p), round(statistics.mean(p), 1), statistics.median(p)]
+    return q
+
 # Открываем на чтение рабочую книгу
 wb = openpyxl.load_workbook("task_10-3.xlsx")
 # Записываем в переменную все страницы рабочей книги
@@ -37,11 +41,12 @@ for k, v in dct.items():
     # Слияние всех списков в один
     all_stat = all_stat + v
     # Расчёт минимального, максимально, среднеарефметического значения и медиан для каждого
-    m = [min(v), max(v), round(statistics.mean(v), 1), statistics.median(v)]
+    # m = [min(v), max(v), round(statistics.mean(v), 1), statistics.median(v)]
     # Перезаписываем значение текущего ключа на произведённое вычисление.
-    dct[k] = m
+    dct[k] = min_max_sred(v)
 # Расчёт минимального, максимально, среднеарефметического значения и медиан по всем
-all_itog = [min(all_stat), max(all_stat), round(statistics.mean(all_stat), 1), statistics.median(all_stat)]
+all_itog = min_max_sred(all_stat)
+# all_itog = [min(all_stat), max(all_stat), round(statistics.mean(all_stat), 1), statistics.median(all_stat)]
 # print(all_stat)
 # print(all_itog)
 # Производим сортировку словаря по алфавиту
