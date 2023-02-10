@@ -5,7 +5,7 @@
 import openpyxl
 import statistics
 
-def min_max_sred(p):
+def min_max_sred_mediana(p):
     q = [min(p), max(p), round(statistics.mean(p), 1), statistics.median(p)]
     return q
 
@@ -43,9 +43,9 @@ for k, v in dct.items():
     # Расчёт минимального, максимально, среднеарефметического значения и медиан для каждого
     # m = [min(v), max(v), round(statistics.mean(v), 1), statistics.median(v)]
     # Перезаписываем значение текущего ключа на произведённое вычисление.
-    dct[k] = min_max_sred(v)
+    dct[k] = min_max_sred_mediana(v)
 # Расчёт минимального, максимально, среднеарефметического значения и медиан по всем
-all_itog = min_max_sred(all_stat)
+all_itog = min_max_sred_mediana(all_stat)
 # all_itog = [min(all_stat), max(all_stat), round(statistics.mean(all_stat), 1), statistics.median(all_stat)]
 # print(all_stat)
 # print(all_itog)
