@@ -48,16 +48,18 @@ sheets = wb.sheetnames
 # Переключаемся на третию страницу
 ws = wb[sheets[1]]
 # Счетчик строк
-
-for k, v in dct.items():
-    row = 1
-    for i, j in enumerate(range(65, 70), 1):
-        # ws[str(chr(i)) + str(row)] = k
-        print(str(chr(i)) + str(j), "=", k)
-
-        print(str(chr(i)) + str(j), "=", v[j - 1])
-        # ws[str(chr(i)) + str(j)] = v[j - 1]
+row = 1
+for k in dct.keys():
+    print(str(chr(65)) + str(row), "=", k)
     row += 1
+
+    # for i in range(65, 70):
+        # ws[str(chr(i)) + str(row)] = k
+
+
+        # print(str(chr(i)) + str(j), "=", v[j - 1])
+        # ws[str(chr(i)) + str(j)] = v[j - 1]
+
 
 # Сохраняем все вычисления в файл
 wb.save("task_10-3.xlsx")
