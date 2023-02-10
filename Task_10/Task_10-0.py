@@ -4,7 +4,7 @@
 import openpyxl
 # Создаём пустой список
 s = []
-# Переменная для работы с файлом XLSX/XLS
+# Открываем на чтение рабочую книгу
 wb = openpyxl.load_workbook('task_10-0.xlsx')
 # Выводим на экран список всех страниц рабочей книги
 print(wb.sheetnames)
