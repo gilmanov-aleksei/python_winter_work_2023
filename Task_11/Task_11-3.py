@@ -11,7 +11,6 @@ def enter_num():
         elif len(a) > 4:
             print("Вы ввели большое число, повторите ввод")
         else:
-            print(int(a))
             return a
 
 
