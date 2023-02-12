@@ -12,6 +12,7 @@
 import openpyxl
 import csv
 
+d = {}
 with open('test_11-2.csv', encoding='utf-8') as file:
     rows = csv.reader(file)
     for row in rows:
