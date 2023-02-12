@@ -13,24 +13,21 @@ import openpyxl
 import csv
 
 d = {}
-row = {}
+reader = {}
 # print(d)
 with open('test_11-2.csv') as f:
     reader = csv.DictReader(f)
     for row in reader:
         print(row)
 
-        # print(row['1'], row['surname'], row['name'], row['company'], row['salary'])
 
-# print(d)
-# wb = openpyxl.load_workbook("test_7.xlsx")
-# for sh in wb.sheetnames:
-#     ws = wb[sh]
-#     print(ws.title, '-------')
-#     for i in range(ws.max_row):
-#         for j in range(ws.max_column):
-#             print(i + 1, j + 1, ws.cell(i + 1, j + 1).value)
-#     ws = wb[sh]
-#     ws.append([111, "Текст", 333 ])
-#     ws.append({1: '123', 3: '345'})
-# wb.save("test_7.xlsx")
+wb = openpyxl.load_workbook("test_11-2.xlsx")
+for sh in wb.sheetnames:
+     ws = wb[sh]
+     print(ws.title, '-------')
+    # for i in range(ws.max_row):
+    #     for j in range(ws.max_column):
+    #         print(i + 1, j + 1, ws.cell(i + 1, j + 1).value)
+    # ws = wb[sh]
+
+# wb.save("test_11-2.xlsx")
