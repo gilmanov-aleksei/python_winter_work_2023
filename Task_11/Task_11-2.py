@@ -13,7 +13,7 @@ import openpyxl
 import csv
 
 d = {}
-reader = {}
+# reader = {}
 # print(d)
 with open('test_11-2.csv') as f:
     reader = csv.DictReader(f)
@@ -21,10 +21,10 @@ with open('test_11-2.csv') as f:
         print(row)
 
 
-wb = openpyxl.load_workbook("test_11-2.xlsx")
-for sh in wb.sheetnames:
-     ws = wb[sh]
-     print(ws.title, '-------')
+# wb = openpyxl.load_workbook("test_11-2.xlsx")
+# for sh in wb.sheetnames:
+#      ws = wb[sh]
+#      print(ws.title, '-------')
     # for i in range(ws.max_row):
     #     for j in range(ws.max_column):
     #         print(i + 1, j + 1, ws.cell(i + 1, j + 1).value)
