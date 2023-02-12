@@ -58,7 +58,6 @@ def checkio3(n):
                              'M     CM   D    CD   C    XC  L   XL  X   IX V  IV I'.split()):
         result += n // arabic * roman
         n %= arabic
-        # print('({}) {} => {}'.format(roman, n, result))
     return result
 
 
