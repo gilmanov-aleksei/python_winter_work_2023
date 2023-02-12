@@ -19,9 +19,7 @@ with open('test_11-2.csv') as f:
     reader = csv.DictReader(f)
     for row in reader:
         print(row)
-        for k, v in row.items():
-            print(v)
-        input()
+
         # print(row['1'], row['surname'], row['name'], row['company'], row['salary'])
 
 # print(d)

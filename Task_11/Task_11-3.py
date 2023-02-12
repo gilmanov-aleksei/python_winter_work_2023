@@ -4,68 +4,68 @@
 #  - Напишите функцию, которая переводит арабские числа в римские.
 #  - Например : 2023 -->MMXXIII
 
+# Функция запрос ввода числа от пользователя
 def enter_num():
     print('Перевод цифр, арабские в римские')
+    # Бесконечный цикл
     while True:
+        # Запрос ввода числа от 1 до 3999, 0 - Выход
         a = input('Введите число от 1 до 3999, 0 - выход: ')
+        # Проверка ввода, если ноль,
         if a == '0':
+            #  то выход из функции
             break
+        # Проверяем, если это не число, то повторяем цикл
         elif not a.isdigit():
             print("Вы ввели не число, повторите ввод")
+        # проеряем число, если оно больше 3999, то повторяем цикл
         elif a > '3999':
             print("Вы ввели число больше 3999, повторите ввод")
         else:
+            # Выход из функции с числом
             return a
 
 
-def checkio1(data):
-    base = "I" * data
+# Функция перевода числа из арабских цифр в римские
+def arab_to_rome(data):
+    # Словарь едениц
+    units = {0: "", 1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI", 7: "VII", 8: "VIII", 9: "IX"}
+    # Словарь дестяков
+    dozens = {0: "", 1: "X", 2: "XX", 3: "XXX", 4: "XL", 5: "L", 6: "LX", 7: "LXX", 8: "LXXX", 9: "XC"}
+    # Словарь сотен
+    hundreds = {0: "", 1: "C", 2: "CC", 3: "CCC", 4: "CD", 5: "D", 6: "DC", 7: "DCC", 8: "DCCC", 9: "CM"}
+    # Словарь тысяч
+    thousands = {0: "", 1: "M", 2: "MM", 3: "MMM"}
 
-    base = base.replace("I" * 5, "V")
-    base = base.replace("V" * 2, "X")
-    base = base.replace("X" * 5, "L")
-    base = base.replace("L" * 2, "C")
-    base = base.replace("C" * 5, "D")
-    base = base.replace("D" * 2, "M")
-
-    base = base.replace("DCCCC", "CM")
-    base = base.replace("CCCC", "CD")
-    base = base.replace("LXXXX", "XC")
-    base = base.replace("XXXX", "XL")
-    base = base.replace("VIIII", "IX")
-    base = base.replace("IIII", "IV")
-
-    return base
-
-
-def checkio2(data):
-    ones = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
-    tens = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
-    hunds = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
-    thous = ["", "M", "MM", "MMM", "MMMM"]
-
-    t = thous[data // 1000]
-    h = hunds[data // 100 % 10]
-    te = tens[data // 10 % 10]
-    o = ones[data % 10]
-
-    return t + h + te + o
+    # Делим на тысячу без остатка,
+    # результат будет ключом в словаре,
+    # записываем в переменную тысячи
+    t = thousands[data // 1000]
+    # Делим на сто без остатка, делим на десять,
+    # остаток будет ключом в словаре,
+    # записываем в переменную сотни
+    h = hundreds[data // 100 % 10]
+    # Делим на десять без остатка, делим на десять,
+    # остаток будет ключом в словаре,
+    # записываем в переменную десятки
+    d = dozens[data // 10 % 10]
+    # Делим на десять,
+    # остаток будет ключом в словаре,
+    # записываем в переменную еденицы
+    u = units[data % 10]
+    # Результата складываем полученные буквы вмести
+    return t + h + d + u
 
 
-def checkio3(n):
-    result = ''
-    for arabic, roman in zip((1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1),
-                             'M     CM   D    CD   C    XC  L   XL  X   IX V  IV I'.split()):
-        result += n // arabic * roman
-        n %= arabic
-    return result
-
-
-d = {}
+# В переменную записываем функцию ввода числа от пользователя
 num = enter_num()
+# Проеряем полученное значение,
 if num is None:
+    # если значения нет, то печатаем Выход
+    # и завершаем программу
     print("Выход")
+# Иначе печатем результат функции
+# перевода числа из арбских чисел в римские
+# передаче значения полученного от пользователя
 else:
-    print(checkio1(int(num)))
-    print(checkio2(int(num)))
-    print(checkio3(int(num)))
+    print(arab_to_rome(int(num)))
