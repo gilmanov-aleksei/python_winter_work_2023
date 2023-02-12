@@ -13,17 +13,14 @@ import openpyxl
 import csv
 
 d = {}
-with open('test_11-2.csv', encoding='utf-8') as file:
-    rows = csv.reader(file)
-    for row in rows:
+# print(d)
+with open('test_11-2.csv') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
         print(row)
+        print(row['1'], row['surname'], row['name'], row['company'], row['salary'])
 
-# with open("test_11-2.csv", "r", encoding='utf 8') as fi:
-#     data = fi.read
-#     for line in data.splitlines():
-#         print(line.split(','))
-
-
+# print(d)
 # wb = openpyxl.load_workbook("test_7.xlsx")
 # for sh in wb.sheetnames:
 #     ws = wb[sh]
