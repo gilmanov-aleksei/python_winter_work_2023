@@ -7,13 +7,13 @@
 def enter_num():
     print('Перевод цифр, арабские в римские')
     while True:
-        a = input('Введите число, 0 - выход: ')
+        a = input('Введите число от 1 до 3999, 0 - выход: ')
         if a == '0':
             break
         elif not a.isdigit():
             print("Вы ввели не число, повторите ввод")
-        elif len(a) > 4:
-            print("Вы ввели большое число, повторите ввод")
+        elif a > '3999':
+            print("Вы ввели число больше 3999, повторите ввод")
         else:
             return a
 
@@ -65,7 +65,7 @@ def checkio3(n):
 d = {}
 num = enter_num()
 if num is None:
-    print("Exit")
+    print("Выход")
 else:
     print(checkio1(int(num)))
     print(checkio2(int(num)))
