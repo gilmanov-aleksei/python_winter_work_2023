@@ -6,3 +6,6 @@ def get_price(price):
 
 prices = [get_price(i) for i in original_prices]
 print(prices)
+
+print([(lambda x: x if x > 0 else 0)(i) for i in prices])
+print(list(map(get_price, original_prices)))
