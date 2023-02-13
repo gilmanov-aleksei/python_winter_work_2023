@@ -20,13 +20,6 @@ with open('Task_11-2.csv') as f:
     for row in reader:
         print(row)
 
-wb = openpyxl.load_workbook("Task_11-2.xlsx")
-for sh in wb.sheetnames:
-    ws = wb[sh]
-    print(ws.title, '-------')
-for i in range(ws.max_row):
-    for j in range(ws.max_column):
-        print(i + 1, j + 1, ws.cell(i + 1, j + 1).value)
-ws = wb[sh]
+wb = openpyxl.Workbook()
 
 wb.save("Task_11-2.xlsx")
