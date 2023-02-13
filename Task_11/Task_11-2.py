@@ -16,13 +16,15 @@ import openpyxl
 dct = {}
 wb = openpyxl.Workbook()
 with open('Task_11-2.csv') as f:
-    reader = csv.reader(f, delimiter=' ', quotechar='|')
-    # reader = csv.DictReader(f)
+    # reader = csv.reader(f, delimiter=' ', quotechar='|')
+    reader = csv.DictReader(f)
     for row in reader:
-        read = ', '.join(row).split(',')
-        for i in read:
-            print(i, end=" ")
-        print()
+        dct[x[0]] = [row[i] for i in x[1:]]
+        # read = ', '.join(row).split(',')
+        # for i in read:
+        #     print(i, end=" ")
+    print(dct)
+
 
 # with open("Task_11-2.csv", "r") as f:
 #     # итерация по строкам
