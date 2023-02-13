@@ -11,15 +11,22 @@
 # Импортируем модуль openpyxl
 import openpyxl
 import csv
+import openpyxl
 
-d = {}
-# reader = {}
-# print(d)
+row = {}
+dct = {}
+srt = ""
+wb = openpyxl.Workbook()
 with open('Task_11-2.csv') as f:
     reader = csv.DictReader(f)
     for row in reader:
+        z = []
         print(row)
+        for k, v in row.items():
+            z.append(v)
+        y = z.pop(0)
+        dct[y] = z
 
-wb = openpyxl.Workbook()
-
+print(dct)
+print(wb.sheetnames)
 wb.save("Task_11-2.xlsx")
