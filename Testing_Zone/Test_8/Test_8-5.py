@@ -2,7 +2,7 @@
 
 import time
 
-y = 100000000
+y = 1000000000
 t0 = time.time()
 s = []
 for i in range(y):
