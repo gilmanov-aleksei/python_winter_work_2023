@@ -16,42 +16,12 @@ import openpyxl
 dct = {}
 wb = openpyxl.Workbook()
 with open('Task_11-2.csv') as f:
-    # reader = csv.reader(f, delimiter=' ', quotechar='|')
-    reader = csv.DictReader(f)
+    reader = csv.reader(f, delimiter=' ', quotechar='|')
+    # reader = csv.DictReader(f)
     for row in reader:
-        dct[x[0]] = [row[i] for i in x[1:]]
-        # read = ', '.join(row).split(',')
-        # for i in read:
-        #     print(i, end=" ")
-    print(dct)
+        read = ','.join(row).split(',')
+        dct[read[0]] = [i for i in read[1:]]
 
-
-# with open("Task_11-2.csv", "r") as f:
-#     # итерация по строкам
-#     for line in f:
-#         l = line.strip('\n').split(',')
-#         dct
-#         print(type(l))
-#         for i in l:
-#             print(type(i))
-#             print(i)
-#         input()
-
-# z = []
-# with open('Task_11-2.csv') as fi:
-#     for i in fi:
-#         z.append(i.strip().split(','))
-#     if dct.get(z[0]):
-#         dct[z[0]] += z
-#     else:
-#         dct[z[0]] = z
-
-
-
-        # for k, v in row.items():
-        #     z.append(v)
-        # y = z.pop(0)
-        # dct[y] = z
 
 # print(dct)
 # print(wb.sheetnames)
