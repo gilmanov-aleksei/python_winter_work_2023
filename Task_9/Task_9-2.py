@@ -10,6 +10,14 @@ def leter_word(word):
     return [i for i, j in enumerate(let) if j in glas]
 
 
+# Цикл по списку с буквами
+# for i, j in enumerate(let):
+#     Если буква есть в словаре
+#     if j in glas:
+#         записываем в список её индекс
+#         lst.append(i)
+
+
 # Словарь гласный букв для проверки
 glas = {'а': 0, 'у': 0, 'о': 0, 'ы': 0, 'и': 0, 'э': 0, 'я': 0, 'ю': 0, 'ё': 0, 'е': 0, }
 
