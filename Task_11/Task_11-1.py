@@ -6,7 +6,9 @@
 
 import datetime
 import calendar
+import locale
 
+locale.setlocale(locale.LC_ALL, 'ru')
 
 def enter_year():
     print('Хотите узнать когда в Эрмитаже бесплатные дни?')
@@ -32,23 +34,34 @@ def enter_year():
 
 
 def free_day_ermitazh(e_year):
-    fde = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
+    pass
 
-    for month in range(1, 13):
-        for day in range(1, calendar.monthrange(e_year, month)[1] + 1):
-            dd = calendar.weekday(e_year, month, day)
-            fde[dd] = fde.get(dd, 0) + 1
-    return fde
+#
+# for month in range(1, 13):
+#     for day in range(1, calendar.monthrange(e_year, month)[1] + 1):
+#         dd = calendar.weekday(e_year, month, day)
+# return
 
 
-# В переменную записываем функцию ввода года от пользователя
-year = enter_year()
-# Проеряем полученное значение от пользователя,
-if year is None:
-    # если значения нет, то печатаем Выход
-    # и завершаем программу
-    print("Выход")
-# Иначе выводим результат функции
-# бесплатные дни в Эрмитаже
-else:
-    print(free_day_ermitazh(year))
+# # В переменную записываем функцию ввода года от пользователя
+# year = enter_year()
+# # Проеряем полученное значение от пользователя,
+# if year is None:
+#     # если значения нет, то печатаем Выход
+#     # и завершаем программу
+#     print("Выход")
+# # Иначе выводим результат функции
+# # бесплатные дни в Эрмитаже
+# else:
+#     print(free_day_ermitazh(year))
+
+date = datetime.date.today()
+weekday = datetime.date.today().weekday()
+count_mounth = calendar.weekday(date.year, date.month, 1)
+print(weekday)
+print(datetime.datetime.strptime(str(weekday), '%B'))
+print(date)
+print(count_mounth)
+print(f'Сегодня {str(date.day)} день месяца!!!')
+today = datetime.datetime.now()
+print(datetime.datetime.strftime(today, '%d %B'))
