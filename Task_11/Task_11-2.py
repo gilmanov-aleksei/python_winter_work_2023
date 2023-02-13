@@ -22,9 +22,8 @@ with open('Task_11-2.csv') as f:
 print(dct)
 wb = openpyxl.Workbook()
 wb.create_sheet("Лист1")
-ws = wb.active
-sheet = wb.sheetnames
 ws = wb[sheet[1]]
+sheet = wb.sheetnames
 print(sheet)
 print(ws.title)
 # wb.save("Task_11-2.xlsx")
