@@ -2,5 +2,5 @@
 
 import calendar
 
-year, month = tuple(map(int, input().split()))
-print(calendar.month(year, month))
+year = tuple(map(int, input().split()))
+print(calendar.calendar(year))
