@@ -10,7 +10,6 @@
 
 # Импортируем модуль openpyxl
 import csv
-
 import openpyxl
 
 dct = {}
