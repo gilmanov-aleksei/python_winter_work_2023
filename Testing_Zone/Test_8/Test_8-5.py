@@ -24,3 +24,11 @@ def fn01(x):
 x = 0
 for _ in range(10):
     print(x := fn01(x))
+
+
+    def flip_flop(x):
+        return 'flip' if x == 'flop' else 'flop'
+
+
+    print(flip_flop('flop'))
+    print(flip_flop('flip'))
