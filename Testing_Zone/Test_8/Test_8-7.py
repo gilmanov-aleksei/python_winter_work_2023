@@ -34,3 +34,16 @@
 # rus_let = 'воититивоиытл12543265@#@%$^%&^'
 # dct = {i:ord(i) for i in rus_let}
 # print(dct)
+
+# items = [('c', 3), ('d', 4), ('a', 1), ('b', 2)]
+# disc_variable = {key: value for (key, value) in items}
+
+# names = ['Fizz', 'Buzz', 'FizzBuzz']
+# inedx = {k: v for (k, v) in enumerate(names)}
+# print(inedx)
+# def fb(x):
+#     return 'FizzBuzz' if x % 15 == 0 else 'Fizz' if x % 3 == 0 else 'Buzz' if x % 5 == 0 else x
+#
+#
+# d = {i: fb(i) for i in range(10) if type(fb(i)) != str}
+# print(d)
