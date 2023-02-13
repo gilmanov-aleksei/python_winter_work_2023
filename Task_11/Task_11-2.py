@@ -17,20 +17,32 @@ row = {}
 dct = {}
 srt = ""
 wb = openpyxl.Workbook()
-# with open('Task_11-2.csv') as f:
-#     reader = csv.DictReader(f)
-#     for row in reader:
-#         print(row)
+with open('Task_11-2.csv') as f:
+    reader = csv.reader(f, delimiter=' ', quotechar='|')
+    # reader = csv.DictReader(f)
+    for row in reader:
+        print(', '.join(row).split(','))
 
-with open("Task_11-2.csv", "r") as f:
-    # итерация по строкам
-    for line in f:
-        l = line.strip('\n').split(',')
-        print(type(l))
-        for i in l:
-            print(type(i))
-            print(i)
-        input()
+# with open("Task_11-2.csv", "r") as f:
+#     # итерация по строкам
+#     for line in f:
+#         l = line.strip('\n').split(',')
+#         dct
+#         print(type(l))
+#         for i in l:
+#             print(type(i))
+#             print(i)
+#         input()
+
+# z = []
+# with open('Task_11-2.csv') as fi:
+#     for i in fi:
+#         z.append(i.strip().split(','))
+#     if dct.get(z[0]):
+#         dct[z[0]] += z
+#     else:
+#         dct[z[0]] = z
+
 
 
         # for k, v in row.items():
