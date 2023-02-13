@@ -30,15 +30,14 @@ def enter_year():
             return int(y)
 
 
-def free_day(fd):
-    fd = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
+def free_day_ermitazh(e_year):
+    fde = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
 
     for month in range(1, 13):
-        for day in range(1, calendar.monthrange(year, month)[1] + 1):
-            dd = calendar.weekday(year, month, day)
-            # dw[dd] += 1
-            fd[dd] = fd.get(dd, 0) + 1
-    return fd
+        for day in range(1, calendar.monthrange(e_year, month)[1] + 1):
+            dd = calendar.weekday(e_year, month, day)
+            fde[dd] = fde.get(dd, 0) + 1
+    return fde
 
 
 # В переменную записываем функцию ввода года от пользователя
@@ -51,4 +50,4 @@ if year is None:
 # Иначе выводим результат функции
 # бесплатные дни в Эрмитаже
 else:
-    print(free_day(year))
+    print(free_day_ermitazh(year))
