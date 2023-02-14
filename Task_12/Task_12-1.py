@@ -8,10 +8,13 @@
 # Например:
 # Ввод: X = [1, 2, 3, 4, 1, 2, 3, 4, 1, 4]
 # Вывод: [0, 4, 8], [3, 7, 9]
+def find_index(num):
+    return [i for i, j in enumerate(x) if j in num]
 
-# [i for i, j in enumerate(let) if j in glas]
 
-# x = input("Введите цифры через пробел: ")
+# x = input("Введите цифры через пробел: ").split())
 x = [1, 2, 3, 4, 1, 2, 3, 4, 1, 4]
-print(min(x))
-print(max(x))
+
+m1x = [None, min(x)]
+m2x = [None, max(x)]
+print(find_index(m1x), find_index(m2x))
