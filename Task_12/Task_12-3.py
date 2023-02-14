@@ -11,6 +11,16 @@
 def str_to_lst(sting):
     return
 
+
 # s = input("Введите диапозон натуральных чисел: ")
 s = '1-2, 4-4, 3-6'
 print(s.split(','))
+
+lst = [1, 2, 3, 3, 3, 2, 1, 3, 4, 2, 2, 2, 4, 4, 5, 6]
+index = 0
+while index < len(lst):
+    cnt = lst.count(lst[index])
+    if cnt > 1:
+        lst[index] = str(lst[index]) * cnt
+    index += 1
+print(set(lst))
