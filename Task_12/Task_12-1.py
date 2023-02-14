@@ -17,4 +17,4 @@ x = [1, 6, -3, 6, 1, 6, -3, 4, 1, 4, -3]
 
 m1x = [None, min(x)]
 m2x = [None, max(x)]
-print(find_index(m1x), find_index(m2x))
+print(f'{find_index(m1x)}, {find_index(m2x)}')
