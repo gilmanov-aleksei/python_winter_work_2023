@@ -7,7 +7,7 @@
 
 lst = [x for x in range(1, 11) for y in range(x)]
 # lst = []
-# for i in range(1, 11):
-#     for j in range(i):
-#         lst.append(i)
+# for x in range(1, 11):
+#     for y in range(x):
+#         lst.append(x)
 print(lst)
