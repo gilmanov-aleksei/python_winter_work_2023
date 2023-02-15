@@ -14,6 +14,13 @@
 # sorted --> Impossible!
 # idiot -> idito
 
+# # Разделение слова в список букв
+# let = [l for w in word for l in w]
+# # проверка каждой буквы со словарем гласных,
+# # если есть, записывается его индекс в список
+# # функция возвращает список индексов гласных в слове
+# return [i for i, j in enumerate(let) if j in glas]
+
 s = input("Enter a word: ")
 d = {'1': 'a', '2': 'e', '3': 'i', '4': 'o', '5': 'u'}
 
