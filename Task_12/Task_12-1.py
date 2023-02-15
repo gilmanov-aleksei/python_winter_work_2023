@@ -12,7 +12,8 @@
 def find_index(num):
     return [i for i, j in enumerate(x) if j in num]
 
-#Пустой список для сбора индексов
+
+# Пустой список для сбора индексов
 # y = []
 # #Цикл по списку Х с индексом
 # for i, j in enumerate(x):
@@ -22,7 +23,6 @@ def find_index(num):
 #     if j in num:
 #         # то записываем в список Y индекс числа
 #         y.append(i)
-
 
 
 # x = input("Введите цифры через пробел: ").split())
