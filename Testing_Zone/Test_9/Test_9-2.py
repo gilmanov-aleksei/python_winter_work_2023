@@ -1,16 +1,21 @@
 #! /usr/bin/python
 
 while True:
+    s = input("Введите целое число: ")
     try:
-        s = int(input("Введите целое число, 0 - Выход: "))
+        n = int(s)
     except:
+        try:
+            n = float(s)
+        except:
+            print("Это не вещественное число")
+            print("Повторите ввод!")
+        else:
+            print(f"Вещественно число: {n}")
+            break
         print("Вы вели не целое число")
         print("Повторите ввод!")
     else:
-        if s == 0:
-            break
-        else:
-            print(s)
-            print("Повторите ввод!")
-    finally:
-        print()
+        print(f"Вы вели число: {s}")
+        break
+
