@@ -18,7 +18,7 @@ def str_to_lst(string):
     #         strlst.append(j)
 
 
-s = input("Введите диапозон натуральных чисел: ").replace(" ", ", ")
-# s = '1-2, 4-4, 3-6, 10-20'
+# s = input("Введите диапозон натуральных чисел: ").replace(" ", ", ")
+s = '1-2, 4-4, 3-6, 10-20'
 print(s)
 print(str_to_lst(s))
