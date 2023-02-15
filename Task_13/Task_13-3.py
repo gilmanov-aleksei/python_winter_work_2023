@@ -7,7 +7,7 @@
 # последовательность не четных чисел из этого списка
 
 
-def nechet(lst):
+def fu(lst):
     yield [v for v in lst if v % 2 != 0]
     # #  Цикл по всему списку
     # for v in lst:
@@ -19,6 +19,6 @@ def nechet(lst):
 
 ls = [1, 4, 7, 15, 22, 6, 19, 9, 11, 14, 16, 21, 24, 29, 30]
 # Передаем списов в функцию-генратор
-gf = nechet(ls)
+gf = fu(ls)
 for x in gf:
     print(*x)
