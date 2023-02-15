@@ -10,11 +10,15 @@
 
 def str_to_lst(string):
     return [j for i in string.split(', ') for j in range(int(i.split('-')[0]), int(i.split('-')[1]) + 1)]
-
+    # #Пустой список
     # strlst = []
+    # #Цикл по списку, без запятой и пробела после неё
     # for i in s.split(', '):
+    #     # Делаем список без разделителя "-"
     #     k = i.split('-')
+    #     # Цикл из полученого списка
     #     for j in range(int(k[0]), int(k[1]) + 1):
+    #         # Добовляем
     #         strlst.append(j)
 
 
