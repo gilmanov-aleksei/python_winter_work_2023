@@ -1,3 +1,6 @@
+#! /usr/bin/python
+
+
 # input n
 n = int(input("Enter the number of rows:"))
 
