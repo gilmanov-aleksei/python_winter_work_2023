@@ -18,7 +18,7 @@ def str_to_lst(string):
     #     k = i.split('-')
     #     # Цикл из полученого списка
     #     for j in range(int(k[0]), int(k[1]) + 1):
-    #         # Добовляем
+    #         # Добовляем в список полученые
     #         strlst.append(j)
 
 
