@@ -17,13 +17,14 @@ with open('Task_11-2.csv') as f:
     reader = csv.reader(f, delimiter=' ', quotechar='|')
     # reader = csv.DictReader(f)
     for row in reader:
-        read = ','.join(row).split(',')
-        dct[read[0]] = [i for i in read[1:]]
-print(dct)
-wb = openpyxl.Workbook()
-sheet = wb.sheetnames
-wb.create_sheet("Лист1")
-ws = wb[sheet[0]]
-print(sheet)
-print(ws.title)
-wb.save("Task_11-2.xlsx")
+        print(row)
+        # read = ','.join(row).split(',')
+        # dct[read[0]] = [i for i in read[1:]]
+# print(dct)
+# wb = openpyxl.Workbook()
+# sheet = wb.sheetnames
+# wb.create_sheet("Лист1")
+# ws = wb[sheet[0]]
+# print(sheet)
+# print(ws.title)
+# wb.save("Task_11-2.xlsx")
