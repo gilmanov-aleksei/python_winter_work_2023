@@ -13,35 +13,37 @@
 # idea -> Impossible!
 # sorted --> Impossible!
 # idiot -> idito
-def sort_word(k, v):
-    pass
-    return
+def sort_word(v):
+    srt = ""
+    for i in range(v):
+        srt += glas[i]
+        srt += soglas[i]
+    return srt
 
 
-s = input("Enter a word: ")
-d = {'a': 0, 'e': 0, 'i': 0, 'o': 0, 'u': 0, 'y': 0}
-glas = []
-soglas = []
+# s = input("Enter a word: ")
+s = "apply"
+d = 'aeiouy'
 
 # Разделение слова в список букв
-let = [y for w in s for y in w]
-# проверка каждой буквы со словарем гласных,
-# если есть, записывается его индекс в список
-# функция возвращает список индексов гласных в слове
-# lst = [i for i, j in enumerate(let) if j in d]
-for i, j in enumerate(let):
-    if j in d:
-        glas.append(i)
-    else:
-        soglas.append(i)
-word = [None] * i
-print(glas)
-print(soglas)
-if len(glas) == len(soglas):
-    print("Rovno")
-elif len(glas) - 1 == len(soglas):
-    print("Bolshe")
-elif len(glas) + 1 == len(soglas):
-    print("Menshe")
+si = [y for w in s for y in w]
+
+glas = [x for x in (si) if x in d]
+soglas = [y for y in (si) if not y in d]
+
+lg = len(glas)
+ls = len(soglas)
+
+# sum(2 for letter in s if letter in vowels) > len(s)
+if lg == ls or lg + 1 == ls:
+    glas.append(' ')
+    glas.sort()
+    print(sort_word(lg))
+elif lg - 1 == ls:
+    soglas.append(' ')
+    print(sort_word(lg))
 else:
     print("Impossible!")
+
+print(glas)
+print(soglas)
