@@ -7,18 +7,19 @@
 # Перетасуйте его буквы, чтобы гласные и согласные шли по очереди.
 # Если это невозможно, то выдайте "Impossible!"
 # Гласными будем считать только
-# a, e, i , o, u. Остальные согласные.
+# a, e, i, o, u, y. Остальные согласные.
 # Например:
 # apple -> papel
 # idea -> Impossible!
 # sorted --> Impossible!
 # idiot -> idito
-def sort_word(k,v):
+def sort_word(k, v):
     pass
     return
 
+
 s = input("Enter a word: ")
-d = {'a': 0, 'e': 0, 'i': 0, 'o': 0, 'u': 0}
+d = {'a': 0, 'e': 0, 'i': 0, 'o': 0, 'u': 0, 'y': 0}
 glas = []
 soglas = []
 
@@ -33,6 +34,7 @@ for i, j in enumerate(let):
         glas.append(i)
     else:
         soglas.append(i)
+word = [None] * i
 print(glas)
 print(soglas)
 if len(glas) == len(soglas):
