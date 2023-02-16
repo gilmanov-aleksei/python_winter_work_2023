@@ -13,17 +13,33 @@
 # idea -> Impossible!
 # sorted --> Impossible!
 # idiot -> idito
-
+def sort_word(k,v):
+    pass
+    return
 
 s = input("Enter a word: ")
-glas = {'a': 0, 'e': 0, 'i': 0, 'o': 0, 'u': 0}
-# glas = {'а': 0, 'у': 0, 'о': 0, 'ы': 0, 'и': 0, 'э': 0, 'я': 0, 'ю': 0, 'ё': 0, 'е': 0, }
+d = {'a': 0, 'e': 0, 'i': 0, 'o': 0, 'u': 0}
+glas = []
+soglas = []
 
 # Разделение слова в список букв
-let = [l for w in s for l in w]
+let = [y for w in s for y in w]
 # проверка каждой буквы со словарем гласных,
 # если есть, записывается его индекс в список
 # функция возвращает список индексов гласных в слове
-lst = [i for i, j in enumerate(let) if j in glas]
-
-print(lst)
+# lst = [i for i, j in enumerate(let) if j in d]
+for i, j in enumerate(let):
+    if j in d:
+        glas.append(i)
+    else:
+        soglas.append(i)
+print(glas)
+print(soglas)
+if len(glas) == len(soglas):
+    print("Rovno")
+elif len(glas) - 1 == len(soglas):
+    print("Bolshe")
+elif len(glas) + 1 == len(soglas):
+    print("Menshe")
+else:
+    print("Impossible!")
