@@ -1,6 +1,4 @@
 #! /usr/bin/python
-import time
-
 
 # Задача 13-2
 # Создайте функцию-генератор,
@@ -23,4 +21,3 @@ def fu(v):
 gf = fu(250)
 for i in gf:
     print(i, end=", ")
-    time.sleep(0.25)
