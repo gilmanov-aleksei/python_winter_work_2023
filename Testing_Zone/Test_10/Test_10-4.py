@@ -34,3 +34,13 @@ def triangle(n, m):
 
 
 triangle(0, 10)
+
+# def triangle(n, m):
+#     print(' *' * n, ' ' * (m - n))
+#     if n > m:
+#         triangle(n - 1, m)
+#     print('* ' * n,' ' * (n-m))
+#     return
+#
+#
+# triangle(10, 0)
