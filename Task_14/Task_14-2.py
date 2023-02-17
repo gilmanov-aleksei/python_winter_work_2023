@@ -12,8 +12,8 @@ def summ_num(n):
 print(summ_num(int(input("Enter num1: "))))
 
 
-def sum_digits(m):
-    return m % 10 + sum_digits(m // 10) if m > 9 else m
+def sum_dig(m):
+    return m % 10 + sum_dig(m // 10) if m > 9 else m
 
 
-print(sum_digits(int(input("Enter num2: "))))
+print(sum_dig(int(input("Enter num2: "))))
