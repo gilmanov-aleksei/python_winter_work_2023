@@ -13,13 +13,15 @@
 # ***
 # ****
 # *****
-# Подсказака: одна строкапечатается до вызова функции,
+# Подсказака: одна строка печатается до вызова функции,
 # а вторая после вызова
 
-def triangle(n):
-    print(' *' * n)
-    if n > 1: triangle(n - 1)
-    return print(' *' * n)
+def triangle(n, m):
+    if n > 1:
+        print(' ' * m, ' *' * n)
+        triangle(n - 1, m + 1)
+    print(' ' * m, ' *' * n)
+    return
 
 
-triangle(5)
+triangle(5, 0)
