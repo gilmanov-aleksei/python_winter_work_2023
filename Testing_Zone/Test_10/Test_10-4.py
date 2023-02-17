@@ -28,8 +28,8 @@
 def triangle(n, m):
     print(' ' * (m - n), '* ' * n)
     if n < m:
-        triangle(2*n + 1, m)
-    print(' ' * (m - n), '* ' * n)
+        triangle(n + 1, m)
+    # print(' ' * (m - n), '* ' * n)
     return
 
 
