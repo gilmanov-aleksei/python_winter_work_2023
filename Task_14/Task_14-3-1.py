@@ -4,7 +4,7 @@ def triangle(n, m):
     print(' ' * (m - n), '* ' * n)
     if n < m:
         triangle(n + 1, m)
-    print(' ' * (m - n), '* ' * n)
+        print(' ' * (m - n), '* ' * n)
     return
 
 
