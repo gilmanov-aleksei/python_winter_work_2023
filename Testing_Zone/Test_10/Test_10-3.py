@@ -31,21 +31,36 @@
 # for x in gen_expr:
 #     print(x, end=" ")
 
-def integers(n):
-    for i in range(1, n + 1):
-        yield i
+# def integers(n):
+#     for i in range(1, n + 1):
+#         yield i
+#
+#
+# def evens(iterable):
+#     for i in iterable:
+#         if not i % 2:
+#             yield i
+#
+#
+# def squared(iterable):
+#     for k in iterable:
+#         yield k * k
+#
 
-
-def evens(iterable):
-    for i in iterable:
-        if not i % 2:
-            yield i
-
-
-def squared(iterable):
-    for k in iterable:
-        yield k * k
-
-
-chain = squared(evens(integers(10)))
-print(*chain)
+# chain = squared(evens(integers(10)))
+# chain = [x for x in squared(evens(integers(10)))]
+# print(chain)
+#
+# def gen1(n):
+#     x = ord('а')
+#     z = ord('я')
+#     yield from range(x, x + n)
+#
+#
+# def gen2(x):
+#     for i in x:
+#         yield chr(i).upper()
+#
+#
+# chain = [x for x in gen2(gen1(33))]
+# print(*chain)
