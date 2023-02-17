@@ -46,7 +46,7 @@
 # def validate(name):
 #     if len(name) < 10:
 #         raise NameTooShortError
-#
+# #
 # class Positive(ValueError): pass
 #
 #
@@ -68,5 +68,5 @@
 #             print("Отрицательное")
 #
 #
-# lst = [0, -15, 1, 1.5, - 2.7, ]
+# lst = [0, -15, 1, 1.5, - 2.7, 5, 0, 34, -56]
 # print(fun(lst))
