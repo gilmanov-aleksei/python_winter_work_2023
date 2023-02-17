@@ -25,4 +25,12 @@
 # print(fact(4))
 # print(fact(5))
 
-def triangle(n):
+def triangle(n, m):
+    print(' ' * (m - n), '* ' * n)
+    if n < m:
+        triangle(2*n + 1, m)
+    print(' ' * (m - n), '* ' * n)
+    return
+
+
+triangle(0, 10)
