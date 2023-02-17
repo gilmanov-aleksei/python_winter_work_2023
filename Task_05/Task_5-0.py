@@ -22,7 +22,7 @@ def sort_word(v):
 
 
 # s = input("Enter a word: ")
-s = "apply"
+s = "appely"
 d = 'aeiouy'
 
 # Разделение слова в список букв
