@@ -4,8 +4,11 @@
 # которая вычисляет количество
 # цифры введенного натурального числа
 def col_num(n):
-    if n == 0: return 0
-    return n + col_num(n % 10)
+    if n < 10:
+        return 1
+    else:
+        pass
+    return
+
 
 print(col_num(int(input("Enter num: "))))
-
