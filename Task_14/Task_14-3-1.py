@@ -8,4 +8,4 @@ def triangle(n, m):
     return
 
 
-triangle(0, 10)
+triangle(0, 5)
