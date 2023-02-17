@@ -9,3 +9,4 @@ def col_num(n):
 
 
 print(col_num(int(input("Enter num: "))))
+
