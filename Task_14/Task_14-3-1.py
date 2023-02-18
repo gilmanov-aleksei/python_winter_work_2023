@@ -22,6 +22,4 @@ def romb(m, n=0):
     return
 
 
-
-
 romb(int(input("Enter the number: ")))
