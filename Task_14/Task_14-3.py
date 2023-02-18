@@ -24,4 +24,4 @@ def triangle(n, m=0):
     return
 
 
-triangle(5)
+triangle(int(input("Enter num: ")))

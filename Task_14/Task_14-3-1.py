@@ -8,4 +8,4 @@ def triangle(m, n=0):
     return
 
 
-triangle(5)
+triangle(int(input("Enter num: ")))
