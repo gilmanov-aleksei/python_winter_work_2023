@@ -4,11 +4,11 @@
 # которая вычисляет количество
 # цифры введенного натурального числа
 
-def num_count(n):
+def num_len(n):
     n //= 10
-    if not n:
+    if n == 0:
         return 1
-    return 1 + num_count(n)
+    return 1 + num_len(n)
 
 
-print(num_count(abs(int(input("Enter num: ")))))
+print(num_len(abs(int(input("Enter the number: ")))))
