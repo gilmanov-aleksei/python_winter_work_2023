@@ -16,7 +16,7 @@
 # Подсказака: одна строка печатается до вызова функции,
 # а вторая после вызова
 
-def triangle(n, m):
+def triangle(n, m=0):
     if n > 1:
         print(' ' * m, ' *' * n)
         triangle(n - 1, m + 1)
@@ -24,4 +24,4 @@ def triangle(n, m):
     return
 
 
-triangle(5, 0)
+triangle(5)

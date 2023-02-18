@@ -1,11 +1,11 @@
 #! /usr/bin/python
 
-def triangle(n, m):
+def triangle(m, n=0):
     print(' ' * (m - n), '* ' * n)
     if n < m:
-        triangle(n + 1, m)
+        triangle(m, n + 1)
         print(' ' * (m - n), '* ' * n)
     return
 
 
-triangle(0, 5)
+triangle(5)
