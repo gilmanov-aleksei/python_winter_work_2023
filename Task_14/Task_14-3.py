@@ -16,12 +16,14 @@
 # Подсказака: одна строка печатается до вызова функции,
 # а вторая после вызова
 
+
 def triangle(n, m=0):
     if n > 1:
-        print(' ' * m, ' *' * n)
+        print(' ' * m, '* ' * n)
         triangle(n - 1, m + 1)
-    print(' ' * m, ' *' * n)
+    print(' ' * m, '* ' * n)
     return
 
 
 triangle(int(input("Enter num: ")))
+
