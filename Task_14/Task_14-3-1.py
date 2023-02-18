@@ -1,11 +1,27 @@
 #! /usr/bin/python
 
-def triangle(m, n=0):
+# Задача 14-3-1
+# Напишите рекурсивную функцию romb(n),
+# которая печатает два треугольника?  в форме ромба
+# Например, для n = 5:
+#      *
+#     * *
+#    * * *
+#   * * * *
+#  * * * * *
+#  * * * * *
+#   * * * *
+#    * * *
+#     * *
+#      *
+def romb(m, n=0):
     print(' ' * (m - n), '* ' * n)
     if n < m:
-        triangle(m, n + 1)
+        romb(m, n + 1)
         print(' ' * (m - n), '* ' * n)
     return
 
 
-triangle(int(input("Enter num: ")))
+
+
+romb(int(input("Enter the number: ")))
