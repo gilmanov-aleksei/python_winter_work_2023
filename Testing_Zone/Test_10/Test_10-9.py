@@ -1,15 +1,16 @@
 #! /usr/bin/python
 
-#
-# def tri_2_1(n):
-#     if n > 1:
-#         print(('* ' * n).center(10))
-#         tri_2_1(n - 1)
-#     return print(('* ' * n).center(10))
-#
-#
-# tri_2_1(5)
-#
+
+def tri_2_1(n):
+    if n > 1:
+        print(('* ' * n).center(10))
+        tri_2_1(n - 1)
+    print(('* ' * n).center(10))
+    return
+
+
+tri_2_1(5)
+
 # n = 5
 # for i in range(n * 2 - 1, 0, -2):
 #     print(('*' * i).center(n * 2))
@@ -37,10 +38,10 @@
 #         f(n-1, level+1)
 # f(5)
 
-def f(n, level = 1):
-    if n > 1:
-        print(' '*(n-1)+'*'*(level*2-1))
-        f(n-1, level+1)
-    elif n == 1:
-        print(' '*(level-1)+'*')
-f(7)
+# def f(n, level = 1):
+#     if n > 1:
+#         print(' '*(n-1)+'*'*(level*2-1))
+#         f(n-1, level+1)
+#     elif n == 1:
+#         print(' '*(level-1)+'*')
+# f(7)
