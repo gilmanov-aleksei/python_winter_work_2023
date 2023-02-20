@@ -22,4 +22,17 @@ def romb(m, n=0):
     return
 
 
-romb(int(input("Enter the number: ")))
+romb(7)
+
+
+def romb1(n, m=0):
+    if n == 0:
+        print(("* " * m).center(15))
+    else:
+        print(("* " * m).center(15))
+        romb1(n - 1, m + 1)
+        print(("* " * m).center(15))
+    return
+
+
+romb1(7)
