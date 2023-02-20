@@ -32,8 +32,7 @@ def romb2(m, n=0):
     if n < m:
         print(' ' * (m - n), '* ' * n)
         romb2(m, n + 1)
-    print(' ' * (m - n), '* ' * n)
-    return
+    return print(' ' * (m - n), '* ' * n)
 
 
 romb2(5)
