@@ -1,5 +1,16 @@
 # #! /usr/bin/python
-#
+
+def tri(n):
+    if n == 1:
+        print('*'.center(10))
+    else:
+        print(('* ' * n).center(10))
+        tri(n - 1)
+        print(('* ' * n).center(10))
+
+
+tri(5)
+
 # def tri_2_2(n):
 #     if n > 1:
 #         print(('* ' * n).center(n - 2 * n))
@@ -16,13 +27,4 @@
 # input("Press Enter")
 # tri_2_3(5)
 
-def tri(n):
-    if n == 1:
-        print('*'.center(10))
-    else:
-        print(('* ' * n).center(10))
-        tri(n - 1)
-        print(('* ' * n).center(10))
 
-
-tri(5)
