@@ -1,5 +1,9 @@
 #! /usr/bin/python
 
+import sys
+print(sys.version)
+print(sys.getrecursionlimit())
+
 a = print(10)
 print(a or "a")
 print(a, "a")
