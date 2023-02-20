@@ -26,8 +26,7 @@ romb(5)
 
 
 def romb1(n, m=0):
-    if n == 0:
-        print(("* " * m).center(10))
+    if n == 0: print(("* " * m).center(10))
     else:
         print(("* " * m).center(10))
         romb1(n - 1, m + 1)

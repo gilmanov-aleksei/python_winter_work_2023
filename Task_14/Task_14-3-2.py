@@ -1,8 +1,7 @@
 # #! /usr/bin/python
 
 def tri(n):
-    if n == 1:
-        print("*".center(10))
+    if n == 1: print("*".center(10))
     else:
         print(("* " * n).center(10))
         tri(n - 1)
