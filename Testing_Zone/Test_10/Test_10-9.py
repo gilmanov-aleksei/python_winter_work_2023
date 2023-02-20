@@ -1,15 +1,18 @@
 #! /usr/bin/python
 
 
-def tri_2_1(n):
+def prt_zvezda(m):
+    return print(('* ' * m).center(10))
+
+
+def tri_2_2(n):
     if n > 1:
-        print(('* ' * n).center(10))
+        prt_zvezda(n)
         tri_2_1(n - 1)
-    print(('* ' * n).center(10))
-    return
+    return prt_zvezda(n)
 
 
-tri_2_1(5)
+tri_2_2(5)
 
 # n = 5
 # for i in range(n * 2 - 1, 0, -2):
