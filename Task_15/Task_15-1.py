@@ -10,10 +10,26 @@
 # Функция должна составить список, состоящий из значенийсловаря с ключем х.
 # НапримерЖ
 # [1,111,2222,333,11]
-def find_key():
-    pass
 
-    return
 
-dct = {1:1, 2:2, {2:22, {1:111, 2:222, {0:1111, 1:2222, 2: 3333}, 1:333}, 1:11,}, 6:22}
 
+
+
+def find_key(dct):
+    print(dct)
+    for x, y in dct.items():
+        # print(x, y)
+        if type(y) == dict:
+            find_key(y)
+        else:
+            res.append(dct[x])
+
+    print(res)
+    return res
+
+
+dct = {1: 1, 2: 2, 6: {2: 22, 1: {1: 111, 2: 222, 3: {0: 1111, 1: 2222, 2: 3333}}}}
+res = []
+x = 1
+find_key(dct)
+# print(*find_key(dct, x))
