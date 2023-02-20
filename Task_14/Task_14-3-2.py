@@ -2,11 +2,11 @@
 
 def tri(n):
     if n == 1:
-        print('*'.center(10))
+        print("*".center(10))
     else:
-        print(('* ' * n).center(10))
+        print(("* " * n).center(10))
         tri(n - 1)
-        print(('* ' * n).center(10))
+        print(("* " * n).center(10))
 
 
 tri(5)
