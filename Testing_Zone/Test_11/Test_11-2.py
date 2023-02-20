@@ -22,3 +22,8 @@
 # import re
 # # print(re.findall(r"\b\w+\b", string))
 # print(re.findall(r"\b\w*[Кк]ос\w+\b", string))
+
+
+string = "cat cut c#t caut ciat coot ct"
+import re
+print(re.findall(r"\bc[^au]t\b", string))
