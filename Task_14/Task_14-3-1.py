@@ -15,24 +15,24 @@
 #     * *
 #      *
 def romb(m, n=0):
-    print(' ' * (m - n), '* ' * n)
     if n < m:
-        romb(m, n + 1)
         print(' ' * (m - n), '* ' * n)
+        romb(m, n + 1)
+    print(' ' * (m - n), '* ' * n)
     return
 
 
-romb(7)
+romb(5)
 
 
 def romb1(n, m=0):
     if n == 0:
-        print(("* " * m).center(15))
+        print(("* " * m).center(10))
     else:
-        print(("* " * m).center(15))
+        print(("* " * m).center(10))
         romb1(n - 1, m + 1)
-        print(("* " * m).center(15))
+        print(("* " * m).center(10))
     return
 
 
-romb1(7)
+romb1(5)
