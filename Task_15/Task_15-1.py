@@ -14,21 +14,21 @@
 def find_key(d, x=1):
     # print(d)
     # Перебираем ключи и значение словаря
-    for k, v in d.items():
+    for k in d:
         # Сравниваем ключ словаря с нашим ключом
         if k == x:
             # если совподает, то проверяем тип значения
-            if type(v) == dict:
+            if type(d[k]) == dict:
                 # если тип словарь, то реукрсией проеряем его
-                find_key(v)
+                find_key(d[k])
             else:
                 # если нет, записываем значение в список
                 res.append(d[k])
         else:
             # Если значение не по ключу, то проверяем тип значения
-            if type(v) == dict:
+            if type(d[k]) == dict:
                 # если тип словарь, то реукрсией проеряем его
-                find_key(v)
+                find_key(d[k])
     # print(res)
     return res
 
