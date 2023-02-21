@@ -8,14 +8,13 @@
 # алфавите, D - цифра от 0 до 9.
 # Например, А123ВС78 или Х666Х178
 
-
 # lat = "ABCEHKMOPTYX"
 # rus = "АВЕКМНОРСТУХ"
 
 import re
 
-str = "A753AB28, L183AB178, M118BC178, M178MM178, L924EH178, O927GL178, L925АВ178" \
-      ", А357СТ78, L753ВЕ99, A945FF178, O679ТУ34, M470TY178, Р679PT05, L736МН178" \
-      ", O699EH50, L810ZZ178, L567CE178, Р937РС178, L670СТ198, M923SQ32, A499AB178"
+num_car = "A753AB78, L183AB178, BHTYYH M118BC178, M178MM178 L924EH178, O927GL178, L925АВ178" \
+      ", А357СТ78, L753ВЕ99, A945FF178 O679ТУ34, G768HG78 M470TY78, Р679PT05 L736МН178" \
+      ", O699EH50 L810ZZ178, L567CE178, Р937РС178, L670СТ198, M923SQ32, А499ТУ178"
 
-print(re.findall(r'[ABCEHKMOPTYX]\d\d\d.[ABCEHKMOPTYX]\d.*[78]', str))
+print(*re.findall(r'[ABCEHKMOPTYX]\d\d\d[ABCEHKMOPTYX]{2}1?78|[АВЕКМНОРСТУХ]\d\d\d[АВЕКМНОРСТУХ]{2}1?78', num_car))
