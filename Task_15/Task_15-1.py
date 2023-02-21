@@ -14,7 +14,7 @@
 def find_key(d, x=1):
     # print(d)
     for k, v in d.items():
-        if k == x:
+        if k == x: # find key in dict
             if type(v) == dict:
                 find_key(v)
             else:
