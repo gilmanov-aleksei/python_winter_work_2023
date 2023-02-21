@@ -14,13 +14,11 @@ import openpyxl
 
 dct = {}
 with open('Task_11-2.csv') as f:
-    reader = csv.reader(f, delimiter=' ', quotechar='|')
-    # reader = csv.DictReader(f)
+    reader = list(csv.reader(f, delimiter=','))[1:]
+    reader.sort(key=lambda x: [x[3], x[1], x[2]])
     for row in reader:
         print(row)
-        # read = ','.join(row).split(',')
-        # dct[read[0]] = [i for i in read[1:]]
-# print(dct)
+
 # wb = openpyxl.Workbook()
 # sheet = wb.sheetnames
 # wb.create_sheet("Лист1")
