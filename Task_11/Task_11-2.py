@@ -8,33 +8,54 @@
 #  предварительно отсортировав этот список по компании, по фамилии и имени.
 #  - В конце списка добавьте строку: ИТОГО и суммарное значение всех зарплат.
 
-# Импортируем модуль openpyxl
+# Импортируем модуль csv и openpyxl
 import csv
 import openpyxl
 
-with open('Task_11-2.csv') as f:
-    reader = list(csv.reader(f, delimiter=','))
+# Открываем файл csv на чтение
+with open('Task_11-2.csv') as file:
+    # Читаем содержимое файлав список
+    reader = list(csv.reader(file, delimiter=','))
+    # записыввем заголовок отдельно,
+    # с удалением из основного списка
     begin = reader.pop(0)
+    # Сортируем основной список по компании, по фамилии и имени.
     reader.sort(key=lambda x: [x[3], x[1], x[2]])
 
+# Создаем пустую рабочую книгу
 wb = openpyxl.Workbook()
+# Переключаемся на активный лист
 sheet = wb.active
+# Переименоваем лист
 sheet.title = "Values"
+# Записываем в переменную страницу
 ws = wb['Values']
-
+# Начальная позиция строки
 row = 1
+# Перменная a chr(65) = 'A'
+a = 65
+# Записваем заголовок в первой строки по колонкам
 for k, v in enumerate(begin):
-    ws[str(chr(65 + k) + str(row))] = v
+    ws[str(chr(a + k) + str(row))] = v
+# Увеличиваем позицию строки
 row += 1
+# Переменная для подсчета всех сумм
 itogo = 0
-colum = 0
+# Цикл по основному списку
 for m in reader:
+    # Подсчет всех сумм из списков,
+    # через срез и преобразование в число
     itogo += int(''.join(map(str, m[-1:])))
-    for i, j in enumerate(m, 65):
+    # Цикл по всем элементам каждого сиписка
+    for i, j in enumerate(m, a):
+        # Записывае значения в лист рабочей книгм
         ws[str(chr(i)) + str(row)] = j
+    # Увеличиваем позицию по строкам
     row += 1
-colum = i
-ws['A' + str(row)] = 'ИТОГО'
-ws[str(chr(colum)) + str(row)] = itogo
+# Записываем в поледнюю строку слово 'ИТОГО'
+ws[str(chr(a)) + str(row)] = 'ИТОГО'
+# На против слова ИТОГО, под колонкой суум,
+# записваем суммы всех зарплат
+ws[str(chr(a + ws.max_column - 1)) + str(row)] = itogo
+# Записываем все данные в фал экселя
 wb.save("Task_11-2.xlsx")
-
