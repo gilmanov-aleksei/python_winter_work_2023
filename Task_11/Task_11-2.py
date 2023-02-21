@@ -10,14 +10,18 @@
 
 # Импортируем модуль openpyxl
 import csv
-import openpyxl
+# import openpyxl
 
-dct = {}
 with open('Task_11-2.csv') as f:
-    reader = list(csv.reader(f, delimiter=','))[1:]
+    reader = list(csv.reader(f, delimiter=','))
+    begin = reader.pop(0)
+    print(*begin)
+    print()
     reader.sort(key=lambda x: [x[3], x[1], x[2]])
     for row in reader:
-        print(row)
+        for txt in row:
+            print(txt, end=" ")
+        print()
 
 # wb = openpyxl.Workbook()
 # sheet = wb.sheetnames
