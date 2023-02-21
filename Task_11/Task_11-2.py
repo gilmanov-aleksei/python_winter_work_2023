@@ -10,23 +10,22 @@
 
 # Импортируем модуль openpyxl
 import csv
-# import openpyxl
+import openpyxl
+
+itog = []
 
 with open('Task_11-2.csv') as f:
     reader = list(csv.reader(f, delimiter=','))
     begin = reader.pop(0)
-    print(*begin)
+    print(begin)
     print()
     reader.sort(key=lambda x: [x[3], x[1], x[2]])
     for row in reader:
-        for txt in row:
-            print(txt, end=" ")
-        print()
+        print(row)
 
-# wb = openpyxl.Workbook()
-# sheet = wb.sheetnames
-# wb.create_sheet("Лист1")
-# ws = wb[sheet[0]]
-# print(sheet)
-# print(ws.title)
-# wb.save("Task_11-2.xlsx")
+wb = openpyxl.Workbook()
+sheet = wb.active
+sheet.title = "Values"
+print(f'Active list: {wb.active.title}')
+
+wb.save("Task_11-2.xlsx")
