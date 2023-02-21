@@ -8,10 +8,9 @@
 # алфавите, D - цифра от 0 до 9.
 # Например, А123ВС78 или Х666Х178
 
-import re
 
-lat = "ABCEHKMOPTYX"
-rus = "АВЕКМНОРСТУХ"
+# lat = "ABCEHKMOPTYX"
+# rus = "АВЕКМНОРСТУХ"
 
 import re
 
