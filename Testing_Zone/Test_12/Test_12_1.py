@@ -14,8 +14,8 @@
 # print(re.findall(r"\w*b[aioeu]t\w*\w*\w*", st))  # 9
 # print(re.findall(r"\w*b[aioeu]t\w*\w*\w*\w*", st))  # 10
 
-import re
-
-text = 'Java самый популярный язык программирования в 2023 году.'
-res = re.sub(r'Java', r'Python', text)
-print(res)
+# import re
+#
+# text = 'Java самый популярный язык программирования в 2023 году.'
+# res = re.sub(r'Java', r'Python', text)
+# print(res)
