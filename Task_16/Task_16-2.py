@@ -8,8 +8,21 @@
 
 import re
 
-# num = input("Введите двухзначное число: ")
-num1 = 45
-num2 = 345
-s = "-25, -15, -10, -5, 0, 1, 5, 8, 12, 25, 31, 43, 56, 62, 74, 87, 91, 100, 1000"
-print(re.findall(r"\b[0-9]\b|\b[1-9][0-9]\b|\b[1-9][0-9][0-9]\b", s))
+# num = input("трехзначное число: ")
+s = "-25, -15, -10, -5, 0, 1, 5, 8, 12, 25, 31, 43, 56, 62, 74, 87, 91, 100, 234, 345, 555, 765, 1000"
+num = "345"
+if len(num) == 1:
+    st = re.compile(fr"\b[0-{num}]\b")
+elif len(num) == 2:
+    n1 = num[0]
+    n2 = num[1]
+    st = re.compile(fr"\b[0-9]\b|\b[1-{n1}][0-{n2}]\b")
+elif len(num) == 3:
+    n1 = num[0]
+    n2 = num[1]
+    n3 = num[2]
+    st = re.compile(fr"\b[0-9]\b|\b[1-9][0-9]\b|\b[1-{n1}][0-{n2}][0-{n3}]\b")
+else:
+    st = '0'
+print(st)
+print(re.findall(st, s))
