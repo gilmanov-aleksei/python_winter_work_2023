@@ -25,23 +25,23 @@
 # res2 = sleep(4)
 # print(f'Результат функции test = {res1}')
 # print(f'Результат функции test = {res2}')
-
-def decorator(func):
-    def wrapper(*args, **kwargs):
-        z = func(*args)
-        res = ''.join(args)
-        return res
-
-    return wrapper
-
-
-@decorator
-def aaa(*args):
-    print(aaa.__name__)
-    return
-print(aaa('xxx', 'yyy', 'zzz'))
-@decorator
-def bbb(x, y):
-    print(bbb.__name__)
-    return len(x) + len(y)
-print(bbb('Hello', 'world'))
+#
+# def decorator(func):
+#     def wrapper(*args, **kwargs):
+#         z = func(*args)
+#         res = ''.join(args)
+#         return res
+#
+#     return wrapper
+#
+#
+# @decorator
+# def aaa(*args):
+#     print(aaa.__name__)
+#     return
+# print(aaa('xxx', 'yyy', 'zzz'))
+# @decorator
+# def bbb(x, y):
+#     print(bbb.__name__)
+#     return len(x) + len(y)
+# print(bbb('Hello', 'world'))
