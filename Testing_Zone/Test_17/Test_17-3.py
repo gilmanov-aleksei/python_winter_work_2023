@@ -7,7 +7,7 @@ class Person:
         self.cur_money = self.money
 
     def info(self):
-        print(self.name, self.cur_money)
+        print(f'Меня зовут {self.name}. У меня {self.cur_money} рублей')
 
     def set_money(self, x):
         self.money += x
@@ -20,7 +20,7 @@ class Person:
             other.money += x
             self.cur_money -= x
         else:
-            print("No money!")
+            print(f'У {self.name} не хватает {x - self.cur_money} рублей')
 
 
 a = Person('Pete', 200)
