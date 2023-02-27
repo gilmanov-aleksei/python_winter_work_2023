@@ -23,12 +23,9 @@ class Person:
             print("No money!")
 
 
-
-
 a = Person('Pete', 200)
 b = Person('Nick', 300)
 c = Person('Jack', 500)
-
 
 a.info(), b.info(), c.info()
 c.give_money(a, 200)
