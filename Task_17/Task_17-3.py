@@ -13,10 +13,10 @@ class Shape:
         self.colour = colour
         self.square = square
 
-    def info(self): # Печатаем информацию об объекте и его площадь
+    def info(self):  # Печатаем информацию об объекте и его площадь
         print(f'Цвет объекта: {self.colour}. Его площадь: {self.square} кв.мм')
 
-    def instsl_colour(self): # Устанвливаем (меняем) цвет объекта
+    def instsl_colour(self):  # Устанвливаем (меняем) цвет объекта
         if self.colour == 'Blue':
             self.colour = 'Red'
         elif self.colour == 'Red':
@@ -24,14 +24,14 @@ class Shape:
         else:
             self.colour = 'Blue'
 
-    def get_colour_print(self): # Запрашиваем цвет объекта и выводим на печать
+    def get_colour_print(self):  # Запрашиваем цвет объекта и выводим на печать
         obj_colour = self.colour
         print(obj_colour)
 
-    def instal_square(self): # Устанавливаем новое знавение площади
+    def instal_square(self):  # Устанавливаем новое знавение площади
         self.square += 150
 
-    def get_square(self): # Запрашиваем площадь объекта и выводим на печать
+    def get_square(self):  # Запрашиваем площадь объекта и выводим на печать
         obj_square = self.square
         print(obj_square)
 
@@ -53,3 +53,6 @@ r.instal_square()
 
 b.get_square()
 r.get_square()
+
+b.info()
+r.info()
