@@ -8,8 +8,6 @@
 
 import re
 
-num = input("Введите двухзначное число: ")
-numbers = "-25, -15, -10, -5, 0, 1, 5, 8, 12, 25, 31, 43, 56, 62, 74, 87, 91, 100"
-for i in numbers:
-    if i < num:
-        print(re.findall(r"\d\d", numbers))
+# num = input("Введите двухзначное число: ")
+numbers = "-25,-15,-10,-5,0,1,5,8,12,25,31,43,56,62,74,87,91,100"
+print(re.findall(r"[-]\d\d", numbers))
