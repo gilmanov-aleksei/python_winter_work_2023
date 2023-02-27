@@ -9,7 +9,7 @@
 import re
 
 # num = input("Введите двухзначное число: ")
-numbers = "-25,-15,-10,-5,0,1,5,8,12,25,31,43,56,62,74,87,91,100"
+numbers = "-25, -15, -10, -5, 0, 1, 5, 8, 12, 25, 31, 43, 56, 62, 74, 87, 91, 100, 1000"
 # print(re.findall(r"[-+]\d*", numbers))
-print(re.findall('[^-][0-9][0-9]?', numbers))
+print(re.findall('[^-]+?\d.', numbers))
 # print(re.findall('\(([^)]+\(?)*[^(]+\)', numbers))
