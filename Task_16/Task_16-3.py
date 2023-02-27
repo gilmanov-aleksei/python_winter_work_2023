@@ -6,9 +6,9 @@
 
 def fun1(text):
     def fun2(t):
-        return t.capitalize()
+        return t.title()
 
     return fun2(text)
 
 
-print(fun1('hEllO, wORLd!'))
+print(fun1('hEllO, wORLd! пРиВеТ, мИр!'))
