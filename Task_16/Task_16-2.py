@@ -8,20 +8,22 @@
 
 import re
 
-# num = input("трехзначное число: ")
-s = "-25, -15, -10, -5, 0, 1, 5, 8, 12, 25, 31, 43, 56, 62, 74, 87, 91, 100, 234, 345, 555, 765, 1000"
-num = "345"
+# num = input("Введите число: ")
+s = "-25, -15, -10, -5, 0, 1, 5, 8, 12, 25, 31, 43, 56, 62, 74, 87, 91, 100, 234, 345, 555, 765, 1234, 2345, 3456, 5555"
+num = "4567"
+z = "[0-9]"
+y = "[1-9]"
+a = f"\\b{z}\\b"
+b = f"\\b{y}{z}\\b"
+c = f"\\b{y}{z}{z}\\b"
 if len(num) == 1:
-    st = re.compile(fr"\b[0-{num}]\b")
+    st = re.compile(fr"\b[0-{num[0]}]\b")
 elif len(num) == 2:
-    n1 = num[0]
-    n2 = num[1]
-    st = re.compile(fr"\b[0-9]\b|\b[1-{n1}][0-{n2}]\b")
+    st = re.compile(fr"{a}|\b[1-{num[0]}][0-{num[1]}]\b")
 elif len(num) == 3:
-    n1 = num[0]
-    n2 = num[1]
-    n3 = num[2]
-    st = re.compile(fr"\b[0-9]\b|\b[1-9][0-9]\b|\b[1-{n1}][0-{n2}][0-{n3}]\b")
+    st = re.compile(fr"{a}|{b}|\b[1-{num[0]}][0-{num[1]}][0-{num[2]}]\b")
+elif len(num) == 4:
+    st = re.compile(fr"{a}|{b}|{c}|\b[1-{num[0]}][0-{num[1]}][0-{num[2]}][0-{num[3]}]\b")
 else:
     st = '0'
 print(st)
