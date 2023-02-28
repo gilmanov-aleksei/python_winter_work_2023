@@ -16,7 +16,9 @@ class Shape:
     def info(self):  # Печатаем информацию об объекте и его площадь
         print(f'Цвет объекта: {self.colour}. Его площадь: {self.square} кв.мм')
 
-    def instsl_colour(self):  # Устанвливаем (меняем) цвет объекта
+    def set_color(self, newcolor):
+        self.color = newcolor
+    def instal_colour(self):  # Устанвливаем (меняем) цвет объекта
         if self.colour == 'Blue':
             self.colour = 'Red'
         elif self.colour == 'Red':
@@ -42,8 +44,8 @@ r = Shape('Red', 200)
 b.info()
 r.info()
 
-b.instsl_colour()
-r.instsl_colour()
+b.instal_colour()
+r.instal_colour()
 
 b.get_colour_print()
 r.get_colour_print()
