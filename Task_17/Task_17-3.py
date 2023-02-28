@@ -9,30 +9,28 @@
 # 4. Запросить площадь объекта
 
 class Shape:
-    def __init__(self, colour, square):
-        self.colour = colour
+    def __init__(self, color, square):
+        self.color = color
         self.square = square
 
     def info(self):  # Печатаем информацию об объекте и его площадь
-        print(f'Цвет объекта: {self.colour}. Его площадь: {self.square} кв.мм')
+        print(f'Цвет объекта: {self.color}. Его площадь: {self.square} кв.мм')
 
     def set_color(self, newcolor):
+        if newcolor == 'Blue':
+            newcolor = 'Red'
+        elif newcolor == 'Red':
+            newcolor = 'Green'
+        else:
+            newcolor = 'Blue'
         self.color = newcolor
 
-    def instal_colour(self):  # Устанвливаем (меняем) цвет объекта
-        if self.colour == 'Blue':
-            self.colour = 'Red'
-        elif self.colour == 'Red':
-            self.colour = 'Green'
-        else:
-            self.colour = 'Blue'
-
-    def get_colour_print(self):  # Запрашиваем цвет объекта и выводим на печать
-        obj_colour = self.colour
+    def get_color_print(self):  # Запрашиваем цвет объекта и выводим на печать
+        obj_colour = self.color
         print(obj_colour)
 
-    def instal_square(self):  # Устанавливаем новое знавение площади
-        self.square += 150
+    def set_square(self, newsquare):
+        self.square += newsquare
 
     def get_square(self):  # Запрашиваем площадь объекта и выводим на печать
         obj_square = self.square
@@ -45,14 +43,14 @@ r = Shape('Red', 200)
 b.info()
 r.info()
 
-b.instal_colour()
-r.instal_colour()
+b.set_color('Red')
+r.set_color('Green')
 
-b.get_colour_print()
-r.get_colour_print()
+b.get_color_print()
+r.get_color_print()
 
-b.instal_square()
-r.instal_square()
+b.set_square(100)
+r.set_square(150)
 
 b.get_square()
 r.get_square()
