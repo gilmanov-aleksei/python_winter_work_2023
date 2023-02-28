@@ -15,8 +15,8 @@ def fu1(*args, **kwargs):
             if type(kwargs[x]) == str:
                 res.append(kwargs[x])
         return [y.upper() for y in res]
+
     return fu2(*args, **kwargs)
 
 
 print(fu1(1, 3, 6, 8, 'qwerty', a=3, b='def', v='test', z='plkm'))
-
