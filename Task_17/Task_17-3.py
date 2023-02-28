@@ -18,6 +18,7 @@ class Shape:
 
     def set_color(self, newcolor):
         self.color = newcolor
+
     def instal_colour(self):  # Устанвливаем (меняем) цвет объекта
         if self.colour == 'Blue':
             self.colour = 'Red'
