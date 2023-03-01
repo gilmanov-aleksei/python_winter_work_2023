@@ -20,18 +20,29 @@ class Tree(object):
         self.kind = kind
         self.age = 0
         self.height = height
+
     def grow(self):
         self.age += 1
+
+
 class FruitTree(Tree):
-    def __init__(self, kind, height):
-        super().__init__(kind,height)
+    col = ''
+
+    def __init__(self, kind='any', height=20):
+        super().__init__(kind, height)
+
     def give_fruits(self):
-        print('Collected 20kg of {}s'.format(self.kind))
+        print(f'Collected 20 kg of {self.kind}')
+
+
 f_tree = FruitTree('apple', 0.7)
 f_tree.col = 'Red'
 print(f_tree.kind, f_tree.age, f_tree.height, f_tree.col)
 s_tree = Tree('oak', 1)
 s_tree.grow()
 print(s_tree.kind, s_tree.age, s_tree.height)
-# f_tree.give_fruits()
-# f_tree.grow()
+orange = FruitTree('orange', 100)
+print(orange.kind, orange.height, orange.age)
+f_tree.give_fruits()
+orange.give_fruits()
+f_tree.grow()
