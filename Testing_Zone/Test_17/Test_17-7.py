@@ -14,7 +14,7 @@
 # z = Shape(20, 'Blue')
 # print(z)
 #
-#! /usr/bin/python
+
 
 class Student:
     def __init__(self, name):
