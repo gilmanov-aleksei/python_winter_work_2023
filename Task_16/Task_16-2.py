@@ -11,7 +11,7 @@ import re
 # num = input("Введите число: ")
 s = "-25, -15, -10, -5, 0, 1, 5, 8, 12, 25, 31, 43, 56, 62, 74, 87, 91, 100, 234, 345, 555, 765, 1234, 2345, 3456, 5555"
 num = "45"
-print(re.findall(r"\b[0-9]|[1-3]?[0-9]|45\b", s))
+# print(re.findall(r"\b[0-9]|[1-4]?[0-5]\b", s))
 # print(int(re.findall("[0-9][0-9]", s)))
 
 # z = "[0-9]"
@@ -23,18 +23,18 @@ print(re.findall(r"\b[0-9]|[1-3]?[0-9]|45\b", s))
 #     compil = compil + '...'?
 #     {a} | {b} | {c} |\b[1 - {num[0]}][0 - {num[1]}][0 - {num[2]}][0 - {num[3]}]\b
 
-# a = f"\\b[0-9]\\b"
-# b = f"\\b[1-9][0-9]\\b"
-# c = f"\\b[1-9][0-9][0-9]\\b"
-# if len(num) == 1:
-#     st = re.compile(fr"\b[0-{num[0]}]\b")
-# elif len(num) == 2:
-#     st = re.compile(fr"{a}|\b[1-{num[0]}][0-{num[1]}]\b")
-# elif len(num) == 3:
-#     st = re.compile(fr"{a}|{b}|\b[1-{num[0]}][0-{num[1]}][0-{num[2]}]\b")
-# elif len(num) == 4:
-#     st = re.compile(fr"{a}|{b}|{c}|\b[1-{num[0]}][0-{num[1]}][0-{num[2]}][0-{num[3]}]\b")
-# else:
-#     st = '0'
-# print(st)
-
+a = f"\\b[0-9]\\b"
+b = f"\\b[1-9][0-9]\\b"
+c = f"\\b[1-9][0-9][0-9]\\b"
+if len(num) == 1:
+    st = re.compile(fr"\b[0-{num[0]}]\b")
+elif len(num) == 2:
+    st = re.compile(fr"{a}|\b[1-{num[0]}][0-{num[1]}]\b")
+elif len(num) == 3:
+    st = re.compile(fr"{a}|{b}|\b[1-{num[0]}][0-{num[1]}][0-{num[2]}]\b")
+elif len(num) == 4:
+    st = re.compile(fr"{a}|{b}|{c}|\b[1-{num[0]}][0-{num[1]}][0-{num[2]}][0-{num[3]}]\b")
+else:
+    st = '0'
+print(st)
+print(re.findall(st, s))
