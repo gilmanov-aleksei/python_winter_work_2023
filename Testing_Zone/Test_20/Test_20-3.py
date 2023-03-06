@@ -21,19 +21,18 @@
 # df['new'] = df['Dept'] + df['Subj']
 # print(df)
 
-import pandas as pd
-
-dct = {'Год': [2001, 2002, 2003, 2004, 2005],
-       'Товар': ['A', 'B', 'C', 'D', 'E'],
-       'шт': [10, 20, 30, 40, 50],
-       'Цена': [100, 200, 300, 400, 500]}
-df = pd.DataFrame(dct)
-print(df)
-df['Итого'] = df['Цена'] * df['шт']
-print(df)
-df.to_excel('test.xlsx')
-df1 = pd.read_excel('test.xlsx')
-# df1.columns = ['#', 'Год', 'Товар', 'шт', 'Цена']
+# import pandas as pd
+#
+# dct = {'Год': [2001, 2002, 2003, 2004, 2005],
+#        'Товар': ['A', 'B', 'C', 'D', 'E'],
+#        'шт': [10, 20, 30, 40, 50],
+#        'Цена': [100, 200, 300, 400, 500]}
+# df = pd.DataFrame(dct)
+# df['Итого'] = df['Цена'] * df['шт']
+# print(df)
+# df.to_excel('test.xlsx')
+# df1 = pd.read_excel('test.xlsx')
+# df1.columns = ['Год', 'Товар', 'шт', 'Цена']
 # df1 = df1.set_index('Год')
 # df1['Товар', 'Цена']
 # df1.loc[2002]
@@ -42,4 +41,12 @@ df1 = pd.read_excel('test.xlsx')
 # cond = df1['Цена'] > 25
 # df1[cond]
 # # df1[df1['Цена'] == 25]
-print(df1[df1['Цена'] == 50])
+# print(df1[df1['Цена'] == 50])
+
+import pandas as pd
+df1 = pd.read_excel('test.xlsx')
+for i in df1.index:
+       print(i, end=':')
+       for j in df1.columns:
+              print(i, j, df1.loc[i, j], end=' ')
+       print()
