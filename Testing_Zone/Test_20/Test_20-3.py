@@ -1,6 +1,6 @@
 #! /usr/bin/python
 
-import pandas as pd
+# import pandas as pd
 
 # df1 = pd.DataFrame([[1, 'Bob', 'Builder'],
 #                     [2, 'Sally', 'Baker'],
@@ -33,8 +33,13 @@ df['Итого'] = df['Цена'] * df['шт']
 print(df)
 df.to_excel('test.xlsx')
 df1 = pd.read_excel('test.xlsx')
-df1.columns = ['#', 'Год', 'Товар', 'шт', 'Цена']
-df1 = df1.set_index('Год')
-df1[['Товар', 'Цена']]
-df1.iloc[1:3]
-
+# df1.columns = ['#', 'Год', 'Товар', 'шт', 'Цена']
+# df1 = df1.set_index('Год')
+# df1['Товар', 'Цена']
+# df1.loc[2002]
+# df1.loc[2003, 'шт'] = 123
+# print(df1)
+# cond = df1['Цена'] > 25
+# df1[cond]
+# # df1[df1['Цена'] == 25]
+print(df1[df1['Цена'] == 50])
