@@ -29,18 +29,13 @@ class Fibonacci:
         self.prev = res
         return res
 
-# fibonacci = Fibonacci()
-# print(next(fibonacci))  # 1
-# print(next(fibonacci))  # 1
-# print(next(fibonacci))  # 2
-# print(next(fibonacci))  # 3
-# print(next(fibonacci))
-# print(next(fibonacci))
 
 fibonacci = Fibonacci()
-for i in range(10):
-    print(next(fibonacci), end=' ')
+print(next(fibonacci))  # 1
+print(next(fibonacci))  # 1
+print(next(fibonacci))  # 2
+print(next(fibonacci))  # 3
 
-
-
-
+# fibonacci = Fibonacci()
+# for i in range(10):
+#     print(next(fibonacci), end=' ')
