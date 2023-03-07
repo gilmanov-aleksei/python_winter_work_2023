@@ -30,7 +30,7 @@ class Teacher:
 
     def view_lessons(self):
         for lesson in self.lessons:
-            print(f"Урок1 {lesson.lesson_number}")
+            print(f"Урок {lesson.lesson_number}")
 
     def view_lesson(self, lesson_number):
         for lesson in self.lessons:
