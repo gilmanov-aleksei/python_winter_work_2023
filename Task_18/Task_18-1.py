@@ -98,8 +98,8 @@ pupil = Pupil("Алексей")
 
 lesson1 = Lesson(1)
 lesson2 = Lesson(2)
-task1 = Task(1, "Write a program to calculate the sum of two numbers")
-task2 = Task(2, "Write a program to calculate the product of two numbers")
+task1 = Task(1, "Написать программу для вычисления суммы двух чисел")
+task2 = Task(2, "Напишите программу для вычисления произведения двух чисел")
 
 lesson1.add_task(task1)
 lesson1.add_task(task2)
@@ -124,7 +124,7 @@ while True:
                 lesson.view_tasks()
         elif teacher_input == 3:
             lesson_number = int(
-                input("Введите ноер урока чтобы добавить: ")
+                input("Введите номер урока чтобы добавить: ")
             )
             lesson = Lesson(lesson_number)
             teacher.add_lesson(lesson)
