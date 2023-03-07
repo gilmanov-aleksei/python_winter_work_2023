@@ -16,7 +16,6 @@
 # Протестируйте систему.
 
 
-
 class Teacher:
     def __init__(self, name, subject):
         self.name = name
@@ -94,7 +93,7 @@ class Task:
         self.status = "not solved"
 
 
-teacher = Teacher("Михаил", "Python Developer")
+teacher = Teacher("Михаил", "Разработчик на Питоне")
 pupil = Pupil("Алексей")
 
 lesson1 = Lesson(1)
