@@ -30,7 +30,7 @@ class Teacher:
 
     def view_lessons(self):
         for lesson in self.lessons:
-            print(f"Lesson {lesson.lesson_number}")
+            print(f"Урок1 {lesson.lesson_number}")
 
     def view_lesson(self, lesson_number):
         for lesson in self.lessons:
@@ -90,7 +90,7 @@ class Task:
     def __init__(self, number, description):
         self.number = number
         self.description = description
-        self.status = "not solved"
+        self.status = "Не выполнено"
 
 
 teacher = Teacher("Михаил", "Разработчик на Питоне")
