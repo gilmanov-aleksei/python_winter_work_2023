@@ -9,15 +9,14 @@
 #     n = input("Введите 3 и более числа через пробел и нажите Enter, 0 - выход: ").split()
 #     if '0' in n:
 #         break
-#     l = len(n)
-#     if l < 3:
+#     if len(n) < 3:
 #         print("Введено меньше 3 чисел, повторите ввод.")
 #     else:
 #         n = list(map(int, n))
 #         s = []
-#         for i in range(l):
-#             for j in range(i + 1, l):
-#                 for k in range(j + 1, l):
+#         for i in range(len(n)):
+#             for j in range(i + 1, len(n)):
+#                 for k in range(j + 1, len(n)):
 #                     s.append(n[i] + n[j] + n[k])
 #         print("Суммы трех чисел из списка:", s)
 
