@@ -29,6 +29,7 @@ for i in range(len(n)):
         for k in range(j + 1, len(n)):
             s.append(n[i] + n[j] + n[k])
 # sum = set(s)
+# print(*sum)
 print(*n)
 print(*s)
-# print(*sum)
+
