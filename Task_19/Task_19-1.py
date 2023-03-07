@@ -18,7 +18,9 @@
 #             for j in range(i + 1, len(n)):
 #                 for k in range(j + 1, len(n)):
 #                     s.append(n[i] + n[j] + n[k])
-#         print("Суммы трех чисел из списка:", s)
+#         sum = set(s)
+#         # print(f'Суммы трех чисел из списка: \n', *s)
+#         print(f'Суммы трех чисел из списка: \n', *sum)
 
 n = [50, 100, 200, 500, 1000, 5000]
 s = []
@@ -26,5 +28,7 @@ for i in range(len(n)):
     for j in range(i + 1, len(n)):
         for k in range(j + 1, len(n)):
             s.append(n[i] + n[j] + n[k])
+# sum = set(s)
 print(*n)
 print(*s)
+# print(*sum)
