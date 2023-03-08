@@ -15,13 +15,13 @@ class InfSeq:  # Создаём класс бесконечный цикл
 
     def __next__(self):
         self.index += 1  # Увеличиваем индекс на 1
-        if self.index >= 53:  # Если индекс достиг предела,
-            self.index = 1  # то сбрасываем его на 1
+        if self.index >= 53:  # Если индекс вышел за пределы (26 х 2),
+            self.index = 1  # то сбрасываем индекс на 1
             return 'A'  # и возвращаем букву А
         if self.index % 2 == 0:  # проверка на чётность
             return self.index // 2  # если четное, печатаем цифру
         else:
-            return self.alphabet[self.index // 2]  # если не четное, то букву
+            return self.alphabet[self.index // 2]  # если нечетное, то букву
 
 
 iseq = InfSeq()
