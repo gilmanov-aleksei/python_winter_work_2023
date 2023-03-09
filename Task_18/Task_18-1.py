@@ -205,7 +205,7 @@ while True:
         excel_file.load_file()
     elif user_input == 4:
         print("Сохранить в файл")
-        excel_file = ExcelFile()
+        excel_file = ExcelFile(f"{input('Name File: ')}.xlsx")
         excel_file.save_file()
     elif user_input == 0:
         break
