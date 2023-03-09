@@ -92,6 +92,7 @@ class ExcelFile:
     def load_file(self):
         if not os.path.isfile(self.file_path):
             print(f"File {self.file_path} does not exist")
+            excel_file.save_file(self.file_path)
             return
 
         try:
@@ -200,7 +201,11 @@ while True:
         #         Pupil.delete_task(task)
     elif user_input == 3:
         print("Загрузить из файла")
+        excel_file = ExcelFile(f"{input('Name File: ')}.xlsx")
+        excel_file.load_file()
     elif user_input == 4:
         print("Сохранить в файл")
+        excel_file = ExcelFile()
+        excel_file.save_file()
     elif user_input == 0:
         break
