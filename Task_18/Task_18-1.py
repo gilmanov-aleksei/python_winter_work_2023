@@ -162,13 +162,12 @@ while True:
     user_input = int(input("Введите число: 1 - Учитель, 2 - Ученик, "
                            "3 - Загрузить из файла, 4 - Сохранить в файл, 0 - Выход: "))
     if user_input == 1:
-        teacher_input = int(input("Введите число: 1 - посмотреть уроки, 2 - посмотреть урок по номеру, "
-                                  "3 - добавить урок, 4 - удалить урок, 0 - вернуться в меню: "))
+        teacher.view_lessons()
+        teacher_input = int(input("Введите число: 1 - посмотреть урок по номеру, "
+                                  "2 - добавить урок, 3 - удалить урок, 0 - вернуться в меню: "))
         if teacher_input == 1:
-            teacher.view_lessons()
-        elif teacher_input == 2:
             lesson_number = int(input("Введите номер урока для просмотра: "))
-            lesson = Teacher.view_lesson(lesson_number)
+            lesson = teacher.view_lesson(lesson_number)
             if lesson:
                 lesson.view_tasks()
         elif teacher_input == 3:
