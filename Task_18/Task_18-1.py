@@ -99,10 +99,8 @@ while True:
                            "3 - Загрузить из файла, 4 - Сохранить в файл, 0 - Выход: "))
     if user_input == 1:
         Teacher.view_lessons()
-        teacher_input = int(
-            input("Введите число: 1 - посмотреть уроки, 2 - посмотреть урок по номеру, "
-                  "3 - добавить урок, 4 - удалить урок, 0 - вернуться в меню: ")
-        )
+        teacher_input = int(input("Введите число: 1 - посмотреть уроки, 2 - посмотреть урок по номеру, "
+                  "3 - добавить урок, 4 - удалить урок, 0 - вернуться в меню: "))
         if teacher_input == 1:
             Teacher.view_lessons()
         elif teacher_input == 2:
@@ -126,10 +124,8 @@ while True:
             if lesson:
                 Teacher.delete_lesson(lesson)
     elif user_input == 2:
-        pupil_input = int(
-            input("Введите число: 1 - для просмотра заданий, 2 - для просмотра задания по номеру, "
-                  "3 - добавить задание, 4 - удалить задание, 0 - вернуться в меню: ")
-        )
+        pupil_input = int(input("Введите число: 1 - для просмотра заданий, 2 - для просмотра задания по номеру, "
+                  "3 - добавить задание, 4 - удалить задание, 0 - вернуться в меню: "))
         if pupil_input == 1:
             Pupil.view_tasks()
         elif pupil_input == 2:
@@ -153,5 +149,9 @@ while True:
             task = Pupil.view_task(task_number)
             if task:
                 Pupil.delete_task(task)
+    elif user_input == 3:
+        print("Загрузить из файла")
+    elif user_input == 4:
+        print("Сохранить в файл")
     elif user_input == 0:
         break
