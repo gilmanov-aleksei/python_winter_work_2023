@@ -16,15 +16,15 @@
 # Протестируйте систему.
 
 
+import openpyxl
+
 class Teacher:
-    def __init__(self, name, subject):
+    def __init__(self, name):
         self.name = name
-        self.subject = subject
         self.lessons = []
 
     def add_lesson(self, lesson):
         self.lessons.append(lesson)
-
     def delete_lesson(self, lesson):
         self.lessons.remove(lesson)
 
@@ -38,73 +38,61 @@ class Teacher:
                 return lesson
         print("Урок не найден")
         return None
+    def check_pupil_task(self, pupil, lesson_num, task_num, status):
+        pupil.results[lesson_num][task_num] = status
+
+    def change_task_status(self, lesson_num, task_num, status):
+        for lesson in self.lessons:
+            if lesson.num == lesson_num:
+                lesson.tasks[task_num-1]['status'] = status
 
 
 class Pupil:
     def __init__(self, name):
         self.name = name
-        self.tasks = []
+        self.results = {}
 
-    def add_task(self, task):
-        self.tasks.append(task)
+    def solve_task(self, lesson_num, task_num):
+        self.results[lesson_num][task_num] = False
 
-    def delete_task(self, task):
-        self.tasks.remove(task)
-
-    def view_tasks(self):
-        for task in self.tasks:
-            print(f"Задание {task.number}: {task.status}")
-
-    def view_task(self, number):
-        for task in self.tasks:
-            if task.number == number:
-                return task
-        print("Задание не найдено")
-        return None
+    def change_task_status(self, lesson_num, task_num, status):
+        self.results[lesson_num][task_num] = status
 
 
 class Lesson:
-    def __init__(self, lesson_number):
-        self.lesson_number = lesson_number
+    def __init__(self, num):
+        self.num = num
         self.tasks = []
 
     def add_task(self, task):
-        self.tasks.append(task)
+        self.tasks.append({'num': len(self.tasks)+1, 'description': task, 'status': None})
 
-    def delete_task(self, task):
-        self.tasks.remove(task)
-
-    def view_tasks(self):
-        for task in self.tasks:
-            print(f"Задание {task.number}: {task.status}")
-
-    def view_task(self, number):
-        for task in self.tasks:
-            if task.number == number:
-                return task
-        print("Задание не найдено")
-        return None
+    def get_tasks_list(self):
+        return [task['description'] for task in self.tasks]
 
 
-class Task:
-    def __init__(self, number, description):
-        self.number = number
-        self.description = description
-        self.status = "Не выполнено"
+class ExcelFile:
+    def __init__(self, file_name):
+        self.file_name = file_name
+        self.workbook = openpyxl.Workbook()
+        self.sheet = self.workbook.active
+        self.data = {}
 
+    def load_data(self):
+        self.workbook = openpyxl.load_workbook(self.file_name)
+        self.sheet = self.workbook.active
 
-teacher = Teacher("Михаил", "Разработчик на Питоне")
-pupil = Pupil("Алексей")
+        for row in range(2, self.sheet.max_row+1):
+            pupil_name = self.sheet.cell(row=row, column=1).value
+            lesson_num = self.sheet.cell(row=1, column=row).value
+            tasks = {}
 
-lesson1 = Lesson(1)
-lesson2 = Lesson(2)
-task1 = Task(1, "Написать программу для вычисления суммы двух чисел")
-task2 = Task(2, "Напишите программу для вычисления произведения двух чисел")
-
-lesson1.add_task(task1)
-lesson1.add_task(task2)
-teacher.add_lesson(lesson1)
-teacher.add_lesson(lesson2)
+            for task in range(1, 4):
+                task_status = self.sheet.cell(row=row, column=task+1).value
+                if task_status is None:
+                    tasks[task] = None
+                else:
+                    tasks[task] = bool(task_status
 
 while True:
     user_input = int(input("Введите число: 1 - Учитель, 2 - Ученик, 0 - Выход: "))
