@@ -167,22 +167,16 @@ while True:
         if teacher_input == 1:
             teacher.view_lessons()
         elif teacher_input == 2:
-            lesson_number = int(
-                input("Введите номер урока для просмотра: ")
-            )
+            lesson_number = int(input("Введите номер урока для просмотра: "))
             lesson = Teacher.view_lesson(lesson_number)
             if lesson:
                 lesson.view_tasks()
         elif teacher_input == 3:
-            lesson_number = int(
-                input("Введите номер урока чтобы добавить: ")
-            )
+            lesson_number = int(input("Введите номер урока чтобы добавить: "))
             lesson = Lesson(lesson_number)
             teacher.add_lesson(lesson)
         elif teacher_input == 4:
-            lesson_number = int(
-                input("Введите номер урока для удаления: ")
-            )
+            lesson_number = int(input("Введите номер урока для удаления: "))
             lesson = Teacher.view_lesson(lesson_number)
             if lesson:
                 teacher.delete_lesson(lesson)
