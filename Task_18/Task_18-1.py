@@ -16,6 +16,7 @@
 # Протестируйте систему.
 
 
+import os.path
 import openpyxl
 
 
@@ -83,27 +84,50 @@ class Task:
 
 
 class ExcelFile:
-    def __init__(self, file_name):
-        self.file_name = file_name
-        self.workbook = openpyxl.Workbook()
-        self.sheet = self.workbook.active
-        self.data = {}
+    def __init__(self, file_path):
+        self.file_path = file_path
+        self.workbook = None
+        self.sheet_data = {}
 
-    def load_data(self):
-        self.workbook = openpyxl.load_workbook(self.file_name)
-        self.sheet = self.workbook.active
+    def load_file(self):
+        if not os.path.isfile(self.file_path):
+            print(f"File {self.file_path} does not exist")
+            return
 
-        for row in range(2, self.sheet.max_row + 1):
-            pupil_name = self.sheet.cell(row=row, column=1).value
-            lesson_num = self.sheet.cell(row=1, column=row).value
-            tasks = {}
+        try:
+            self.workbook = openpyxl.load_workbook(self.file_path)
+        except:
+            print(f"File {self.file_path} is already opened in another program")
+            return
 
-            for task in range(1, 4):
-                task_status = self.sheet.cell(row=row, column=task + 1).value
-                if task_status is None:
-                    tasks[task] = None
-                else:
-                    tasks[task] = bool(task_status)
+        for sheet_name in self.workbook.sheetnames:
+            sheet = self.workbook[sheet_name]
+
+            row_dict = {}
+            for row in sheet.iter_rows(min_row=1, max_row=sheet.max_row,
+                                       min_col=1, max_col=sheet.max_column):
+                cell_dict = {}
+                for cell in row:
+                    cell_dict[cell.column_letter] = cell.value
+                row_dict[row[0].row] = cell_dict
+
+            self.sheet_data[sheet_name] = row_dict
+
+    def save_file(self, file_path=None):
+        if file_path is None:
+            file_path = self.file_path
+
+        if self.workbook is None:
+            self.workbook = openpyxl.Workbook()
+
+        for sheet_name, row_dict in self.sheet_data.items():
+            sheet = self.workbook.create_sheet(sheet_name)
+
+            for row_number, cell_dict in row_dict.items():
+                for column_letter, value in cell_dict.items():
+                    sheet[f"{column_letter}{row_number}"] = value
+
+        self.workbook.save(file_path)
 
 
 teacher = Teacher("Михаил", "Разработчик на Питоне")
