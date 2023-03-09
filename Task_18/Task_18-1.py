@@ -43,37 +43,51 @@ class Teacher:
         print("Урок не найден")
         return None
 
-    def check_pupil_task(self, pupil, lesson_num, task_num, status):
-        pupil.results[lesson_num][task_num] = status
-
-    def change_task_status(self, lesson_num, task_num, status):
-        for lesson in self.lessons:
-            if lesson.num == lesson_num:
-                lesson.tasks[task_num - 1]['status'] = status
-
 
 class Pupil:
     def __init__(self, name):
         self.name = name
-        self.results = {}
+        self.tasks = []
 
-    def solve_task(self, lesson_num, task_num):
-        self.results[lesson_num][task_num] = False
+    def add_task(self, task):
+        self.tasks.append(task)
 
-    def change_task_status(self, lesson_num, task_num, status):
-        self.results[lesson_num][task_num] = status
+    def delete_task(self, task):
+        self.tasks.remove(task)
+
+    def view_tasks(self):
+        for task in self.tasks:
+            print(f"Задание {task.number}: {task.status}")
+
+    def view_task(self, number):
+        for task in self.tasks:
+            if task.number == number:
+                return task
+        print("Задание не найдено")
+        return None
 
 
 class Lesson:
     def __init__(self, lesson_number):
-        self.num = lesson_number
+        self.lesson_number = lesson_number
         self.tasks = []
 
     def add_task(self, task):
-        self.tasks.append({'num': len(self.tasks) + 1, 'description': task, 'status': None})
+        self.tasks.append(task)
 
-    def get_tasks_list(self):
-        return [task['description'] for task in self.tasks]
+    def delete_task(self, task):
+        self.tasks.remove(task)
+
+    def view_tasks(self):
+        for task in self.tasks:
+            print(f"Задание {task.number}: {task.status}")
+
+    def view_task(self, number):
+        for task in self.tasks:
+            if task.number == number:
+                return task
+        print("Задание не найдено")
+        return None
 
 
 class Task:
