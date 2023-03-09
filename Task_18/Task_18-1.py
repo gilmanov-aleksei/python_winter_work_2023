@@ -95,7 +95,8 @@ class ExcelFile:
                     tasks[task] = bool(task_status)
 
 while True:
-    user_input = int(input("Введите число: 1 - Учитель, 2 - Ученик, 0 - Выход: "))
+    user_input = int(input("Введите число: 1 - Учитель, 2 - Ученик, "
+                           "3 - Загрузить из файла, 4 - Сохранить в файл, 0 - Выход: "))
     if user_input == 1:
         Teacher.view_lessons()
         teacher_input = int(
