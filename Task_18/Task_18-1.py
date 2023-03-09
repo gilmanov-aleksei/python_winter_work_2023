@@ -78,21 +78,21 @@ class ExcelFile:
         self.sheet = self.workbook.active
         self.data = {}
 
-    def load_data(self):
-        self.workbook = openpyxl.load_workbook(self.file_name)
-        self.sheet = self.workbook.active
-
-        for row in range(2, self.sheet.max_row+1):
-            pupil_name = self.sheet.cell(row=row, column=1).value
-            lesson_num = self.sheet.cell(row=1, column=row).value
-            tasks = {}
-
-            for task in range(1, 4):
-                task_status = self.sheet.cell(row=row, column=task+1).value
-                if task_status is None:
-                    tasks[task] = None
-                else:
-                    tasks[task] = bool(task_status)
+    # def load_data(self):
+    #     self.workbook = openpyxl.load_workbook(self.file_name)
+    #     self.sheet = self.workbook.active
+    #
+    #     for row in range(2, self.sheet.max_row+1):
+    #         pupil_name = self.sheet.cell(row=row, column=1).value
+    #         lesson_num = self.sheet.cell(row=1, column=row).value
+    #         tasks = {}
+    #
+    #         for task in range(1, 4):
+    #             task_status = self.sheet.cell(row=row, column=task+1).value
+    #             if task_status is None:
+    #                 tasks[task] = None
+    #             else:
+    #                 tasks[task] = bool(task_status)
 
 while True:
     user_input = int(input("Введите число: 1 - Учитель, 2 - Ученик, "
