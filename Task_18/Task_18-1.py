@@ -20,8 +20,9 @@ import openpyxl
 
 
 class Teacher:
-    def __init__(self, name):
+    def __init__(self, name, subject):
         self.name = name
+        self.subject = subject
         self.lessons = []
 
     def add_lesson(self, lesson):
@@ -63,8 +64,8 @@ class Pupil:
 
 
 class Lesson:
-    def __init__(self, num):
-        self.num = num
+    def __init__(self, lesson_number):
+        self.num = lesson_number
         self.tasks = []
 
     def add_task(self, task):
@@ -125,7 +126,7 @@ while True:
         teacher_input = int(input("Введите число: 1 - посмотреть уроки, 2 - посмотреть урок по номеру, "
                                   "3 - добавить урок, 4 - удалить урок, 0 - вернуться в меню: "))
         if teacher_input == 1:
-            Teacher.view_lessons()
+            teacher.view_lessons()
         elif teacher_input == 2:
             lesson_number = int(
                 input("Введите номер урока для просмотра: ")
@@ -138,14 +139,14 @@ while True:
                 input("Введите номер урока чтобы добавить: ")
             )
             lesson = Lesson(lesson_number)
-            Teacher.add_lesson(lesson)
+            teacher.add_lesson(lesson)
         elif teacher_input == 4:
             lesson_number = int(
                 input("Введите номер урока для удаления: ")
             )
             lesson = Teacher.view_lesson(lesson_number)
             if lesson:
-                Teacher.delete_lesson(lesson)
+                teacher.delete_lesson(lesson)
     elif user_input == 2:
         print("Ученик")
         # pupil_input = int(input("Введите число: 1 - для просмотра заданий, 2 - для просмотра задания по номеру, "
