@@ -97,18 +97,18 @@ class ExcelFile:
 while True:
     user_input = int(input("Введите число: 1 - Учитель, 2 - Ученик, 0 - Выход: "))
     if user_input == 1:
-        teacher.view_lessons()
+        Teacher.view_lessons()
         teacher_input = int(
             input("Введите число: 1 - посмотреть уроки, 2 - посмотреть урок по номеру, "
                   "3 - добавить урок, 4 - удалить урок, 0 - вернуться в меню: ")
         )
         if teacher_input == 1:
-            teacher.view_lessons()
+            Teacher.view_lessons()
         elif teacher_input == 2:
             lesson_number = int(
                 input("Введите номер урока для просмотра: ")
             )
-            lesson = teacher.view_lesson(lesson_number)
+            lesson = Teacher.view_lesson(lesson_number)
             if lesson:
                 lesson.view_tasks()
         elif teacher_input == 3:
@@ -116,26 +116,26 @@ while True:
                 input("Введите номер урока чтобы добавить: ")
             )
             lesson = Lesson(lesson_number)
-            teacher.add_lesson(lesson)
+            Teacher.add_lesson(lesson)
         elif teacher_input == 4:
             lesson_number = int(
                 input("Введите номер урока для удаления: ")
             )
-            lesson = teacher.view_lesson(lesson_number)
+            lesson = Teacher.view_lesson(lesson_number)
             if lesson:
-                teacher.delete_lesson(lesson)
+                Teacher.delete_lesson(lesson)
     elif user_input == 2:
         pupil_input = int(
             input("Введите число: 1 - для просмотра заданий, 2 - для просмотра задания по номеру, "
                   "3 - добавить задание, 4 - удалить задание, 0 - вернуться в меню: ")
         )
         if pupil_input == 1:
-            pupil.view_tasks()
+            Pupil.view_tasks()
         elif pupil_input == 2:
             task_number = int(
                 input("Введите номер задания для просмотра: ")
             )
-            task = pupil.view_task(task_number)
+            task = Pupil.view_task(task_number)
             if task:
                 print(f"Задание {task.number}: {task.description}, {task.status}")
         elif pupil_input == 3:
@@ -144,13 +144,13 @@ while True:
             )
             task_description = input("Введите номер задания для просмотра: ")
             task = Task(task_number, task_description)
-            pupil.add_task(task)
+            Pupil.add_task(task)
         elif pupil_input == 4:
             task_number = int(
                 input("Введите номер задания для удаления: ")
             )
-            task = pupil.view_task(task_number)
+            task = Pupil.view_task(task_number)
             if task:
-                pupil.delete_task(task)
+                Pupil.delete_task(task)
     elif user_input == 0:
         break
