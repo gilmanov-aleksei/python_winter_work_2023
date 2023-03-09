@@ -18,6 +18,7 @@
 
 import openpyxl
 
+
 class Teacher:
     def __init__(self, name):
         self.name = name
@@ -25,6 +26,7 @@ class Teacher:
 
     def add_lesson(self, lesson):
         self.lessons.append(lesson)
+
     def delete_lesson(self, lesson):
         self.lessons.remove(lesson)
 
@@ -38,13 +40,14 @@ class Teacher:
                 return lesson
         print("Урок не найден")
         return None
+
     def check_pupil_task(self, pupil, lesson_num, task_num, status):
         pupil.results[lesson_num][task_num] = status
 
     def change_task_status(self, lesson_num, task_num, status):
         for lesson in self.lessons:
             if lesson.num == lesson_num:
-                lesson.tasks[task_num-1]['status'] = status
+                lesson.tasks[task_num - 1]['status'] = status
 
 
 class Pupil:
@@ -65,10 +68,17 @@ class Lesson:
         self.tasks = []
 
     def add_task(self, task):
-        self.tasks.append({'num': len(self.tasks)+1, 'description': task, 'status': None})
+        self.tasks.append({'num': len(self.tasks) + 1, 'description': task, 'status': None})
 
     def get_tasks_list(self):
         return [task['description'] for task in self.tasks]
+
+
+class Task:
+    def __init__(self, number, description):
+        self.number = number
+        self.description = description
+        self.status = "Не выполнено"
 
 
 class ExcelFile:
@@ -78,29 +88,42 @@ class ExcelFile:
         self.sheet = self.workbook.active
         self.data = {}
 
-    # def load_data(self):
-    #     self.workbook = openpyxl.load_workbook(self.file_name)
-    #     self.sheet = self.workbook.active
-    #
-    #     for row in range(2, self.sheet.max_row+1):
-    #         pupil_name = self.sheet.cell(row=row, column=1).value
-    #         lesson_num = self.sheet.cell(row=1, column=row).value
-    #         tasks = {}
-    #
-    #         for task in range(1, 4):
-    #             task_status = self.sheet.cell(row=row, column=task+1).value
-    #             if task_status is None:
-    #                 tasks[task] = None
-    #             else:
-    #                 tasks[task] = bool(task_status)
+    def load_data(self):
+        self.workbook = openpyxl.load_workbook(self.file_name)
+        self.sheet = self.workbook.active
+
+        for row in range(2, self.sheet.max_row + 1):
+            pupil_name = self.sheet.cell(row=row, column=1).value
+            lesson_num = self.sheet.cell(row=1, column=row).value
+            tasks = {}
+
+            for task in range(1, 4):
+                task_status = self.sheet.cell(row=row, column=task + 1).value
+                if task_status is None:
+                    tasks[task] = None
+                else:
+                    tasks[task] = bool(task_status)
+
+
+teacher = Teacher("Михаил", "Разработчик на Питоне")
+pupil = Pupil("Алексей")
+
+lesson1 = Lesson(1)
+lesson2 = Lesson(2)
+task1 = Task(1, "Написать программу для вычисления суммы двух чисел")
+task2 = Task(2, "Напишите программу для вычисления произведения двух чисел")
+
+lesson1.add_task(task1)
+lesson1.add_task(task2)
+teacher.add_lesson(lesson1)
+teacher.add_lesson(lesson2)
 
 while True:
     user_input = int(input("Введите число: 1 - Учитель, 2 - Ученик, "
                            "3 - Загрузить из файла, 4 - Сохранить в файл, 0 - Выход: "))
     if user_input == 1:
-        Teacher.view_lessons()
         teacher_input = int(input("Введите число: 1 - посмотреть уроки, 2 - посмотреть урок по номеру, "
-                  "3 - добавить урок, 4 - удалить урок, 0 - вернуться в меню: "))
+                                  "3 - добавить урок, 4 - удалить урок, 0 - вернуться в меню: "))
         if teacher_input == 1:
             Teacher.view_lessons()
         elif teacher_input == 2:
