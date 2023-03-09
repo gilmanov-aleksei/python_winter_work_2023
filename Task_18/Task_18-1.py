@@ -92,7 +92,7 @@ class ExcelFile:
                 if task_status is None:
                     tasks[task] = None
                 else:
-                    tasks[task] = bool(task_status
+                    tasks[task] = bool(task_status)
 
 while True:
     user_input = int(input("Введите число: 1 - Учитель, 2 - Ученик, 0 - Выход: "))
