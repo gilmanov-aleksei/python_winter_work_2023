@@ -16,7 +16,9 @@
 
 def find_min_route(matrix):
     m = len(matrix)
+    print(m)
     n = len(matrix[0])
+    print(n)
     # инициализируем матрицу длин минимальных путей
     path_lens = [[0] * n for i in range(m)]
     # заполняем первую строку и первый столбец
@@ -33,6 +35,6 @@ def find_min_route(matrix):
     return path_lens[m - 1][n - 1]
 
 
-matrix = [[10, 20, 30], [5, 1, 80], [90, 2, 70]]
+matrix = [[10, 20, 30], [5, 1, 80], [90, 2, 70], [5, 1, 20]]
 min_route = find_min_route(matrix)
 print(min_route)
