@@ -15,28 +15,33 @@
 # для каждой клетки из начала.
 
 
-def find_optimal_route(matrix):
+# Функция поиска оптимального маршрута в матрице
+def find_optimal_route_matrix(form):
     # Узнаём количество строк в двумерной матрице
-    m = len(matrix)
+    m = len(form)
     # Узнаём количество столбцов в первой строке двумерной матрицы
-    n = len(matrix[0])
+    n = len(form[0])
     dp = [[0] * n for _ in range(m)]
     # Найдем сумму чисел на пути вдоль первой колонки
     for i in range(m):
-        dp[i][0] = matrix[i][0] if i == 0 else dp[i - 1][0] + matrix[i][0]
+        dp[i][0] = form[i][0] if i == 0 else dp[i - 1][0] + form[i][0]
     # Найдем сумму чисел на пути вдоль первой строки
     for j in range(n):
-        dp[0][j] = matrix[0][j] if j == 0 else dp[0][j - 1] + matrix[0][j]
+        dp[0][j] = form[0][j] if j == 0 else dp[0][j - 1] + form[0][j]
     # Найдем оптимальный маршрут заполнив оставшиеся ячейки
     for i in range(1, m):
         for j in range(1, n):
-            dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + matrix[i][j]
+            dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + form[i][j]
     # Найдем путь с помощью бэктрекинга
-    pathn = []
     i, j = m - 1, n - 1
-    pathi = [(i, j)]
+    # Список для сбора значений по движению в матрице
+    path_num = []
+    # Список для сбора индексов по движению в матрице
+    path_index = [(i, j)]
+    # Цикл по матрице пока не выйдем за её пределы
     while i >= 0 and j >= 0:
-        pathn.append(matrix[i][j])
+        # Сохраняем в список значение из ячеки
+        path_num.append(form[i][j])
         if i == 0:
             j -= 1
         elif j == 0:
@@ -46,15 +51,32 @@ def find_optimal_route(matrix):
                 i -= 1
             else:
                 j -= 1
-        pathi.append((i, j))
-    pathi.pop()
-    pathn.reverse()
-    print("Маршрут по ячейкам: ", pathi[::-1])
-    print("Маршрут по значениям: ", pathn)
+        # Сохраняем в список индекс ячейки
+        path_index.append((i, j))
+    # Удаляем последнее значение из списка,
+    # так как оно находиться за пределами матрицы
+    path_index.pop()
+    # Переворачиваем список значений
+    path_num.reverse()
+    # Переворачиваем список индексов с выводом на экран
+    print("Маршрут по ячейкам: (колонка, строка)")
+    print(*path_index[::-1])
+    # Вывод значений на экран
+    print("Маршрут по значениям: ", *path_num)
     return dp[m - 1][n - 1]
 
 
-matrix = [[10, 20, 30], [5, 1, 80], [90, 2, 70]]
-print("Матрица: ", *matrix)
-result = find_optimal_route(matrix)
+matrix = [[10, 2, 20, 30], [5, 3, 1, 80], [15, 8, 10, 50], [90, 7, 2, 70]]
+# определяем максимальное количество символов в строке
+max_len = len(str(max([max(row) for row in matrix])))
+# выводим матрицу на экран
+print("Матрица")
+for row in matrix:
+    for item in row:
+        # форматируем каждый элемент, выравнивая по максимальному количеству символов
+        print(f"{item:>{max_len}}".format(item=item, max_len=max_len), end=" ")
+    # переходим на новую строку
+    print()
+
+result = find_optimal_route_matrix(matrix)
 print("Сумма наименьшего маршрута: ", result)
