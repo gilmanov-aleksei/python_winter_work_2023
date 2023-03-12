@@ -84,7 +84,7 @@ def backtracking(a, b, m1, m2):
 
 
 # Функция поиска оптимального маршрута в матрице
-def find_optimal_route_matrix(form, pr=0, pm=0):
+def find_optimal_route_matrix(form, pr=0):
     # Узнаём количество строк в матрице
     m = len(form)
     # Узнаём количество столбцов в первой строке матрицы
@@ -101,8 +101,6 @@ def find_optimal_route_matrix(form, pr=0, pm=0):
     for i in range(1, m):
         for j in range(1, n):
             dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + form[i][j]
-    if pm == 1:
-        print_matrix(form)
     if pr == 1:
         return backtracking(m, n, form, dp)
     else:
@@ -112,9 +110,9 @@ def find_optimal_route_matrix(form, pr=0, pm=0):
 matrix = [[10, 20, 30], [5, 1, 80], [90, 2, 70]]
 # Генерация матрицы
 # matrix = random_matrix()
-# 1 - выводить на экран матрицу, 0 - нет
-p_matrix = 1
+# Выводит на экран матрицу
+print_matrix(matrix)
 # 1 - выводить на экран маршрут движения по матрице, 0 - нет
-p_route = 1
-result = find_optimal_route_matrix(matrix, p_route, p_matrix)
+p_route = 0
+result = find_optimal_route_matrix(matrix, p_route)
 print("Сумма наименьшего маршрута: ", result)
