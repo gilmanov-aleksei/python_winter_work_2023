@@ -57,8 +57,7 @@ def find_optimal_route_matrix(form):
     path_num = []
     # Список для сбора индексов по движению в матрице
     # с записью максимального индекса
-    # path_index = [(i, j)]
-    path_index = [(m, n)]
+    path_index = [(i, j)]
     # Цикл в матрице, пока она не закончиться,
     # то есть не выйдем за её пределы
     while i >= 0 and j >= 0:
@@ -74,8 +73,7 @@ def find_optimal_route_matrix(form):
             else:
                 j -= 1
         # Сохраняем в список индекс ячейки
-        # path_index.append((i, j))
-        path_index.append((i + 1, j + 1))
+        path_index.append((i, j))
         # Удаляем последнее значение индекса из списка,
     # так как оно находиться за пределами матрицы
     path_index.pop()
