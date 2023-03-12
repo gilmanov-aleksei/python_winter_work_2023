@@ -36,6 +36,7 @@ def find_optimal_route_matrix(form):
     m = len(form)
     # Узнаём количество столбцов в первой строке матрицы
     n = len(form[0])
+    # Создаём матрицу со знаечниями 0
     dp = [[0] * n for _ in range(m)]
     # Найдем сумму чисел на пути вдоль первой колонки
     for i in range(m):
