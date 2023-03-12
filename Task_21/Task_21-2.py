@@ -25,8 +25,10 @@ def random_matrix():
     m = [[0 for x in range(cols)] for y in range(rows)]
     # Заполнение матрицы случайными числами от 1 до 99
     for row in range(rows):
+        r1 = randint(1, 9)
         for col in range(cols):
-            m[row][col] = randint(1, 99)
+            r2 = randint(10, 99)
+            m[row][col] = randint(r1, r2)
     return m
 
 
@@ -49,7 +51,7 @@ def find_optimal_route_matrix(form):
         for j in range(1, n):
             dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + form[i][j]
     # Найдем путь с помощью бэктрекинга
-    # (алгоритм из интернета, объединены запись индекса и значения ячейки)
+    # (алгоритм из интернета, алгоритмы запись индекса и значения ячейки)
     i, j = m - 1, n - 1
     # Список для сбора значений по движению в матрице
     path_num = []
@@ -85,9 +87,8 @@ def find_optimal_route_matrix(form):
     return dp[m - 1][n - 1]
 
 
-# matrix = [[10, 20, 30], [5, 1, 80], [90, 2, 70]]
-# matrix = [[10, 2, 20, 30], [5, 3, 1, 80], [15, 8, 10, 50], [90, 7, 2, 70]]
-matrix = random_matrix()
+matrix = [[10, 20, 30], [5, 1, 80], [90, 2, 70]]
+# matrix = random_matrix()
 # определяем максимальное количество символов в строке
 max_len = len(str(max([max(row) for row in matrix])))
 # выводим матрицу на экран
