@@ -113,6 +113,6 @@ matrix = [[10, 20, 30], [5, 1, 80], [90, 2, 70]]
 # Выводит на экран матрицу
 print_matrix(matrix)
 # 1 - выводить на экран маршрут движения по матрице, 0 - нет
-p_route = 0
+p_route = 1
 result = find_optimal_route_matrix(matrix, p_route)
 print("Сумма наименьшего маршрута: ", result)
