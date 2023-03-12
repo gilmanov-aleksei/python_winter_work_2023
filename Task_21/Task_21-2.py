@@ -15,6 +15,21 @@
 # для каждой клетки из начала.
 
 
+from random import randint
+
+
+def random_matrix():
+    rows = int(input("Введите количество строк в матрице: "))
+    cols = int(input("Введите количество столбцов в матрице: "))
+    # Создание двумерной матрицы
+    m = [[0 for x in range(cols)] for y in range(rows)]
+    # Заполнение матрицы случайными числами от 1 до 99
+    for row in range(rows):
+        for col in range(cols):
+            m[row][col] = randint(1, 99)
+    return m
+
+
 # Функция поиска оптимального маршрута в матрице
 def find_optimal_route_matrix(form):
     # Узнаём количество строк в матрице
@@ -56,7 +71,7 @@ def find_optimal_route_matrix(form):
                 i -= 1
             else:
                 j -= 1
-    # Удаляем последнее значение из списка,
+    # Удаляем последнее значение индекса из списка,
     # так как оно находиться за пределами матрицы
     path_index.pop()
     # Переворачиваем список значений
@@ -69,7 +84,9 @@ def find_optimal_route_matrix(form):
     return dp[m - 1][n - 1]
 
 
-matrix = [[10, 2, 20, 30], [5, 3, 1, 80], [15, 8, 10, 50], [90, 7, 2, 70]]
+# matrix = [[10, 20, 30], [5, 1, 80], [90, 2, 70]]
+# matrix = [[10, 2, 20, 30], [5, 3, 1, 80], [15, 8, 10, 50], [90, 7, 2, 70]]
+matrix = random_matrix()
 # определяем максимальное количество символов в строке
 max_len = len(str(max([max(row) for row in matrix])))
 # выводим матрицу на экран
