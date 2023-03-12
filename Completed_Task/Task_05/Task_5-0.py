@@ -13,37 +13,38 @@
 # idea -> Impossible!
 # sorted --> Impossible!
 # idiot -> idito
-def sort_word(v):
-    srt = ""
-    for i in range(v):
-        srt += glas[i]
-        srt += soglas[i]
-    return srt
 
-
-# s = input("Enter a word: ")
-s = "appaale"
-d = 'aeiouy'
-
-# Разделение слова в список букв
-# si = [y for w in s for y in w]
-
-glas = [x for x in s if x in d]
-soglas = [y for y in s if not y in d]
-
-lg = len(glas)
-ls = len(soglas)
-print(glas)
-print(soglas)
-
-# sum(2 for letter in s if letter in vowels) > len(s)
-if lg == ls:
-    print(s, "-->", sort_word(lg))
-elif lg + 1 == ls:
-    glas.append(" ")
-    print(s, "-->", sort_word(ls))
-elif lg - 1 == ls:
-    soglas.append(" ")
-    print(s, "-->", sort_word(lg))
+word = input("Input word: ")
+# Список для гласных букв
+vowels = []
+# Список для согласных букв
+consonants = []
+# Перебор слова по буквам
+for letter in word:
+    # Сравниваем букву со списком гласных букв
+    if letter in "aeiouy":
+        # если гласная, сохраняем в список гласных
+        vowels.append(letter)
+    else:
+        # согласную сохраняем в список для согласных
+        consonants.append(letter)
+    # Проверяем длину спискоков гласных и согласных букв
+# Создаем пустую строку для перемешивания букв
+result = ""
+if abs(len(vowels) - len(consonants)) > 1:
+    # Если больше 1, то выводин на экран Impossible!
+    print("Impossible!")
 else:
-    print(s, "--> Impossible!")
+    # Цикл повторять пока не списки не станут пустыми
+    while vowels or consonants:
+        # Прверяем длину скисков
+        if len(vowels) < len(consonants):
+            # Если согласных больше чем гласных,
+            # то записываем в строку согласную
+            result += consonants.pop(0)
+        else:
+            # иначе записываем в строку гласную
+            result += vowels.pop(0)
+    # Выходим с новой строкой
+
+print(result)
