@@ -20,8 +20,8 @@
 #     ('Изучаем Python', 'Марка Лутца', 2),
 #     ('Программирование на Python', 'Марка Лутца', 2),
 #     ('Python. Карманный справочник', 'Марка Лутца', 2),
-#     ('Основы Python. Научитесь думать как программист', 'Аллен Дауни', 2),
-#     ('Изучение сложных систем с помощью Python', 'Аллен Дауни', 2),
+#     ('Основы Python. Научитесь думать как программист', 'Аллен Б. Дауни', 2),
+#     ('Изучение сложных систем с помощью Python', 'Аллен Б. Дауни', 2),
 #     ('Нравственные письма к Луцилию', 'Сенека Луций Анней', 3),
 #     ('О краткости жизни', 'Сенека Луций Анней', 3),
 #     ('Философские трактаты', 'Сенека Луций Анней', 3),
@@ -33,7 +33,7 @@
 # SELECT * FROM book WHERE book_author = 'Михаил Булгаков';
 # SELECT * FROM book WHERE book_title = 'Евгений Онегин';
 # SELECT * FROM book WHERE publisher_id = '1';
-# SELECT * FROM book WHERE book_author = 'Марка Лутца';
+# SELECT * FROM book WHERE book_author = 'Аллен Б. Дауни';
 # SELECT * FROM book WHERE book_title = 'Изучаем Python';
 # SELECT * FROM book WHERE publisher_id = '2';
 # SELECT * FROM book WHERE book_author = 'Конфуций';
