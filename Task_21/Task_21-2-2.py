@@ -49,8 +49,8 @@ def backtracking(m2, i, j):
     return sum(path_num)
 
 
-mat_rix = [[10, 3, 20, 30], [5, 10, 1, 80], [90, 5, 2, 70], [50, 15, 5, 60]]
-m, n = len(mat_rix), len(mat_rix[0])
-print_matrix(mat_rix)
-bt = backtracking(mat_rix, m - 1, n - 1)
+matrix = [[10, 3, 20, 30], [5, 10, 1, 80], [90, 5, 2, 70], [50, 15, 5, 60]]
+m, n = len(matrix), len(matrix[0])
+print_matrix(matrix)
+bt = backtracking(matrix, m - 1, n - 1)
 print("Сумма наименьшего маршрута: ", bt)
