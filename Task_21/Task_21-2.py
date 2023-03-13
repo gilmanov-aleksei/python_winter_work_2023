@@ -92,21 +92,28 @@ def find_optimal_route_matrix(form, pr=0):
     # Создаём матрицу для посчета маршрута с заполнением её 0 значениями
     dp = [[0] * n for _ in range(m)]
     # Найдем сумму чисел на пути вдоль первой колонки
-    for i in range(m):
-        if i == 0:
-            dp[i][0] = form[i][0]
-        else:
-            dp[i][0] = dp[i - 1][0] + form[i][0]
-    # Найдем сумму чисел на пути вдоль первой строки
-    for j in range(n):
-        if j == 0:
-            dp[0][j] = form[0][j]
-        else:
-            dp[0][j] = dp[0][j - 1] + form[0][j]
+    # for i in range(m):
+    #     if i == 0:
+    #         dp[i][0] = form[i][0]
+    #     else:
+    #         dp[i][0] = dp[i - 1][0] + form[i][0]
+    # # Найдем сумму чисел на пути вдоль первой строки
+    # for j in range(n):
+    #     if j == 0:
+    #         dp[0][j] = form[0][j]
+    #     else:
+    #         dp[0][j] = dp[0][j - 1] + form[0][j]
     # Найдем оптимальный маршрут заполнив оставшиеся ячейки
-    for i in range(1, m):
-        for j in range(1, n):
-            dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + form[i][j]
+    for i in range(m):
+        for j in range(n):
+            if i == 0 and j == 0:
+                dp[i][j] = matrix[i][j]
+            elif i == 0:
+                dp[i][j] = dp[i][j - 1] + matrix[i][j]
+            elif j == 0:
+                dp[i][j] = dp[i - 1][j] + matrix[i][j]
+            else:
+                dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + matrix[i][j]
     if pr == 1:
         return backtracking(m, n, form, dp)
     else:
