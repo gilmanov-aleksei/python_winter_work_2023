@@ -1,11 +1,11 @@
 #! /usr/bin/python
 
 
-def print_matrix(m2):
+def print_matrix(m1):
     # определяем максимальное количество символов в строке
-    max_len = len(str(max([max(row) for row in m2])))
+    max_len = len(str(max([max(row) for row in m1])))
     # выводим матрицу на экран
-    for row in m2:
+    for row in m1:
         for item in row:
             # форматируем каmatrixждый элемент, выравнивая по максимальному количеству символов
             print(f"{item:>{max_len}}".format(item=item, max_len=max_len), end=" ")
@@ -14,7 +14,7 @@ def print_matrix(m2):
     return
 
 
-def backtracking(m1, i, j):
+def backtracking(m2, i, j):
     # Найдем путь с помощью бэктрекинга
     # Список для сбора значений по движению в матрице
     path_num = []
@@ -24,13 +24,13 @@ def backtracking(m1, i, j):
     # то есть не выйдем за её пределы
     while i >= 0 and j >= 0:
         # Сохраняем в список значение из ячеки
-        path_num.append(m1[i][j])
+        path_num.append(m2[i][j])
         if i == 0:
             j -= 1
         elif j == 0:
             i -= 1
         else:
-            if m1[i - 1][j] < m1[i][j - 1]:
+            if m2[i - 1][j] < m2[i][j - 1]:
                 i -= 1
             else:
                 j -= 1
@@ -46,30 +46,11 @@ def backtracking(m1, i, j):
     print(*path_index[::-1])
     # Вывод значений на экран
     print("Маршрут по значениям: ", *path_num)
-    return
+    return sum(path_num)
 
 
-def optimal_path(matrix, i, j, dct=None):
-    if dct is None:
-        dct = {}
-    if (i, j) in dct:
-        return dct[(i, j)]
-    if i == 0 and j == 0:
-        return matrix[0][0]
-    elif i == 0:
-        result = matrix[0][j] + optimal_path(matrix, i, j - 1, dct)
-    elif j == 0:
-        result = matrix[i][0] + optimal_path(matrix, i - 1, j, dct)
-    else:
-        result = matrix[i][j] + min(optimal_path(matrix, i - 1, j, dct), optimal_path(matrix, i, j - 1, dct))
-    dct[(i, j)] = result
-    return result
-
-
-mat_rix = [[10, 20, 30], [5, 1, 80], [90, 2, 70]]
-m = len(mat_rix)
-n = len(mat_rix[0])
+mat_rix = [[10, 3, 20, 30], [5, 10, 1, 80], [90, 5, 2, 70], [50, 15, 5, 60]]
+m, n = len(mat_rix), len(mat_rix[0])
 print_matrix(mat_rix)
-optimal_sum = optimal_path(mat_rix, m - 1, n - 1)
-backtracking(mat_rix, m - 1, n - 1)
-print("Сумма наименьшего маршрута: ", optimal_sum)
+bt = backtracking(mat_rix, m - 1, n - 1)
+print("Сумма наименьшего маршрута: ", bt)
