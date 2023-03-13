@@ -93,10 +93,16 @@ def find_optimal_route_matrix(form, pr=0):
     dp = [[0] * n for _ in range(m)]
     # Найдем сумму чисел на пути вдоль первой колонки
     for i in range(m):
-        dp[i][0] = form[i][0] if i == 0 else dp[i - 1][0] + form[i][0]
+        if i == 0:
+            dp[i][0] = form[i][0]
+        else:
+            dp[i][0] = dp[i - 1][0] + form[i][0]
     # Найдем сумму чисел на пути вдоль первой строки
     for j in range(n):
-        dp[0][j] = form[0][j] if j == 0 else dp[0][j - 1] + form[0][j]
+        if j == 0:
+            dp[0][j] = form[0][j]
+        else:
+            dp[0][j] = dp[0][j - 1] + form[0][j]
     # Найдем оптимальный маршрут заполнив оставшиеся ячейки
     for i in range(1, m):
         for j in range(1, n):
