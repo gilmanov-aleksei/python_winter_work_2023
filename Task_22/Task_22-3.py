@@ -36,7 +36,7 @@ def replace_words(text):
             new_text.append(kw_replace[words[i]])
         else:
             new_text.append(words[i])
-            # Склеиваем слова обратно в строку
+    # Собираем слова обратно в строку
     new_text = ' '.join(new_text)
     return new_text
 
