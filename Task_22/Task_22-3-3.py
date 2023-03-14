@@ -20,5 +20,5 @@ def replace_words(string):
     return new_string
 
 
-text = 'if x == 2: and  as assert print("x is 2") else: print("x is not 2")'
+text = 'if x == 2: and  as assert print("x is 2") else print("x is not 2")'
 print(replace_words(text))

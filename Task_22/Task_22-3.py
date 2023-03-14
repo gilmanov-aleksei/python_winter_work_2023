@@ -29,14 +29,17 @@ def replace_words(text):
     kw_replace = {kw: '<kw>' for kw in kw_list}
     # Разбиваем текст на отдельные слова
     words = text.split()
+    new_text = []
     # Заменяем все ключевые слова в тексте на '<kw>'
     for i in range(len(words)):
         if words[i] in kw_replace:
-            words[i] = kw_replace[words[i]]
-    # Склеиваем слова обратно в строку
-    new_text = ' '.join(words)
+            new_text.append(kw_replace[words[i]])
+        else:
+            new_text.append(words[i])
+            # Склеиваем слова обратно в строку
+    new_text = ' '.join(new_text)
     return new_text
 
 
-text = 'if x == 2: and  as assert print("x is 2") else print("x is not 2")'
+text = 'if x == 2 and  as assert print("x is 2") else print("x is not 2")'
 print(replace_words(text))
