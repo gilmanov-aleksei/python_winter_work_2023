@@ -21,21 +21,18 @@
 
 
 import keyword
+import re
+
 
 def replace_words(text):
     # Получаем список всех ключевых слов Python
-    kw_list = keyword.kwlist
-    # Создаем словарь, где ключи - это ключевые слова, а значения - это '<kw>'
-    kw_replace = {kw: '<kw>' for kw in kw_list}
-    # Разбиваем текст на отдельные слова
-    words = text.split()
-    # Заменяем все ключевые слова в тексте на '<kw>'
-    for i in range(len(words)):
-        if words[i] in kw_replace:
-            words[i] = kw_replace[words[i]]
-    # Склеиваем слова обратно в строку
-    new_text = ' '.join(words)
-    return new_text
+    words = keyword.kwlist
+    # Создаем регулярное выражение, которое будет находить целые слова
+    pattern = r'\b(' + '|'.join(words) + r')\b'
+    # Заменяем все целые слова в тексте на '<kw>'
+    replaced_text = re.sub(pattern, '<kw>', text)
+    return replaced_text
+
 
 text = 'if x == 2: and  as assert print("x is 2") else print("x is not 2")'
 print(replace_words(text))
