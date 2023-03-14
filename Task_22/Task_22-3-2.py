@@ -7,7 +7,7 @@ import re
 def replace_words(text):
     # Получаем список всех ключевых слов Python
     words = keyword.kwlist
-    # Создаем регулярное выражение, которое будет находить целые слова
+    # Регулярное выражение, которое будет находить целые слова
     pattern = r'\b(' + '|'.join(words) + r')\b'
     # Заменяем все целые слова в тексте на '<kw>'
     replaced_text = re.sub(pattern, '<kw>', text)
