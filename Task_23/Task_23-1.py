@@ -6,29 +6,34 @@
 # наибольшим палиндромом является 6 (подстрока 'ccddcc')
 
 def find_long_palindrome(txt):
-    max_len = 0
-    word = ''
+    # Создаём пустой словарь для сбора полиндромов
     dct = {}
+    # Цикл перебора всей строки
     for i in range(len(txt)):
+        # Цикл перебора по элементно
         for j in range(len(txt), i, -1):
-            x = txt[i:j]
-            if x == x[::-1]:
-                if max_len <= len(x):
-                    max_len = len(x)
-                    dct[x] = dct.get(x, len(x))
-    for key, value in dct.items():
-        if value == max_len:
-            word += key + ' '
+            # Сравниваем срез с перевернутым срезом строки
+            if txt[i:j] == txt[i:j][::-1]:
+                # Если они равны, записываем строку в ключ,
+                # в значение его длину
+                dct[txt[i:j]] = dct.get(txt[i:j], len(txt[i:j]))
+    # Находим максимальную длину в значение словаря
+    max_len = max(dct.values())
+    # перебераем все ключи словаря,
+    # с проверкой максимального значения и сохраняем в список
+    keys = [k for k, v in dct.items() if v == max_len]
+    # Преобразуем список в строку
+    word = ', '.join(keys)
     return word, max_len
 
 
 string = 'aababcacdedcaceeefffeeeklmonmlka1s2d3d2s1'
 flp = find_long_palindrome(string)
 
-print("Палиндромы:", flp[0])
+print("Палиндром:", flp[0])
 print("Длина полиндрома:", flp[1])
 
-# Рабочий вариант
+# Рабочий вариант со списком
 # def find_long_palindrome(txt):
 #     max_len = 0
 #     word = []
