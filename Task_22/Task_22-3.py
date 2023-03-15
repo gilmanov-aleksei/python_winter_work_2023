@@ -22,23 +22,23 @@
 import keyword
 
 
-def replace_words(text):
+def replace_words(txt):
     # Получаем список всех ключевых слов Python
     kw_list = keyword.kwlist
-    # Создаем словарь, где ключи - это ключевые слова, а значения - это '<kw>'
+    # Создаем словарь, где ключевые слова - это ключи, а значения - это '<kw>'
     kw_replace = {kw: '<kw>' for kw in kw_list}
     # Разбиваем текст на отдельные слова
-    words = text.split()
-    new_text = []
+    words = txt.split()
+    new_txt = []
     # Заменяем все ключевые слова в тексте на '<kw>'
     for i in range(len(words)):
         if words[i] in kw_replace:
-            new_text.append(kw_replace[words[i]])
+            new_txt.append(kw_replace[words[i]])
         else:
-            new_text.append(words[i])
+            new_txt.append(words[i])
     # Собираем слова обратно в строку
-    new_text = ' '.join(new_text)
-    return new_text
+    new_txt = ' '.join(new_txt)
+    return new_txt
 
 
 text = 'if x == 2 and as assert print("x is 2") else print("x is not 2")'

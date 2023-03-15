@@ -4,14 +4,14 @@ import keyword
 import re
 
 
-def replace_words(text):
+def replace_words(txt):
     # Получаем список всех ключевых слов Python
     words = keyword.kwlist
     # Регулярное выражение, которое будет находить целые слова
     pattern = r'\b(' + '|'.join(words) + r')\b'
     # Заменяем все целые слова в тексте на '<kw>'
-    replaced_text = re.sub(pattern, '<kw>', text)
-    return replaced_text
+    replaced_txt = re.sub(pattern, '<kw>', txt)
+    return replaced_txt
 
 
 text = 'if x == 2: and  as assert print("x is 2") else print("x is not 2")'

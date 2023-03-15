@@ -6,7 +6,7 @@ import keyword
 from flashtext.keyword import KeywordProcessor
 
 
-def replace_words(string):
+def replace_words(txt):
     # Получаем список всех ключевых слов Python
     kw_list = keyword.kwlist
     keyword_processor = KeywordProcessor()
@@ -15,7 +15,7 @@ def replace_words(string):
         # Добавляем ключевые слова в словарь для замены на <kw>
         keyword_processor.add_keyword(key_word, '<kw>')
     # Заменяем в строке все ключеве на <kw>
-    new_string = keyword_processor.replace_keywords(string)
+    new_string = keyword_processor.replace_keywords(txt)
     return new_string
 
 
