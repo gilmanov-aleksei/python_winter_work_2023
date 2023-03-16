@@ -23,6 +23,6 @@ def max_number(num):
     return ''.join(sorted(''.join([str(x) for x in num]), reverse=True))
 
 
-numbers = [9, 81, 25]
+numbers = [9, 81, 25, 4, 87, 9]
 print(*numbers)
 print(max_number(numbers))
