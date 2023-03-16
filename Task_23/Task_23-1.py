@@ -8,7 +8,7 @@
 def find_long_palindrome(txt):
     # Создаём пустой словарь для сбора полиндромов
     dct = {}
-    max_len = 1
+    max_len = 2
     # Цикл перебора всей строки
     for i in range(len(txt)):
         # Цикл перебора по элементно
