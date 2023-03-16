@@ -6,3 +6,23 @@
 # Напиример, вход [1, 21, 3], результат 3211
 # Если вход [9, 81, 25], то результат 98125
 
+
+# Рабочий, разложенный вариант
+# def max_number(num):
+#     # Преобразуем список чисел в список строк
+#     num = [str(x) for x in num]
+#     # Обеденим строки в одну (получим одно число)
+#     num = ''.join(num)
+#     # Сортируем цифры в убывающем порядке
+#     num = sorted(num, reverse=True)
+#     # Обеденим строки в одну (получим одно число)
+#     return ''.join(num)
+
+
+def max_number(num):
+    return ''.join(sorted(''.join([str(x) for x in num]), reverse=True))
+
+
+numbers = [9, 81, 25]
+print(*numbers)
+print(max_number(numbers))
