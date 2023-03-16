@@ -29,7 +29,7 @@ def find_long_palindrome(txt):
 
 string = 'aababcacdedcaceeefffeeeklmonmlka1s2d3d2s1'
 flp = find_long_palindrome(string)
-
+# Результат выводим на экран
 print("Палиндром:", flp[0])
 print("Длина полиндрома:", flp[1])
 
