@@ -18,9 +18,7 @@ def find_long_palindrome(txt):
                 # Если они равны, записываем длину в ключ,
                 # а в значение строку
                 if dct.get(len(txt[i:j]), True) != True:
-                    lst = dct[len(txt[i:j])]
-                    lst.append(txt[i:j])
-                    dct[len(txt[i:j])] = lst
+                    dct.setdefault(len(txt[i:j]), []).append(txt[i:j])
                 else:
                     dct[len(txt[i:j])] = txt[i:j].split()
 
