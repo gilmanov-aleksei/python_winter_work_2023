@@ -17,10 +17,10 @@ def find_long_palindrome(txt):
             if txt[i:j] == txt[i:j][::-1] and len(txt[i:j]) > 1:
                 # Если они равны, записываем длину в ключ,
                 # а в значение строку
-                if dct.get(len(txt[i:j]), True) != True:
-                    dct.setdefault(len(txt[i:j]), []).append(txt[i:j])
+                if len(txt[i:j]) in dct:
+                    dct[len(txt[i:j])].append(txt[i:j])
                 else:
-                    dct[len(txt[i:j])] = txt[i:j].split()
+                    dct[len(txt[i:j])] = [txt[i:j]]
 
     # Находим максимальную длину в ключе словаря
     max_len = max(dct.keys())
