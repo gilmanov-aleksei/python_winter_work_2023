@@ -12,22 +12,28 @@ def find_long_palindrome(txt):
     for i in range(len(txt)):
         # Цикл перебора по элементно
         for j in range(len(txt), i, -1):
+            # Если длина меньше 2, то пропукаем, так как не полиндром
             # Сравниваем срез строки и его перевернутым срез
-            if txt[i:j] == txt[i:j][::-1]:
-                # Если они равны, записываем строку в ключ,
-                # в значение его длину
-                dct[txt[i:j]] = dct.get(txt[i:j], len(txt[i:j]))
-    # Находим максимальную длину в значение словаря
-    max_len = max(dct.values())
-    # перебераем все ключи словаря,
-    # с проверкой максимального значения и сохраняем в список
-    keys = [k for k, v in dct.items() if v == max_len]
+            if txt[i:j] == txt[i:j][::-1] and len(txt[i:j]) > 1:
+                # Если они равны, записываем длину в ключ,
+                # а в значение строку
+                if dct.get(len(txt[i:j]), True) != True:
+                    lst = dct[len(txt[i:j])]
+                    lst.append(txt[i:j])
+                    dct[len(txt[i:j])] = lst
+                else:
+                    dct[len(txt[i:j])] = txt[i:j].split()
+
+    # Находим максимальную длину в ключе словаря
+    max_len = max(dct.keys())
+    # проверка максимального значения ключа и сохраняем в список
+    word = dct.get(max_len)
     # Преобразуем список в строку
-    word = ', '.join(keys)
+    word = ', '.join(word)
     return word, max_len
 
 
-string = 'aababcacdedcaceeefffeeeklmonmlka1s2d3d2s1'
+string = 'aababcacddcaceeeffeeeklmonmlka1s2dd2s1ceeeffeeek'
 flp = find_long_palindrome(string)
 # Результат выводим на экран
 print("Палиндром:", flp[0])
