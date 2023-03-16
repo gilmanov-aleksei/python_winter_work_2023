@@ -38,7 +38,6 @@ def find_long_palindrome(txt):
     return word, max_len
 
 
-
 string = 'aababcacdedcaceeefffeeeklmonmlka1s2d3d2s1ceeefffeeek'
 flp = find_long_palindrome(string)
 # Результат выводим на экран
