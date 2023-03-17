@@ -7,12 +7,11 @@
 # Если вход [9, 81, 25], то результат 98125
 
 
-
 import itertools
 
 
 def max_number(num):
-     # Список чисел, переведем в список строк
+    # Список чисел, переведем в список строк
     num = [str(n) for n in num]
     # Перемешаем строки с помощью itertools
     combinations = list(itertools.permutations(num))
