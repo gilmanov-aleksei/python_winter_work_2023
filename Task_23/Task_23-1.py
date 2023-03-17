@@ -31,7 +31,7 @@ def find_long_palindrome(txt):
             # если не равно, то пропускаем, так как не полиндром
             # И проверяем длину полиндрома, если она меньше предыдущего, то пропускаем
             if x == x[::-1] and len(x) >= max_len:
-                # Записывем длину палендрома в переменную max_len
+                # Записывем длину палиндрома в переменную max_len
                 max_len = len(x)
                 # Ключом в словаре будет длина полиндрома
                 # Проверяем ключ в словаре, если он есть,
@@ -42,14 +42,17 @@ def find_long_palindrome(txt):
                 # а в значение создаем список с полиндромом
                 else:
                     dct[max_len] = [x]
+    # Количество собраных полиндромов
+    word_col = len(dct.get(max_len))
     # Значение максимального ключа сохраняем в список
     # Список преобразуем в строку
     word = ', '.join(dct.get(max_len))
-    return word, max_len
+    return word, word_col, max_len
 
 
-string = 'aababcacdedcaceeefffeeeklmonmlka 1s2d3d2s1ceeefffeeekааамммааа'
+string = 'aababcacdedcaceeeffeeeklmonmlka 1s2d3d2s1ceeefffeeekааамммааа'
 flp = find_long_palindrome(string)
 # Результат выводим на экран
 print("Палиндром:", flp[0])
-print("Длина полиндрома:", flp[1])
+print("Количество полиндромов", flp[1])
+print("Длина полиндрома:", flp[2])
