@@ -1,6 +1,6 @@
 #! /usr/bin/python
 
-# Напишите программу, которая считывает информацию из таблицы
+# Напишите программу, которая считывает информацию из таблицы Postgres
 # book и формирует DataFrame, полностью соотвествующей этой
 # таблице.
 # Нарисуйте график колличества книги цен.
@@ -11,7 +11,7 @@
 import psycopg2
 import pandas as pd
 import matplotlib.pyplot as plt
-
+# Подключаемся к базе Postgres
 con = psycopg2.connect(
     database="postgres",
     user="postgres",
@@ -20,29 +20,23 @@ con = psycopg2.connect(
     port="5432"
 )
 cur = con.cursor()
+# Вызываем таблицу book
+cur.execute('SELECT * FROM book')
+# Копируем таблицу из базы Postgres в переменную
+rows = cur.fetchall()
+# Добавляем названия колонок для DataFrame
+cols = ['book_id', 'title', 'price', 'amount', 'author_id']
+# Записываем данные в таблицу DataFrame
+df = pd.DataFrame(rows, columns=cols)
 
-# cur.execute("INSERT INTO pupil VALUES (2, 'Вася', 1)")
-# cur.execute('SELECT * FROM pupil')
-# d = {'id': [], 'name': [], 'result': []}
-# for i in cur.fetchall():
-#     print(i)
-#     d['id'].append(i[0])
-#     d['name'].append(i[1])
-#     d['result'].append(i[2])
-# # con.commit()
-# con.close()
-
-# Данные для графика
-x = [1, 2, 3, 4, 5]
-y = [3, 6, 1, 8, 2]
-
-# Создаем ось и добавляем данные на график
-plt.plot(x, y)
-
+# Создаем ось и добавляем данные графика
+df.plot(x='amount', y='price', kind='bar')
 # Добавляем подписи осей и заголовок
-plt.xlabel('Books')
+plt.title('Books by price')
+plt.xlabel('Amount')
 plt.ylabel('Price')
-plt.title('Books and Price')
-
 # Отображаем график
 plt.show()
+
+cur.close()
+con.close()
