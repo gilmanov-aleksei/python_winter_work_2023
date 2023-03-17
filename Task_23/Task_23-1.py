@@ -5,6 +5,16 @@
 # Например, дана строка 'aabbccddcc' тогда длиной подстроки с
 # наибольшим палиндромом является 6 (подстрока 'ccddcc')
 
+# Короткий вариант
+# def find_long_palindrom(txt):
+#     max_len = 2
+#     for i in range(len(txt)):
+#         for j in range(len(txt), i, -1):
+#             if txt[i:j] == txt[i:j][::-1] and len(txt[i:j]) >= max_len:
+#                 max_len = len(txt[i:j])
+#     return max_len
+
+
 def find_long_palindrome(txt):
     # Создаём пустой словарь для сбора полиндромов
     dct = {}
