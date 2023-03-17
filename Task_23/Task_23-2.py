@@ -29,11 +29,11 @@ cols = ['book_id', 'title', 'price', 'amount', 'author_id']
 df = pd.DataFrame(rows, columns=cols)
 
 # Создаем ось и добавляем данные графика
-df.plot(x='amount', y='price', kind='bar')
+df.plot(x='price', y='amount', kind='bar')
 # Добавляем подписи осей и заголовок
 plt.title('Books by price')
-plt.xlabel('Amount')
-plt.ylabel('Price')
+plt.xlabel('Price')
+plt.ylabel('Amount')
 # Отображаем график
 plt.show()
 
