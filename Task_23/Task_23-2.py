@@ -6,11 +6,10 @@
 # Нарисуйте график колличества книги цен.
 # Подсказка: используйте matplotlib и функцию df.plot()
 
-# Программа не готова.
-
 import psycopg2
 import pandas as pd
 import matplotlib.pyplot as plt
+
 # Подключаемся к базе Postgres
 con = psycopg2.connect(
     database="postgres",
