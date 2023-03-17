@@ -28,7 +28,7 @@ def max_number(num):
 numbers = [1, 21, 3]
 print(max_number(numbers))
 
-numbers = [9, 81, 25, 95]
+numbers = [9, 81, 25]
 print(max_number(numbers))
 
 # def max_number(numbers):
