@@ -20,7 +20,8 @@ def max_number(num):
     # Сортируем список по убыванию
     lst.sort(reverse=True)
     # Первый элемент списка, это наибольшее число
-    return lst[0]
+    # Строку преобразуем в число
+    return int(lst[0])
 
 
 numbers = [1, 21, 3]
