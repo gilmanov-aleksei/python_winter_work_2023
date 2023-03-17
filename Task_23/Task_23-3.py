@@ -15,13 +15,12 @@ def max_number(num):
     num = [str(n) for n in num]
     # Перемешаем строки с помощью itertools
     combinations = list(itertools.permutations(num))
-    # Полученый список картежей переведем в список строк
+    # Полученый список картежей, переводим их в список строк
     lst = [''.join(c) for c in combinations]
-    # Сортируем список по возрастанию
-    lst.sort()
-    # Последний элемент списка, это наибольшее число
-    big_num = lst.pop()
-    return big_num
+    # Сортируем список по убыванию
+    lst.sort(reverse=True)
+    # Первый элемент списка, это наибольшее число
+    return lst[0]
 
 
 numbers = [1, 21, 3]
@@ -29,6 +28,18 @@ print(max_number(numbers))
 
 numbers = [9, 81, 25]
 print(max_number(numbers))
+
+# def max_number(num):
+#     # Функция для сравнения чисел
+#     def compare(a, b):
+#         return int(b + a) - int(a + b)
+#     # Преобразуем каждое число в строку, чтобы можно было сравнивать цифры
+#     num = [str(n) for n in num]
+#     # Сортируем список по убыванию, используя кастомную функцию сравнения
+#     num.sort(key=cmp_to_key(compare))
+#     # Объединяем отсортированные числа в одну строку и преобразуем обратно в число
+#     largest = int(''.join(num))
+#     return largest
 
 # def max_number(numbers):
 #     # сортируем числа по убыванию
@@ -42,18 +53,6 @@ print(max_number(numbers))
 #     num = [str(n) for n in num]
 #     # Сортируем список по убыванию, используя лексикографический порядок строк
 #     num.sort(reverse=True)
-#     # Объединяем отсортированные числа в одну строку и преобразуем обратно в число
-#     largest = int(''.join(num))
-#     return largest
-
-# def max_number(num):
-#     # Функция для сравнения чисел
-#     def compare(a, b):
-#         return int(b + a) - int(a + b)
-#     # Преобразуем каждое число в строку, чтобы можно было сравнивать цифры
-#     num = [str(n) for n in num]
-#     # Сортируем список по убыванию, используя кастомную функцию сравнения
-#     num.sort(key=cmp_to_key(compare))
 #     # Объединяем отсортированные числа в одну строку и преобразуем обратно в число
 #     largest = int(''.join(num))
 #     return largest
