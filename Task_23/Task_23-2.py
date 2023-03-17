@@ -25,7 +25,7 @@ cur.execute('SELECT * FROM book')
 rows = cur.fetchall()
 # Добавляем названия колонок для DataFrame
 cols = ['book_id', 'title', 'price', 'amount', 'author_id']
-# Записываем данные в таблицу DataFrame
+# Записываем данные из переменной в таблицу DataFrame
 df = pd.DataFrame(rows, columns=cols)
 
 # Создаем ось и добавляем данные графика
