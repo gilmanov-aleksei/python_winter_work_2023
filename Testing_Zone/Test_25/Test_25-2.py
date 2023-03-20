@@ -50,7 +50,7 @@ class MainWindows(QMainWindow):
         self.setWindowTitle(new_windows_title)
     def the_windows_title_changed(self, windows_title):
         print("Window title changed: %s" % windows_title)
-        if windows_title
+
 
 
 app = QApplication(sys.argv)
