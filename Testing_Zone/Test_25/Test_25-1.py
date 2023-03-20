@@ -40,29 +40,32 @@
 # app.exec()
 
 import sys
-from PyQt6.QtCore import QSize, Qt
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton
 
 
 class MainWindows(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.count = 0
+
         self.setWindowTitle("My App")
         button = QPushButton("Press Me!")
-        print(button.text())
-        button.setCheckable(True)
 
-        # self.change_text(button)
-        print(button.text())
+        button.setCheckable(True)
         button.clicked.connect(self.the_button_was_clicked())
-        self.setFixedSize(QSize(400, 300))
+        button.clicked.connect(self.the_button_was_clicked())
         self.setCentralWidget(button)
 
     def the_button_was_clicked(self):
-        print("Clicked!")
+        self.count += 1
+        print(f"Clicked! {self.count}")
+        self.setWindowTitle(f"Clicked! {self.count}")
+
+    def the_button_was_toggled(self, checked):
+        print("Checket?", checked)
 
 
 app = QApplication(sys.argv)
-window = MainWindows()
+window = QMainWindow()
 window.show()
 app.exec()
