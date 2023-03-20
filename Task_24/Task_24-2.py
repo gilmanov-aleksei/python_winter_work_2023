@@ -21,7 +21,8 @@ cur = con.cursor()
 # Вызываем таблицу book
 cur.execute('SELECT * FROM book')
 # Копируем таблицу из базы Postgres в переменную
-rows = cur.fetchall()
+# rows = cur.fetchall()
+# print(rows)
 # Добавляем названия колонок для DataFrame
 
 cur.close()
