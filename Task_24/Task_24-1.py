@@ -6,7 +6,7 @@
 
 def bubble_sort(num):
     n = len(num)
-    m = 0
+    tmp = 0
     # Повторяем сортировку n-1 раз, т.к. после каждой итерации
     # в конце уже будет находиться правильно отсортированный элемент
     for i in range(n - 1):
@@ -15,9 +15,9 @@ def bubble_sort(num):
         for j in range(n - i - 1):
             # Если следующий элемент меньше текущего, меняем их местами
             if num[j] > num[j + 1]:
-                m = num[j]
+                tmp = num[j]
                 num[j] = num[j + 1]
-                num[j + 1] = m
+                num[j + 1] = tmp
 
     return num
 
