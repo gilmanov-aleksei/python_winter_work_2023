@@ -5,8 +5,7 @@
 
 import sys
 from PyQt6.QtWidgets import QApplication, QWidget, QHBoxLayout, QLabel, QLineEdit, QPushButton
-from PyQt6.QtCore import Qt, QUrl
-from PyQt6.QtGui import QDesktopServices
+
 
 class MainWindow(QWidget):
     def __init__(self):
