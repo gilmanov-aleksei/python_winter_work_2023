@@ -13,7 +13,7 @@ def camel_style(string):
     new_str = ""
     # Все слова начинаются с заглавной буквы
     # и продолжаются строчными, методом title()
-    # Методом split() переводим строку в список, через разделитель
+    # Методом split() переводит строку в список, через разделитель
     words = string.title().split(" ")
     # Цикл по списку
     for word in words:
@@ -22,8 +22,13 @@ def camel_style(string):
     return new_str
 
 
-text1 = "caMel caSe woRd"
+print("Вариант 1")
+
+text1 = "caMel cASe wORd"
 print(camel_style(text1))
+
+print("Вариант 2")
+
 
 # Вариант 2
 def to_camel_style(string):
