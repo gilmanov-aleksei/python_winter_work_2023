@@ -30,8 +30,10 @@ from random import choice
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton
 
 windows_titles = ['My App', 'My App',
-                   'Still My App', 'Still My App',
-                   'Whath on earth', 'STOP']
+                  'Still My App', 'Still My App',
+                  'Whath on earth', 'STOP']
+
+
 class MainWindows(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -41,6 +43,7 @@ class MainWindows(QMainWindow):
         button.clicked.connect(self.the_button_was_clicked)
         self.windowTitleChanged.connect(self.the_windows_title_changed)
         self.setCentralWidget(button)
+
     def the_button_was_clicked(self):
         print("Clicked.")
         new_windows_title = choice(windows_titles)
@@ -48,9 +51,9 @@ class MainWindows(QMainWindow):
         button.setText("You already clicked me.")
         print("Seting title: %s" % new_windows_title)
         self.setWindowTitle(new_windows_title)
+
     def the_windows_title_changed(self, windows_title):
         print("Window title changed: %s" % windows_title)
-
 
 
 app = QApplication(sys.argv)
