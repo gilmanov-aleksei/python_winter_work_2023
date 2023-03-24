@@ -37,14 +37,8 @@ def string_validation(string):
     return i == 0
 
 
-str = "()"  # => true
-print(string_validation(str))
-str = ")(()))"  # => false
-print(string_validation(str))
-str = "("  # => false
-print(string_validation(str))
-str = "(()) (( ()() ) () )"  # => true
-print(string_validation(str))
-str = ")("  # => true
-print(string_validation(str))
-
+print(string_validation("()"), True)
+print(string_validation(")(()))"), False)
+print(string_validation("("), False)
+print(string_validation("(()) (( ()() ) () )"), True)
+print(string_validation(")("), False)
