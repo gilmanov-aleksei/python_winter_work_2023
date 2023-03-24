@@ -33,6 +33,8 @@ print(count_elm([1, 2, 3]), ' --> [1, 2, 3]', " --> 3")
 print(count_elm(["x", "y", ["z"]]), ' --> ["x", "y", ["z"]]', "--> 4")
 print(count_elm([1, 2, [3, 4, [5]]]), ' --> [1, 2, [3, 4, [5]]]', " --> 7")
 
+print("Вариант из интернета")
+
 
 def count_elements(lst):
     count = 0
@@ -45,7 +47,6 @@ def count_elements(lst):
     return count
 
 
-print("Вариант из интернета")
 print(count_elements([]))  # 0
 print(count_elements([1, 2, 3]))  # 3
 print(count_elements(["x", "y", ["z"]]))  # 4
