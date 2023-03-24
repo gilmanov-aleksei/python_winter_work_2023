@@ -7,13 +7,12 @@
 # Функцию dis для метода Par.dis определите заранее.
 
 
-def print_attrs(cls):
-    print("Class attributes:")
-    for attr in cls.__dict__:
-        if not attr.startswith("__"):
-            print(attr)
+def dis(obj):
+    print(f"All attributes of {obj.__class__.__name__}:")
+    print(dir(obj))
 
 
-Par = type("Par", (), {"dis": print_attrs})
+Par = type('Par', (object,), {'dis': dis})
 
-print(Par().dis())
+p = Par()
+p.dis()
