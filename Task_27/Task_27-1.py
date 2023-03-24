@@ -17,7 +17,7 @@ while True:
     if n == 0:
         break
     else:
-        if n > 18 or n < 0:
+        if n > 18:
             continue
         else:
             # Создаем матрицу размером n на n и заполняем ее нулями
