@@ -10,39 +10,29 @@
 # 'bc' и 'abc' - True, 'axc' и 'abc' - True
 # 'abc' и 'acb' - False, 'abc' и 'a' - False, '' и '   ' - False
 
-def test_str(s1, s2):
+
+def compare_str(str1, str2):
     # если строки равны
-    if s1 == s2:
+    if str1 == str2:
         return True
-
     # если длины строк различаются более чем на 1 символ
-    if abs(len(s1) - len(s2)) > 1:
+    if abs(len(str1) - len(str2)) > 1:
         return False
-
     # счетчик для подсчета различающихся символов
     count_diff = 0
-
-    # проходимся по символам двух строк и считаем число различающихся символов
-    i, j = 0, 0
-    while i < len(s1) and j < len(s2):
-        if s1[i] != s2[j]:
+    for c1, c2 in zip(str1, str2):
+        if c1 != c2:
             count_diff += 1
             if count_diff > 1:
                 return False
-            i = i + (len(s1) > len(s2))
-            j = j + (len(s2) > len(s1))
-        else:
-            i += 1
-            j += 1
 
-    # возвращаем True, если различается не более 1 символа
-    return count_diff == 1
+    return True
 
 
-print(test_str('abc', 'abc'))  # True
-print(test_str('abc', 'abcd'))  # True
-print(test_str('bc', 'abc'))  # True
-print(test_str('axc', 'abc'))  # True
-print(test_str('abc', 'acb'))  # False
-print(test_str('abc', 'a'))  # False
-print(test_str('', '   '))  # False
+print(compare_str('abc', 'abc'))  # True
+print(compare_str('abc', 'abcd'))  # True
+print(compare_str('bc', 'abc'))  # True
+print(compare_str('axc', 'abc'))  # True
+print(compare_str('abc', 'acb'))  # False
+print(compare_str('abc', 'a'))  # False
+print(compare_str('', '   '))  # False
