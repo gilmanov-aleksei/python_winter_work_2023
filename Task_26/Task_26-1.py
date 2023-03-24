@@ -12,18 +12,20 @@
 
 
 def compare_str(str1, str2):
-    # если строки равны
+    # Если строки равны, то True
     if str1 == str2:
         return True
-    # если длины строк различаются более чем на 1 символ
+    # Если строк различаются более чем на 1 символ, то False
     if abs(len(str1) - len(str2)) > 1:
         return False
-    # счетчик для подсчета различающихся символов
-    count_diff = 0
+    # Счетчик для подсчета различающихся символов
+    count = 0
+    # Сравниваем символы каждой строки по одному
     for c1, c2 in zip(str1, str2):
         if c1 != c2:
-            count_diff += 1
-            if count_diff > 1:
+            # Если не ровын, то прибавляем счётчик
+            count += 1
+            if count > 1:
                 return False
 
     return True
