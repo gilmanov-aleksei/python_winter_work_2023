@@ -7,9 +7,8 @@
 # всех остальных случаях. Если две строки равны, то True.
 # Например:
 # 'abc' и 'abc' - True, 'abc' и abcd ' - True,
-# ' bc' и 'abc' - True, 'axc' и 'abc' - True
+# 'bc' и 'abc' - True, 'axc' и 'abc' - True
 # 'abc' и 'acb' - False, 'abc' и 'a' - False, '' и '   ' - False
-
 
 def compare_str(str1, str2):
     # Если строки равны, то True
@@ -18,25 +17,23 @@ def compare_str(str1, str2):
     # Если строк различаются более чем на 1 символ, то False
     if abs(len(str1) - len(str2)) > 1:
         return False
-    # Счетчик для подсчета различающихся символов
-    count = 0
-    # Сравниваем символы каждой строки по одному
-    for s1, s2 in zip(str1, str2):
-        if s1 != s2:
-            # Если не равын,
-            # то прибавляем счётчик на 1
-            count += 1
-            # Проверяем счётчик,
-            # если больше одного, то False
-            if count > 1:
-                return False
+    # Меняем местами строки, если str2 больше str1
+    if len(str1) < len(str2):
+        str1, str2 = str2, str1
+
+    for i in range(len(str2)):
+        if str1[i] != str2[i]:
+            if len(str1) == len(str2):
+                return str1[i + 1:] == str2[i + 1:]
+            else:
+                return str1[i + 1:] == str2[i:]
 
     return True
 
 
 print(compare_str('abc', 'abc'))  # True
 print(compare_str('abc', 'abcd'))  # True
-print(compare_str(' bc', 'abc'))  # True
+print(compare_str('bc', 'abc'))  # True
 print(compare_str('axc', 'abc'))  # True
 print(compare_str('abc', 'acb'))  # False
 print(compare_str('abc', 'a'))  # False
