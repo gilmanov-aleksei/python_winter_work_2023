@@ -51,8 +51,8 @@ class MainWindow(QMainWindow):
 
     def on_help(self):
         self.label.setText("Помощь по программе\n\n"
-                           "Смотри инструкцию по программе")
-
+                           "Смотри инструкцию по программе\n"
+                           "Используя мышку, нажимайте на кнопку Меню\n")
 
 if __name__ == "__main__":
     app = QApplication([])
