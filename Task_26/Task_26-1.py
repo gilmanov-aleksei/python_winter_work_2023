@@ -7,7 +7,7 @@
 # всех остальных случаях. Если две строки равны, то True.
 # Например:
 # 'abc' и 'abc' - True, 'abc' и abcd ' - True,
-# 'bc' и 'abc' - True, 'axc' и 'abc' - True
+# ' bc' и 'abc' - True, 'axc' и 'abc' - True
 # 'abc' и 'acb' - False, 'abc' и 'a' - False, '' и '   ' - False
 
 
@@ -31,7 +31,7 @@ def compare_str(str1, str2):
 
 print(compare_str('abc', 'abc'))  # True
 print(compare_str('abc', 'abcd'))  # True
-print(compare_str('bc', 'abc'))  # True
+print(compare_str(' bc', 'abc'))  # True
 print(compare_str('axc', 'abc'))  # True
 print(compare_str('abc', 'acb'))  # False
 print(compare_str('abc', 'a'))  # False
