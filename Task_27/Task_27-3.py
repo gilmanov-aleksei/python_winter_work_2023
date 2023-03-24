@@ -28,11 +28,10 @@ def count_elm(lst):
     return count
 
 
-print(count_elm([]), " --> 0")
-print(count_elm([1, 2, 3]), " --> 3")
-print(count_elm(["x", "y", ["z"]]), "--> 4")
-print(count_elm([1, 2, [3, 4, [5]]]), " --> 7")
-print(count_elm([1, 2, [3, 4, [5, 6, [7]]]]), " --> 10")
+print(count_elm([]), ' --> []', " --> 0")
+print(count_elm([1, 2, 3]), ' --> [1, 2, 3]', " --> 3")
+print(count_elm(["x", "y", ["z"]]), ' --> ["x", "y", ["z"]]', "--> 4")
+print(count_elm([1, 2, [3, 4, [5]]]), ' --> [1, 2, [3, 4, [5]]]', " --> 7")
 
 
 def count_elements(lst):
