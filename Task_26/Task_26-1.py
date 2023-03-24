@@ -31,10 +31,10 @@ def compare_str(str1, str2):
     return True
 
 
-print(compare_str('abc', 'abc'))  # True
-print(compare_str('abc', 'abcd'))  # True
-print(compare_str('bc', 'abc'))  # True
-print(compare_str('axc', 'abc'))  # True
-print(compare_str('abc', 'acb'))  # False
-print(compare_str('abc', 'a'))  # False
-print(compare_str(' ', '   '))  # False
+print(compare_str('abc', 'abc'), True)  # True
+print(compare_str('abc', 'abcd'), True)  # True
+print(compare_str(' bc', 'abc'), True)  # True
+print(compare_str('axc', 'abc'), True)  # True
+print(compare_str('abc', 'acb'), False)  # False
+print(compare_str('abc', 'a'), False)  # False
+print(compare_str(' ', '   '), False)  # False
