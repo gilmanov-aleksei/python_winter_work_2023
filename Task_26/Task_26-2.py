@@ -14,5 +14,4 @@ def dis(obj):
 
 Par = type('Par', (object,), {'dis': dis})
 
-p = Par()
-p.dis()
+Par().dis()
