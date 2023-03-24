@@ -54,6 +54,7 @@ class MainWindow(QMainWindow):
                            "Смотри инструкцию по программе\n"
                            "Используя мышку, нажимайте на кнопку Меню\n")
 
+
 if __name__ == "__main__":
     app = QApplication([])
     window = MainWindow()
