@@ -23,22 +23,22 @@ class Item:
     def total(self):
         return self.price * self.quantity
 
-        # def prn_items(self):
-        #     return print(f"Наименование: {self.get_title()}\n  Общая цена: {self.get_total()}")
+    # def prn_items(self):
+    #     return print(f"Наименование: {self.get_name()}\n  Общая цена: {self.get_total()}")
 
 
 if __name__ == "__main__":
-    item1 = Item("ноутбук", 55000, 4)
-    item2 = Item("смартфон", 25000, 7)
+    item1 = Item("ноуТбук", 55_000, 4)
+    item2 = Item("смарТфон", 25_000, 7)
 
     # Ноутбук
     print(f"Наименование:", item1.get_name())
     # 220000
-    print(f"  Общая цена:", item1.total())
+    print(f"  Общая цена:", item1.total(), "Руб.")
     # Смартфон
     print(f"Наименование:", item2.get_name())
     # 175000
-    print(f"  Общая цена:", item2.total())
+    print(f"  Общая цена:", item2.total(), "Руб.")
 
     # Ноутбук - 220000
     # item1.prn_items()
