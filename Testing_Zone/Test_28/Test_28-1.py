@@ -1,9 +1,8 @@
 """ Пример программы по взаимодействию PushButton, LineEdit, Label"""
 
 import sys
-from PyQt6.QtWidgets import QMainWindow, QApplication, QTextEdit, QLabel, QCheckBox
-from PyQt6.QtWidgets import QComboBox, QLineEdit, QPushButton, QLineEdit, QSpinBox
-from PyQt6.QtWidgets import QDoubleSpinBox, QSlider, QHBoxLayout, QVBoxLayout, QWidget
+from PyQt6.QtWidgets import QMainWindow, QApplication, QTextEdit, QLabel, QWidget, QPushButton, QLineEdit, QVBoxLayout
+# from PyQt6.QtWidgets import QComboBox, QLineEdit, QDoubleSpinBox, QSlider, QHBoxLayout, QSpinBox, QCheckBox
 from PyQt6.QtCore import Qt
 
 
