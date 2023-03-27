@@ -42,6 +42,7 @@ class Node:
         self.value = value
         self.next_node = None
 
+
 a = Node('a')
 b = Node('b')
 c = Node('c')
@@ -60,14 +61,14 @@ d.next_node = e
 #     # print(y.value)
 # else:
 #     y.next_node = x
-y = a
-z = 1
-print(y.value, z)
-while y.next_node != None:
-    y = y.next_node
-    z += 1
-    print(y.value, z)
-print()
+# y = a
+# z = 1
+# print(y.value, z)
+# while y.next_node != None:
+#     y = y.next_node
+#     z += 1
+#     print(y.value, z)
+# print()
 
 b.next_node = c.next_node
 c.next_node = b
