@@ -22,3 +22,14 @@ for i in lst:
 #
 #     def __repr__(self):
 #         return f"Vector ({self.x}, {self.y})"
+
+class Point:
+    def __init__(self, x, y):
+        return
+
+    def __getattr__(name):
+        return
+
+    def __setattr__(name):
+        return
+
