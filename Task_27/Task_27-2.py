@@ -24,7 +24,7 @@ class Item:
         return self.price * self.quantity
 
     # def prn_items(self):
-    #     return print(f"Наименование: {self.get_name()}\n  Общая цена: {self.get_total()}")
+    #     return print(f"Наименование: {self.get_name()}\n  Общая цена: {self.total()} Руб.")
 
 
 if __name__ == "__main__":
@@ -40,7 +40,7 @@ if __name__ == "__main__":
     # 175000
     print(f"  Общая цена:", item2.total(), "Руб.")
 
-    # Ноутбук - 220000
+    # # Ноутбук - 220000
     # item1.prn_items()
-    # Смартфон - 175000
+    # # Смартфон - 175000
     # item2.prn_items()
