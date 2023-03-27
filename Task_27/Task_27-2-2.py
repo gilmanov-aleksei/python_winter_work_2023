@@ -11,27 +11,37 @@
 # его название с заглавной буквы, а при обращении к атрибуту total -
 # произведение цены предмета на его количество
 
-
 class Item:
     def __init__(self, name, price, quantity):
         self._name = name
         self._price = price
         self._quantity = quantity
 
-    @property
-    def name(self):
+    def get_name(self):
         return self._name.title()
 
-    @property
     def total(self):
         return self._price * self._quantity
 
+    def prn_items(self):
+        return print(f"Наименование: {self.get_name()}\n  Общая цена: {self.total()} Руб.")
 
 if __name__ == "__main__":
     item1 = Item("ноуТбук", 55_000, 4)
     item2 = Item("смарТфон", 25_000, 7)
 
-    print(item1.name)
-    print(item1.total)
-    print(item2.name)
-    print(item2.total)
+    # Ноутбук
+    print(f"Наименование:", item1.get_name())
+    # 220000
+    print(f"  Общая цена:", item1.total(), "Руб.")
+    # Смартфон
+    print(f"Наименование:", item2.get_name())
+    # 175000
+    print(f"  Общая цена:", item2.total(), "Руб.")
+    print()
+    # Ноутбук - 220000
+    item1.prn_items()
+    # Смартфон - 175000
+    item2.prn_items()
+
+
