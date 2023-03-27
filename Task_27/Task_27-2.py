@@ -31,7 +31,11 @@ if __name__ == "__main__":
     item1 = Item("ноуТбук", 55_000, 4)
     item2 = Item("смарТфон", 25_000, 7)
 
-    print(item1.name)
-    print(item1.total)
-    print(item2.name)
-    print(item2.total)
+    # Ноутбук
+    print(f"Наименование:", item1.name)
+    # 220000
+    print(f"  Общая цена:", item1.total, "Руб.")
+    # Смартфон
+    print(f"Наименование:", item2.name)
+    # 175000
+    print(f"  Общая цена:", item2.total, "Руб.")
