@@ -17,7 +17,7 @@ def mismatched_letters(s1, s2):
             count += 1
     return count
 
-
+# Интерент решение
 # def mismatched_letters(s1, s2):
 #     return sum(1 for a, b in zip(s1, s2) if a != b)
 
@@ -28,8 +28,8 @@ print(f"{srt1} и {srt2} - {mismatched_letters(srt1, srt2)}")
 srt1 = "abc"
 srt2 = "abc"
 print(f"{srt1} и {srt2} - {mismatched_letters(srt1, srt2)}")
-srt1 = "abcd"
-srt2 = "abde"
+srt1 = "abc"
+srt2 = "abd"
 print(f"{srt1} и {srt2} - {mismatched_letters(srt1, srt2)}")
 srt1 = "abc"
 srt2 = "xyz"
