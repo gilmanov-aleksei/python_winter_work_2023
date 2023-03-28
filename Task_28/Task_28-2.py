@@ -8,7 +8,9 @@
 # abc и abd - 1
 # abc и xyz - 3
 
-def find_simbol(s1, s2):
+def mismatched_letters(s1, s2):
+    if len(s1) != len(s2):
+        return "Строки не ровны!"
     count = 0
     for i in range(len(s1)):
         if s1[i] != s2[i]:
@@ -16,12 +18,15 @@ def find_simbol(s1, s2):
     return count
 
 
+srt1 = "abcd"
+srt2 = "abc"
+print(f"{srt1} и {srt2} - {mismatched_letters(srt1, srt2)}")
 srt1 = "abc"
 srt2 = "abc"
-print(f"{srt1} и {srt2} - {find_simbol(srt1, srt2)}")
+print(f"{srt1} и {srt2} - {mismatched_letters(srt1, srt2)}")
 srt1 = "abc"
 srt2 = "abd"
-print(f"{srt1} и {srt2} - {find_simbol(srt1, srt2)}")
+print(f"{srt1} и {srt2} - {mismatched_letters(srt1, srt2)}")
 srt1 = "abc"
 srt2 = "xyz"
-print(f"{srt1} и {srt2} - {find_simbol(srt1, srt2)}")
+print(f"{srt1} и {srt2} - {mismatched_letters(srt1, srt2)}")
