@@ -10,12 +10,16 @@
 
 def mismatched_letters(s1, s2):
     if len(s1) != len(s2):
-        return "Строки не ровны!"
+        return "Строки не ровны по длине!"
     count = 0
     for i in range(len(s1)):
         if s1[i] != s2[i]:
             count += 1
     return count
+
+
+# def mismatched_letters(s1, s2):
+#     return sum(1 for a, b in zip(s1, s2) if a != b)
 
 
 srt1 = "abcd"
@@ -24,8 +28,8 @@ print(f"{srt1} и {srt2} - {mismatched_letters(srt1, srt2)}")
 srt1 = "abc"
 srt2 = "abc"
 print(f"{srt1} и {srt2} - {mismatched_letters(srt1, srt2)}")
-srt1 = "abc"
-srt2 = "abd"
+srt1 = "abcd"
+srt2 = "abde"
 print(f"{srt1} и {srt2} - {mismatched_letters(srt1, srt2)}")
 srt1 = "abc"
 srt2 = "xyz"
