@@ -19,7 +19,7 @@ def find_inversions_num(lst):
     return count
 
 
-print("Компактый код, который выполняется за время O(n^2)")
+print("Компактый код, выполняется за время O(n^2)")
 a = [1, 2, 3, 4, 5]
 print(find_inversions_num(a), "[1,2,3,4,5] -> 0")
 a = [5, 4, 3, 2, 1]
@@ -56,7 +56,7 @@ def find_inversion_num(lst):
     return inv_count
 
 
-print("Быстрый код, который выполняется за время O(n * log(n))")
+print("Быстрый код, выполняется за время O(n * log(n))")
 a = [1, 2, 3, 4, 5]
 print(find_inversion_num(a), "[1,2,3,4,5] -> 0")
 a = [5, 4, 3, 2, 1]
