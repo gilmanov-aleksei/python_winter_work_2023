@@ -10,10 +10,13 @@
 # Для n = 2 , число перестановок равно 3
 
 def hanoi_tower(n):
-    if n == 1:  # базовый случай
-        return 1
-    else:
-        return 1 + 2 * hanoi_tower(n - 1)
+    return 1 if n == 1 else 1 + 2 * hanoi_tower(n - 1)
+
+    # базовый случай
+    # if n == 1:
+    #     return 1
+    # else:
+    #     return 1 + 2 * hanoi_tower(n - 1)
 
 
 print("Ханойская башня")
@@ -23,4 +26,3 @@ while True:
         print(f"Число перестановок равно: {hanoi_tower(num)}")
     else:
         break
-
