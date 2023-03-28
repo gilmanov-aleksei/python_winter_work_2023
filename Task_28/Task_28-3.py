@@ -10,8 +10,8 @@
 # Для n = 2 , число перестановок равно 3
 
 def hanoi_tower(n):
-    return 1 if n == 1 else 1 + 2 * hanoi_tower(n - 1)
-
+    return 1 + 2 * hanoi_tower(n - 1) if n != 1 else 1
+    # return 1 if n == 1 else 1 + 2 * hanoi_tower(n - 1)
     # базовый случай
     # if n == 1:
     #     return 1
