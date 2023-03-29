@@ -18,5 +18,14 @@ def about():
     return render_template('about.html', title='О сайте')
 
 
+@app.route('/help')
+def help():
+    return render_template('help.html', title='Помощь')
+
+@app.route('/hobbi')
+def hobbi():
+    return render_template('hobbi.html', title='Хобби')
+
+
 if __name__ == "__main__":
     app.run(debug=True)
