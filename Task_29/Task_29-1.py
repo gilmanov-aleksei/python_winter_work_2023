@@ -7,7 +7,7 @@
 
 
 lst = [11, 11, 11, 11, 11, 11, 11, 11, 11, 10, 11, 11, 11, 11, 11]
-print("Исключение:", "".join(map(str, [num for num in lst if lst.count(num) == 1])))
+print("Исключение:", " ".join(map(str, [num for num in lst if lst.count(num) == 1])))
 
 for num in lst:
     if lst.count(num) == 1:
