@@ -2,14 +2,14 @@
 
 from flask import Flask, render_template
 
-manu = ["Первый", "Второй", "Третий"]
+menu = ["Первый", "Второй", "Третий"]
 
 app = Flask(__name__)
 
 
 @app.route('/index')
 @app.route('/')
-def index(menu=None):
+def index():
     return render_template('index.html', title='Про Flask', menu=menu)
 
 
