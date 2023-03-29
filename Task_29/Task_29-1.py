@@ -14,8 +14,8 @@ for num in lst:
         print("Исключение:", num)
 
 dct = {}
-for i in lst:
-    dct[i] = dct.get(i, 0) + 1
+for d in lst:
+    dct[d] = dct.get(d, 0) + 1
 print("Исключение:", *[k for k, v in dct.items() if v == 1])
 # for k, v in dct.items():
 #     if v == 1:
