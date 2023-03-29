@@ -10,16 +10,22 @@
 #           [7, 8, 9]]
 # rotate(matrix, "по часовой") # -----> [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
 
-def rotate(matrix):
-    len_m = len(matrix)
+def rotate(m):
+    # Пустой список, для новой матрицы
     rotated_m = []
-    for j in range(len_m):
-        row = []
-        for i in range(len_m - 1, -1, -1):
-            row.append(matrix[i][j])
-        rotated_m.append(row)
+    # Цикл по всей длине матрицы
+    for j in range(len(m)):
+        # Пустой список, для новой строки матрицы
+        row_m = []
+        for i in range(len(m) - 1, -1, -1):
+            # Добавляем элемент матрицы вновую строку
+            row_m.append(m[i][j])
+        # Добавляем новую строку в новую матрицу
+        rotated_m.append(row_m)
     return rotated_m
 
 
 matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-print(rotate(matrix))  # -----> [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
+for i in range(4):
+    print(matrix)
+    matrix = rotate(matrix)
