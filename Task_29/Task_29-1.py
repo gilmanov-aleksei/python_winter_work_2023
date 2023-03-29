@@ -13,7 +13,6 @@ for num in lst:
     if lst.count(num) == 1:
         print("Искомое число:", num)
 
-lst = [11, 11, 11, 11, 11, 11, 11, 11, 11, 10, 11, 11, 11, 11, 11]
 dct = {}
 for i in lst:
     dct[i] = dct.get(i, 0) + 1
