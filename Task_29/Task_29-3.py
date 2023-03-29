@@ -15,3 +15,11 @@
 # AB CC
 # XXY XYY
 # ABAB CD
+
+def isomorphic_words(s):
+    pass
+
+
+
+str1 = "CBAABC"
+str2 = "DEFFED"
