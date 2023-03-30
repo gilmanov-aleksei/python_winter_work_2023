@@ -10,7 +10,7 @@
 #           [7, 8, 9]]
 # rotate(matrix, "по часовой") # -----> [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
 
-def rotate(m):
+def rotate1(m):
     # Пустой список, для новой матрицы
     rotated_m = []
     # Цикл по всей длине матрицы
@@ -23,13 +23,6 @@ def rotate(m):
         # Добавляем новую строку в новую матрицу
         rotated_m.append(row_m)
     return rotated_m
-
-
-matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-for i in range(4):
-    print(matrix)
-    matrix = rotate(matrix)
-print()
 
 
 def rotate2(m):
@@ -46,6 +39,13 @@ def rotate2(m):
     return rotated_m
 
 
+print("Вращение матрицы по часовой стрелке")
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+for i in range(4):
+    print(matrix)
+    matrix = rotate1(matrix)
+
+print("Вращение матрицы против часовой стрелки")
 matrix2 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 for i in range(4):
     print(matrix2)
