@@ -14,12 +14,12 @@ def rotate1(m):
     # Пустой список, для новой матрицы
     rotated_m = []
     # Цикл по всей длине матрицы
-    for i in range(len(m)):
+    for i1 in range(len(m)):
         # Пустой список, для новой строки матрицы
         row_m = []
-        for j in range(len(m) - 1, -1, -1):
+        for j1 in range(len(m) - 1, -1, -1):
             # Добавляем элемент матрицы вновую строку
-            row_m.append(m[j][i])
+            row_m.append(m[j1][i1])
         # Добавляем новую строку в новую матрицу
         rotated_m.append(row_m)
     return rotated_m
@@ -28,15 +28,16 @@ def rotate1(m):
 def rotate2(m):
     # Пустой список, для новой матрицы
     rotated_m = []
-    for j in range(len(m) - 1, -1, -1):
+    for j2 in range(len(m) - 1, -1, -1):
         # Пустой список, для новой строки матрицы
         row_m = []
-        for i in range(len(m)):
+        for i2 in range(len(m)):
             # Добавляем элемент матрицы вновую строку
-            row_m.append(m[i][j])
+            row_m.append(m[i2][j2])
         # Добавляем новую строку в новую матрицу
         rotated_m.append(row_m)
     return rotated_m
+
 
 def print_matrix(pm):
     for row in pm:
