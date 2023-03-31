@@ -38,23 +38,23 @@ def rotate2(m):
         rotated_m.append(row_m)
     return rotated_m
 
-
-print("Вращение матрицы по часовой стрелке")
-matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-for i in range(4):
-    for row in matrix:
+def print_matrix(pm):
+    for row in pm:
         for col in row:
             print(col, end=' ')
         print()
     print()
+    return
+
+
+print("Вращение матрицы по часовой стрелке")
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+for i in range(4):
+    print_matrix(matrix)
     matrix = rotate1(matrix)
 
 print("Вращение матрицы против часовой стрелки")
 matrix2 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 for i in range(4):
-    for row in matrix2:
-        for col in row:
-            print(col, end=' ')
-        print()
-    print()
+    print_matrix(matrix2)
     matrix2 = rotate2(matrix2)
