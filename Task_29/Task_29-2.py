@@ -42,11 +42,19 @@ def rotate2(m):
 print("Вращение матрицы по часовой стрелке")
 matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 for i in range(4):
-    print(matrix)
+    for row in matrix:
+        for col in row:
+            print(col, end=' ')
+        print()
+    print()
     matrix = rotate1(matrix)
 
 print("Вращение матрицы против часовой стрелки")
 matrix2 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 for i in range(4):
-    print(matrix2)
+    for row in matrix2:
+        for col in row:
+            print(col, end=' ')
+        print()
+    print()
     matrix2 = rotate2(matrix2)
