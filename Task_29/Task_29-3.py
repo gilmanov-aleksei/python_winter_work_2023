@@ -44,5 +44,5 @@ def isomorphic_words(s1, s2):
 str1 = ["CBAABC", "XXX", "RAMBUNCTIOUSLY", "AB", "XXY", "ABAB"]
 str2 = ["DEFFED", "YYY", "THERMODYNAMICS", "CC", "XYY", "CD"]
 
-for i in range(len(str1)):
-    print(str1[i], str2[i], "--->", isomorphic_words(str1[i], str2[i]))
+for s in range(len(str1)):
+    print(str1[s], str2[s], "--->", isomorphic_words(str1[s], str2[s]))
