@@ -1,0 +1,29 @@
+# так настройки из файла base.html перенесутся в этот файл
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <div class="title">
+        <h1>Приложение для обработки документов</h1>
+    </div>
+	<h3 align="center">Инструкция</h3>
+<div align="center">
+	<table id="instruction">
+       	    <tr id="row">
+	        <td>Краткая инструкция по использованию приложения состоит из 3 шагов:</td> </tr>
+       	    <tr id="row">
+	        <td>1 шаг. Загрузить материалы. Добавить документы в открывшуюся папку.</td> </tr>
+       	    <tr id="row">
+		 <td>2 шаг. Запуск модуля. Обработка документов.</td> </tr>
+       	    <tr id="row">
+		 <td>3 шаг. Итог. Выгрузка результатов отработки модуля.</td> </tr>
+	</table>
+</div>
+<div align="center">
+    <p><a class="btn" href="/upload" target="_blank">Загрузить материалы</a></p>
+    <p><a class="btn" href="/start">Запуск</a></p>
+	<p><a class="btn" href="/output_data">Итог</a></p>
+
+</div>
+
+{% endblock %}
