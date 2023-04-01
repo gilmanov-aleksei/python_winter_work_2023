@@ -8,3 +8,7 @@ def index(request):
 
 def about(request):
 	return HttpResponse("<h4>Страница про нас</h4>")
+
+
+def help(request):
+	return HttpResponse("<h4>Страница помощи</h4>")
