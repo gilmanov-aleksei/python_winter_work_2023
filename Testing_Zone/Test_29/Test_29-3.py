@@ -22,6 +22,10 @@ def about():
 def help():
     return render_template('help.html', title='Помощь')
 
+@app.route('/helpp')
+def helpp():
+    return render_template('helpp.html', title='Помощь')
+
 @app.route('/hobbi')
 def hobbi():
     return render_template('hobbi.html', title='Хобби')
