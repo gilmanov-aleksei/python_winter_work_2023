@@ -3,11 +3,11 @@ from django.http import HttpResponse
 
 
 def index(request):
-	return render(request, 'main/index.htm')
+	return render(request, 'main/index.html')
 
 
 def about(request):
-	return render(request, 'main/about.htm')
+	return render(request, 'main/about.html')
 
 
 def help(request):
