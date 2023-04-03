@@ -9,7 +9,11 @@ def index(request):
 
 
 def about(request):
-	return render(request, 'main/about.html', {'title': 'О Нас'})
+	return render(request, 'main/about.html', {'title': 'О нас'})
+
+
+def base_home(request):
+	return render(request, 'base/base_home.html', {'title': 'База'})
 
 
 def cont(request):
