@@ -1,14 +1,16 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 
 def index(request):
-	return render(request, 'main/index.html', {'titel': 'Главная страница'})
+	data = {
+		'title': 'Главная'
+	}
+	return render(request, 'main/index.html', data)
 
 
 def about(request):
-	return render(request, 'main/about.html')
+	return render(request, 'main/about.html', {'title': 'О Нас'})
 
 
-def help(request):
-	return HttpResponse("<h4>Страница помощи</h4>")
+def cont(request):
+	return render(request, 'main/cont.html', {'title': 'Контанты'})
