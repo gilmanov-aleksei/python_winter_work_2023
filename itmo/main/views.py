@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 
 def index(request):
-	return render(request, 'main/index.html')
+	return render(request, 'main/index.html', {'titel': 'Главная страница'})
 
 
 def about(request):
