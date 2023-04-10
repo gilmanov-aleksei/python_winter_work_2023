@@ -17,7 +17,6 @@ app.config['BABEL_DEFAULT_LOCALE'] = 'ru'
 
 db = SQLAlchemy(app)
 
-
 # class User(db.Model):
 # 	id = db.Column(db.Integer, primary_key=True)
 # 	role = db.Column(db.String(100), nullable=False)
