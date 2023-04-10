@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Создать задачу</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="my-5">Создать задачу</h1>
+    <form method="POST">
+        {% if form %}
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.name.label("Название") }}
+            {{ form.name(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.description.label("Описание") }}
+            {{ form.description(class="form-control") }}
+        </div>
+        <div class="form-group">
+<!--            <a href="{{ url_for('lesson', lesson_id=lesson_id) }}" class="btn btn-primary">Вернуться к уроку</a>-->
+            {{ form.submit(class="btn btn-primary") }}
+             <a href="{{ url_for('index') }}" class="btn btn-primary">Вернуться</a>
+        </div>
+        {% else %}
+        <p>Ошибка загрузки формы.</p>
+        {% endif %}
+    </form>
+</div>
+</body>
+</html>

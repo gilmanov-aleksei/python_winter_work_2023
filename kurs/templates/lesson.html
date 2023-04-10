@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Задачи</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h3 class="my-5">Задачи: {{ lesson.name }} - {{ lesson.description }}</h3>
+    <a href="{{ url_for('new_task') }}" class="btn btn-primary">Создать задачу</a>
+    <a href="{{ url_for('delete_task') }}" class="btn btn-primary">Удалить задачу</a>
+    <a href="{{ url_for('index') }}" class="btn btn-primary">Вернуться</a>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>№</th>
+            <th>Задача</th>
+            <th>Описание задачи</th>
+            <th>Студент решил</th>
+            <th>Учитель принял</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.id }}</td>
+            <td>{{ task.name }}</td>
+            <td>{{ task.description }}</td>
+            <td>{% if task.solved_by_student %}Да{% else %}Нет{% endif %}</td>
+            <td>{% if task.solved_by_teacher %}Да{% else %}Нет{% endif %}</td>
+            <td>{% if not task.completed %}
+                <a href="{{ url_for('task_solved_by_student', id=task.id) }}" class="btn btn-success">Студент</a>
+                {% endif %}
+            </td>
+            <td>{% if not task.completed %}
+                <a href="{{ url_for('task_solved_by_teacher', id=task.id) }}" class="btn btn-success">Учитель</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

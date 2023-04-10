@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Уроки</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="my-5">Уроки</h1>
+    <a href="{{ url_for('home') }}" class="btn btn-primary">Домашняя страница</a>
+    <a href="{{ url_for('new_lesson') }}" class="btn btn-primary">Создать урок</a>
+    <a href="{{ url_for('delete_lesson') }}" class="btn btn-primary">Удалить урок</a>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>№</th>
+            <th>Урок</th>
+            <th>Описание урока</th>
+            <th>Количество задач</th>
+            <th>Задачи</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for lesson in lessons %}
+        <tr>
+            <td>{{ lesson.id }}</td>
+            <td>{{ lesson.name }}</td>
+            <td>{{ lesson.description }}</td>
+            <td>{{ task_count }}</td>
+            <td>
+                <a href="{{ url_for('lesson', lesson_id=lesson.id) }}" class="btn btn-primary">Посмотреть</a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
